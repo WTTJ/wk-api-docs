@@ -67,7 +67,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
 
   // language selector for mobile devices
@@ -95,10 +95,24 @@ html, body {
       padding: 6px 0 6px 20px;
       box-sizing: border-box;
       margin: $nav-v-padding $nav-padding;
+      margin-bottom: 20px;
       width: $nav-width - 30;
       outline: none;
       color: $nav-text;
       border-radius: 0; /* ios has a default border radius */
+
+      &::-webkit-input-placeholder {
+        color: $search-box-placeholder;
+      }
+      &:-moz-placeholder {
+        color: $search-box-placeholder;
+      }
+      &::-moz-placeholder {
+        color: $search-box-placeholder;
+      }
+      &:-ms-input-placeholder {
+        color: $search-box-placeholder;
+      }
     }
 
     &:before {
@@ -123,12 +137,12 @@ html, body {
     transition-property: height, margin;
     transition-duration: 180ms;
     transition-timing-function: ease-in-out;
+    background: #3c3c3c;
+
     &.visible {
       height: 30%;
       margin-bottom: 1em;
     }
-
-    @include embossed-bg;
 
     li {
       margin: 1em $nav-padding;
@@ -161,7 +175,7 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 28px;
+    line-height: 36px;
   }
 
   li {
@@ -189,8 +203,6 @@ html, body {
       font-size: 12px;
     }
 
-    // for embossed look:
-    @include embossed-bg;
     &>li:last-child {
       box-shadow: none; // otherwise it'll overflow out of the subheader
     }
@@ -199,7 +211,8 @@ html, body {
   .toc-footer {
     padding: 1em 0;
     margin-top: 1em;
-    border-top: 1px dashed $nav-footer-border-color;
+    border-top: 1px solid $nav-footer-border-color;
+    opacity: 0.5;
 
     li,a {
       color: $nav-text;
@@ -252,6 +265,24 @@ html, body {
   &.open {left: $nav-width}
 }
 
+// CUSTOM LOGO
+#nav-logo {
+  display: block;
+  padding: 10px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+
+  img {
+    height: 20px;
+  }
+
+  span {
+    display: block;
+    margin-top: 5px;
+  }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // PAGE LAYOUT AND CODE SAMPLE BACKGROUND
