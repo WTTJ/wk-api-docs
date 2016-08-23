@@ -27,7 +27,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
   "contract_types": [
     {
       "id": "UNLIMITED",
-        "multiposting_code": 1,
         "name": {
           "en": "Unlimited Contract",
           "fr": "CDI"
@@ -35,7 +34,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "LIMITED",
-      "multiposting_code": 2,
       "name": {
         "en": "Limited duration",
         "fr": "CDD"
@@ -43,7 +41,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "INTERNSHIP",
-      "multiposting_code": 3,
       "name": {
         "en": "Internship",
         "fr": "Stage"
@@ -51,7 +48,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "INTERIM",
-      "multiposting_code": 4,
       "name": {
         "en": "Interim",
         "fr": "Int\u00e9rim"
@@ -59,7 +55,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "FREELANCE",
-      "multiposting_code": 5,
       "name": {
         "en": "Freelance",
         "fr": "Freelance"
@@ -67,7 +62,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "SALARIED",
-      "multiposting_code": 6,
       "name": {
         "en": "Salaried Employee",
         "fr": "Contractuel"
@@ -75,7 +69,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "APPRENTICE",
-      "multiposting_code": 7,
       "name": {
         "en": "Apprenticeship",
         "fr": "Apprentissage / Alternance"
@@ -83,7 +76,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "VIE",
-      "multiposting_code": 8,
       "name": {
         "en": "International internship",
         "fr": "V.I.E."
@@ -91,7 +83,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "FRANCHISE",
-      "multiposting_code": 9,
       "name": {
         "en": "Franchise",
         "fr": "Franchise"
@@ -101,7 +92,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
   "education_levels": [
     {
       "id": "NO_DIPLOMA",
-      "multiposting_code": 1,
       "name": {
         "en": "No Diploma",
         "fr": "Sans dipl\u00f4me"
@@ -109,7 +99,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "CAP",
-      "multiposting_code": 2,
       "name": {
         "en": "Youth Training",
         "fr": "CAP"
@@ -117,7 +106,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "BEP",
-      "multiposting_code": 3,
       "name": {
         "en": "BTEC First Diploma",
         "fr": "BEP"
@@ -125,7 +113,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "BAC",
-      "multiposting_code": 4,
       "name": {
         "en": "BTEC National Diploma",
         "fr": "Bac"
@@ -133,7 +120,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "BAC_1",
-      "multiposting_code": 5,
       "name": {
         "en": "A-levels",
         "fr": "Bac +1"
@@ -141,7 +127,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "BAC_2",
-      "multiposting_code": 6,
       "name": {
         "en": "BTEC Higher National Diploma",
         "fr": "Bac +2"
@@ -149,7 +134,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "BAC_3",
-      "multiposting_code": 7,
       "name": {
         "en": "Bachelor's Degree",
         "fr": "Bac +3"
@@ -157,7 +141,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "BAC_4",
-      "multiposting_code": 8,
       "name": {
         "en": "-",
         "fr": "Bac +4"
@@ -165,7 +148,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "BAC_5",
-      "multiposting_code": 9,
       "name": {
         "en": "Master's Degree",
         "fr": "Bac +5 / Master"
@@ -173,7 +155,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "PHD",
-      "multiposting_code": 10,
       "name": {
         "en": "PhD and more",
         "fr": "> Bac +5 / Doctorat"
@@ -183,7 +164,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
   "experience_levels": [
     {
       "id": "LESS_THAN_6_MONTHS",
-      "multiposting_code": 1,
       "name": {
         "en": "Less than 6 months",
         "fr": "Moins de 6 mois"
@@ -191,7 +171,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "6_MONTHS_TO_1_YEAR",
-      "multiposting_code": 2,
       "name": {
         "en": "6 months - 1 year",
         "fr": "6 mois \u00e0 1 an"
@@ -199,7 +178,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "1_TO_2_YEARS",
-      "multiposting_code": 3,
       "name": {
         "en": "1 - 2 years",
         "fr": "1 \u00e0 2 ans"
@@ -207,7 +185,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "2_TO_3_YEARS",
-      "multiposting_code": 4,
       "name": {
         "en": "2 - 3 years",
         "fr": "2 \u00e0 3 ans"
@@ -215,7 +192,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "3_TO_4_YEARS",
-      "multiposting_code": 5,
       "name": {
         "en": "3 - 4 years",
         "fr": "3 \u00e0 4 ans"
@@ -223,7 +199,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "4_TO_5_YEARS",
-      "multiposting_code": 6,
       "name": {
         "en": "4 - 5 years",
         "fr": "4 \u00e0 5 ans"
@@ -231,7 +206,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "5_TO_7_YEARS",
-      "multiposting_code": 7,
       "name": {
         "en": "5 - 7 years",
         "fr": "5 \u00e0 7 ans"
@@ -239,7 +213,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "7_TO_10_YEARS",
-      "multiposting_code": 8,
       "name": {
         "en": "7 - 10 years",
         "fr": "7 \u00e0 10 ans"
@@ -247,7 +220,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "10_TO_15_YEARS",
-      "multiposting_code": 9,
       "name": {
         "en": "10 - 15 years",
         "fr": "10 \u00e0 15 ans"
@@ -255,7 +227,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     {
       "id": "MORE_THAN_15_YEARS",
-      "multiposting_code": 10,
       "name": {
         "en": "More than 15 years",
         "fr": "Plus de 15 ans"
