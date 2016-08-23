@@ -9,7 +9,7 @@ This endpoint requires <code>candidates_rw</code> scope.
 ```shell
 curl -X POST "https://www.welcomekit.co/api/v1/external/candidates" \
     -H "Content-Type: application/json" \
-    -H "Authorization: bearer wk-api-key" \
+    -H "Authorization: Bearer WK_API_KEY" \
     -d @- <<EOF
 {
   "email": "test@example.com",

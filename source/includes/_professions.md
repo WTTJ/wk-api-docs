@@ -9,7 +9,7 @@ Through our API, you can access the list of all active professions.
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/professions" \
     -H "Content-Type: application/json" \
-    -H "Authorization: bearer wk-api-key"
+    -H "Authorization: Bearer WK_API_KEY"
 ```
 
 > The above command returns JSON structured like this:

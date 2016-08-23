@@ -5,7 +5,7 @@ language_tabs:
   - shell
 
 toc_footers:
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='https://github.com/tripit/slate'>Powered by Slate</a>
 
 includes:
   - jobs
@@ -27,10 +27,10 @@ TODO
 
 ```shell
 curl "api_endpoint_here"
-  -H "Authorization: bearer wk-api-key"
+  -H "Authorization: Bearer WK_API_KEY"
 ```
 
-> Make sure to replace `wk-api-key` with your API key.
+> Make sure to replace `WK_API_KEY` with your API key.
 
 WelcomeKit uses OAuth tokens to allow access to the API.
 
@@ -41,12 +41,12 @@ the server:
 
 * in a header that looks like the following:
 
-`Authorization: bearer wk-api-key`
+`Authorization: Bearer WK_API_KEY`
 
 * in query string:
 
-`?access_token=wk-api-key`
+`?access_token=WK_API_KEY`
 
 <aside class="notice">
-You must replace <code>wk-api-key</code> with your personal API key.
+You must replace <code>WK_API_KEY</code> with your personal API key.
 </aside>

@@ -5,7 +5,7 @@
 ```shell
 curl -X POST "https://www.welcomekit.co/api/v1/external/requests" \
     -H "Content-Type: application/json" \
-    -H "Authorization: bearer wk-api-key" \
+    -H "Authorization: Bearer WK_API_KEY" \
     -d @- <<EOF
 {
   "subject": "Support request",

@@ -17,7 +17,7 @@ In order to create a job, you may need the following information :
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     -H "Content-Type: application/json" \
-    -H "Authorization: bearer wk-api-key"
+    -H "Authorization: Bearer WK_API_KEY"
 ```
 
 > The above command returns JSON structured like this:
@@ -263,7 +263,7 @@ support@welcomekit.co to get the reference for the targeted company.
 ```shell
 curl -X POST "https://www.welcomekit.co/api/v1/external/jobs" \
     -H "Content-Type: application/json" \
-    -H "Authorization: bearer wk-api-key" \
+    -H "Authorization: Bearer WK_API_KEY" \
     -d @- <<EOF
 {
   "organization_reference": "Pg4eV6k",
@@ -394,7 +394,7 @@ This endpoint requires <code>jobs_rw</code> scope.
 ```shell
 curl -X PUT "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
     -H "Content-Type: application/json" \
-    -H "Authorization: bearer wk-api-key" \
+    -H "Authorization: Bearer WK_API_KEY" \
     -d @- <<EOF
 {
   "name": "Fake Job",
@@ -518,7 +518,7 @@ This endpoint requires <code>jobs_rw</code> scope.
 ```shell
 curl -X PUT "https://www.welcomekit.co/api/v1/external/jobs/:reference/update_status" \
     -H "Content-Type: application/json" \
-    -H "Authorization: bearer wk-api-key" \
+    -H "Authorization: Bearer WK_API_KEY" \
     -d @- <<EOF
 {
   "status": "published"
