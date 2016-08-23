@@ -2,6 +2,10 @@
 
 ## Get jobs dependencies
 
+<aside class="notice">
+This endpoint requires <code>jobs_r</code> or <code>jobs_rw</code> scope.
+</aside>
+
 In order to create a job, you may need the following information :
 
 * `salary_currencies`
@@ -13,266 +17,274 @@ In order to create a job, you may need the following information :
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     -H "Content-Type: application/json" \
-    -H "Authorization: bearer wk-api-key" \
+    -H "Authorization: bearer wk-api-key"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-   "education_levels" : [
-      {
-         "multi_posting_code" : 1,
-         "id" : "NO_DIPLOMA",
-         "name" : {
-            "fr" : "Sans diplôme",
-            "en" : "No Diploma"
-         }
-      },
-      {
-         "name" : {
-            "en" : "Youth Training",
-            "fr" : "CAP"
-         },
-         "id" : "CAP",
-         "multi_posting_code" : 2
-      },
-      {
-         "multi_posting_code" : 3,
-         "name" : {
-            "en" : "BTEC First Diploma",
-            "fr" : "BEP"
-         },
-         "id" : "BEP"
-      },
-      {
-         "multi_posting_code" : 4,
-         "name" : {
-            "fr" : "Bac",
-            "en" : "BTEC National Diploma"
-         },
-         "id" : "BAC"
-      },
-      {
-         "multi_posting_code" : 5,
-         "name" : {
-            "en" : "A-levels",
-            "fr" : "Bac +1"
-         },
-         "id" : "BAC_1"
-      },
-      {
-         "name" : {
-            "en" : "BTEC Higher National Diploma",
-            "fr" : "Bac +2"
-         },
-         "id" : "BAC_2",
-         "multi_posting_code" : 6
-      },
-      {
-         "id" : "BAC_3",
-         "name" : {
-            "en" : "Bachelor's Degree",
-            "fr" : "Bac +3"
-         },
-         "multi_posting_code" : 7
-      },
-      {
-         "multi_posting_code" : 8,
-         "id" : "BAC_4",
-         "name" : {
-            "fr" : "Bac +4",
-            "en" : "-"
-         }
-      },
-      {
-         "multi_posting_code" : 9,
-         "name" : {
-            "fr" : "Bac +5 / Master",
-            "en" : "Master's Degree"
-         },
-         "id" : "BAC_5"
-      },
-      {
-         "multi_posting_code" : 10,
-         "name" : {
-            "en" : "PhD and more",
-            "fr" : "> Bac +5 / Doctorat"
-         },
-         "id" : "PHD"
+  "contract_types": [
+    {
+      "id": "UNLIMITED",
+        "multiposting_code": 1,
+        "name": {
+          "en": "Unlimited Contract",
+          "fr": "CDI"
+        }
+    },
+    {
+      "id": "LIMITED",
+      "multiposting_code": 2,
+      "name": {
+        "en": "Limited duration",
+        "fr": "CDD"
       }
-   ],
-   "salary_currencies" : [
-      "EUR",
-      "USD"
-   ],
-   "salary_periods" : [
-      "yearly",
-      "monthly",
-      "daily",
-      "none"
-   ],
-   "contract_types" : [
-      {
-         "multiposting_code" : 1,
-         "id" : "UNLIMITED",
-         "name" : {
-            "fr" : "CDI",
-            "en" : "Unlimited Contract"
-         }
-      },
-      {
-         "id" : "LIMITED",
-         "name" : {
-            "fr" : "CDD",
-            "en" : "Contract of limited duration"
-         },
-         "multiposting_code" : 2
-      },
-      {
-         "name" : {
-            "en" : "Internship",
-            "fr" : "Stage"
-         },
-         "id" : "INTERNSHIP",
-         "multiposting_code" : 3
-      },
-      {
-         "multiposting_code" : 4,
-         "name" : {
-            "fr" : "Intérim",
-            "en" : "Interim"
-         },
-         "id" : "INTERIM"
-      },
-      {
-         "multiposting_code" : 5,
-         "id" : "FREELANCE",
-         "name" : {
-            "fr" : "Freelance / Indépendant",
-            "en" : "Freelance / Self Employed"
-         }
-      },
-      {
-         "name" : {
-            "en" : "Salaried Employee",
-            "fr" : "Contractuel"
-         },
-         "id" : "SALARIED",
-         "multiposting_code" : 6
-      },
-      {
-         "name" : {
-            "en" : "Apprenticeship / Work placement contract",
-            "fr" : "Apprentissage / Alternance"
-         },
-         "id" : "APPRENTICE",
-         "multiposting_code" : 7
-      },
-      {
-         "id" : "VIE",
-         "name" : {
-            "fr" : "V.I.E.",
-            "en" : "International internship"
-         },
-         "multiposting_code" : 8
-      },
-      {
-         "id" : "FRANCHISE",
-         "name" : {
-            "en" : "Franchise",
-            "fr" : "Franchise"
-         },
-         "multiposting_code" : 9
+    },
+    {
+      "id": "INTERNSHIP",
+      "multiposting_code": 3,
+      "name": {
+        "en": "Internship",
+        "fr": "Stage"
       }
-   ],
-   "experience_levels" : [
-      {
-         "id" : "LESS_THAN_6_MONTHS",
-         "name" : {
-            "fr" : "Moins de 6 mois",
-            "en" : "Less than 6 months"
-         },
-         "multiposting_code" : 1
-      },
-      {
-         "id" : "6_MONTHS_TO_1_YEAR",
-         "name" : {
-            "en" : "6 months - 1 year",
-            "fr" : "6 mois à 1 an"
-         },
-         "multiposting_code" : 2
-      },
-      {
-         "name" : {
-            "fr" : "1 à 2 ans",
-            "en" : "1 - 2 years"
-         },
-         "id" : "1_TO_2_YEARS",
-         "multiposting_code" : 3
-      },
-      {
-         "id" : "2_TO_3_YEARS",
-         "name" : {
-            "en" : "2 - 3 years",
-            "fr" : "2 à 3 ans"
-         },
-         "multiposting_code" : 4
-      },
-      {
-         "name" : {
-            "en" : "3 - 4 years",
-            "fr" : "3 à 4 ans"
-         },
-         "id" : "3_TO_4_YEARS",
-         "multiposting_code" : 5
-      },
-      {
-         "multiposting_code" : 6,
-         "name" : {
-            "fr" : "4 à 5 ans",
-            "en" : "4 - 5 years"
-         },
-         "id" : "4_TO_5_YEARS"
-      },
-      {
-         "multiposting_code" : 7,
-         "name" : {
-            "en" : "5 - 7 years",
-            "fr" : "5 à 7 ans"
-         },
-         "id" : "5_TO_7_YEARS"
-      },
-      {
-         "id" : "7_TO_10_YEARS",
-         "name" : {
-            "fr" : "7 à 10 ans",
-            "en" : "7 - 10 years"
-         },
-         "multiposting_code" : 8
-      },
-      {
-         "multiposting_code" : 9,
-         "id" : "10_TO_15_YEARS",
-         "name" : {
-            "en" : "10 - 15 years",
-            "fr" : "10 à 15 ans"
-         }
-      },
-      {
-         "multiposting_code" : 10,
-         "id" : "MORE_THAN_15_YEARS",
-         "name" : {
-            "en" : "More than 15 years",
-            "fr" : "Plus de 15 ans"
-         }
+    },
+    {
+      "id": "INTERIM",
+      "multiposting_code": 4,
+      "name": {
+        "en": "Interim",
+        "fr": "Int\u00e9rim"
       }
-   ]
+    },
+    {
+      "id": "FREELANCE",
+      "multiposting_code": 5,
+      "name": {
+        "en": "Freelance",
+        "fr": "Freelance"
+      }
+    },
+    {
+      "id": "SALARIED",
+      "multiposting_code": 6,
+      "name": {
+        "en": "Salaried Employee",
+        "fr": "Contractuel"
+      }
+    },
+    {
+      "id": "APPRENTICE",
+      "multiposting_code": 7,
+      "name": {
+        "en": "Apprenticeship",
+        "fr": "Apprentissage / Alternance"
+      }
+    },
+    {
+      "id": "VIE",
+      "multiposting_code": 8,
+      "name": {
+        "en": "International internship",
+        "fr": "V.I.E."
+      }
+    },
+    {
+      "id": "FRANCHISE",
+      "multiposting_code": 9,
+      "name": {
+        "en": "Franchise",
+        "fr": "Franchise"
+      }
+    }
+  ],
+  "education_levels": [
+    {
+      "id": "NO_DIPLOMA",
+      "multiposting_code": 1,
+      "name": {
+        "en": "No Diploma",
+        "fr": "Sans dipl\u00f4me"
+      }
+    },
+    {
+      "id": "CAP",
+      "multiposting_code": 2,
+      "name": {
+        "en": "Youth Training",
+        "fr": "CAP"
+      }
+    },
+    {
+      "id": "BEP",
+      "multiposting_code": 3,
+      "name": {
+        "en": "BTEC First Diploma",
+        "fr": "BEP"
+      }
+    },
+    {
+      "id": "BAC",
+      "multiposting_code": 4,
+      "name": {
+        "en": "BTEC National Diploma",
+        "fr": "Bac"
+      }
+    },
+    {
+      "id": "BAC_1",
+      "multiposting_code": 5,
+      "name": {
+        "en": "A-levels",
+        "fr": "Bac +1"
+      }
+    },
+    {
+      "id": "BAC_2",
+      "multiposting_code": 6,
+      "name": {
+        "en": "BTEC Higher National Diploma",
+        "fr": "Bac +2"
+      }
+    },
+    {
+      "id": "BAC_3",
+      "multiposting_code": 7,
+      "name": {
+        "en": "Bachelor's Degree",
+        "fr": "Bac +3"
+      }
+    },
+    {
+      "id": "BAC_4",
+      "multiposting_code": 8,
+      "name": {
+        "en": "-",
+        "fr": "Bac +4"
+      }
+    },
+    {
+      "id": "BAC_5",
+      "multiposting_code": 9,
+      "name": {
+        "en": "Master's Degree",
+        "fr": "Bac +5 / Master"
+      }
+    },
+    {
+      "id": "PHD",
+      "multiposting_code": 10,
+      "name": {
+        "en": "PhD and more",
+        "fr": "> Bac +5 / Doctorat"
+      }
+    }
+  ],
+  "experience_levels": [
+    {
+      "id": "LESS_THAN_6_MONTHS",
+      "multiposting_code": 1,
+      "name": {
+        "en": "Less than 6 months",
+        "fr": "Moins de 6 mois"
+      }
+    },
+    {
+      "id": "6_MONTHS_TO_1_YEAR",
+      "multiposting_code": 2,
+      "name": {
+        "en": "6 months - 1 year",
+        "fr": "6 mois \u00e0 1 an"
+      }
+    },
+    {
+      "id": "1_TO_2_YEARS",
+      "multiposting_code": 3,
+      "name": {
+        "en": "1 - 2 years",
+        "fr": "1 \u00e0 2 ans"
+      }
+    },
+    {
+      "id": "2_TO_3_YEARS",
+      "multiposting_code": 4,
+      "name": {
+        "en": "2 - 3 years",
+        "fr": "2 \u00e0 3 ans"
+      }
+    },
+    {
+      "id": "3_TO_4_YEARS",
+      "multiposting_code": 5,
+      "name": {
+        "en": "3 - 4 years",
+        "fr": "3 \u00e0 4 ans"
+      }
+    },
+    {
+      "id": "4_TO_5_YEARS",
+      "multiposting_code": 6,
+      "name": {
+        "en": "4 - 5 years",
+        "fr": "4 \u00e0 5 ans"
+      }
+    },
+    {
+      "id": "5_TO_7_YEARS",
+      "multiposting_code": 7,
+      "name": {
+        "en": "5 - 7 years",
+        "fr": "5 \u00e0 7 ans"
+      }
+    },
+    {
+      "id": "7_TO_10_YEARS",
+      "multiposting_code": 8,
+      "name": {
+        "en": "7 - 10 years",
+        "fr": "7 \u00e0 10 ans"
+      }
+    },
+    {
+      "id": "10_TO_15_YEARS",
+      "multiposting_code": 9,
+      "name": {
+        "en": "10 - 15 years",
+        "fr": "10 \u00e0 15 ans"
+      }
+    },
+    {
+      "id": "MORE_THAN_15_YEARS",
+      "multiposting_code": 10,
+      "name": {
+        "en": "More than 15 years",
+        "fr": "Plus de 15 ans"
+      }
+    }
+  ],
+  "salary_currencies": [
+    "EUR",
+    "USD"
+  ],
+  "salary_periods": [
+    "yearly",
+    "monthly",
+    "daily",
+    "none"
+  ]
 }
 ```
 
+### HTTP Request
+
+`GET https://www.welcomekit.co/api/v1/external/jobs/dependencies`
+
 
 ## Create a job
+
+<aside class="notice">
+This endpoint requires <code>jobs_rw</code> scope.
+</aside>
 
 Before being able to use this endpoint, you need to contact
 support@welcomekit.co to get the reference for the targeted company.
@@ -310,53 +322,53 @@ EOF
 
 ```json
 {
-    "name": "Fake Job",
-    "reference": "WTTJ_KmqkD1Y",
-    "stages": [
-        {
-            "id": 14752,
-            "name": "New",
-            "reference": "initial",
-            "visible": true
-        },
-        {
-            "id": 14753,
-            "name": "Refused",
-            "reference": "refused",
-            "visible": true
-        },
-        {
-            "id": 14754,
-            "name": "After refus\u00e9",
-            "reference": null,
-            "visible": true
-        },
-        {
-            "id": 14755,
-            "name": "To Meet",
-            "reference": "to_meet",
-            "visible": true
-        },
-        {
-            "id": 14756,
-            "name": "Interview",
-            "reference": "interviewed",
-            "visible": true
-        },
-        {
-            "id": 14757,
-            "name": "Proposition!",
-            "reference": null,
-            "visible": true
-        },
-        {
-            "id": 14758,
-            "name": "Archived",
-            "reference": "archived",
-            "visible": false
-        }
-    ],
-    "status": "draft"
+  "name": "Fake Job",
+  "reference": "WTTJ_KmqkD1Y",
+  "stages": [
+    {
+      "id": 14752,
+      "name": "New",
+      "reference": "initial",
+      "visible": true
+    },
+    {
+      "id": 14753,
+      "name": "Refused",
+      "reference": "refused",
+      "visible": true
+    },
+    {
+      "id": 14754,
+      "name": "After refus\u00e9",
+      "reference": null,
+      "visible": true
+    },
+    {
+      "id": 14755,
+      "name": "To Meet",
+      "reference": "to_meet",
+      "visible": true
+    },
+    {
+      "id": 14756,
+      "name": "Interview",
+      "reference": "interviewed",
+      "visible": true
+    },
+    {
+      "id": 14757,
+      "name": "Proposition!",
+      "reference": null,
+      "visible": true
+    },
+    {
+      "id": 14758,
+      "name": "Archived",
+      "reference": "archived",
+      "visible": false
+    }
+  ],
+  "status": "draft"
 }
 ```
 
@@ -369,7 +381,7 @@ EOF
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `organization_reference` | String | ✔ | | Reference for a given organization/company | aEioU123
-`profession_reference` | String | ✔ | | Reference for a given profession | "sales" / "finance" / "dev_backend" / etc. See Professions endpoint for the whole list of valid values
+`profession_reference` | String | ✔ | | Reference for a given profession | "sales" / "finance" / "dev_backend" / etc. See [Professions endpoint](#professions)
 `name` | String | ✔ | | Job name | Full-Stack Developer
 `description` | Text | ✔ | | Job description (Explain the job, not the company)
 `profile` | Text | ✔ | | Job profile (Explain who you're looking for)
@@ -404,6 +416,10 @@ Parameter | Type | Required | Default | Description | Example
 
 ## Update a job
 
+<aside class="notice">
+This endpoint requires <code>jobs_rw</code> scope.
+</aside>
+
 ```shell
 curl -X PUT "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
     -H "Content-Type: application/json" \
@@ -435,53 +451,53 @@ EOF
 
 ```json
 {
-    "name": "Fake Job",
-    "reference": "WTTJ_KmqkD1Y",
-    "stages": [
-        {
-            "id": 14752,
-            "name": "New",
-            "reference": "initial",
-            "visible": true
-        },
-        {
-            "id": 14753,
-            "name": "Refused",
-            "reference": "refused",
-            "visible": true
-        },
-        {
-            "id": 14754,
-            "name": "After refus\u00e9",
-            "reference": null,
-            "visible": true
-        },
-        {
-            "id": 14755,
-            "name": "To Meet",
-            "reference": "to_meet",
-            "visible": true
-        },
-        {
-            "id": 14756,
-            "name": "Interview",
-            "reference": "interviewed",
-            "visible": true
-        },
-        {
-            "id": 14757,
-            "name": "Proposition!",
-            "reference": null,
-            "visible": true
-        },
-        {
-            "id": 14758,
-            "name": "Archived",
-            "reference": "archived",
-            "visible": false
-        }
-    ],
-    "status": "draft"
+  "name": "Fake Job",
+  "reference": "WTTJ_KmqkD1Y",
+  "stages": [
+    {
+      "id": 14752,
+      "name": "New",
+      "reference": "initial",
+      "visible": true
+    },
+    {
+      "id": 14753,
+      "name": "Refused",
+      "reference": "refused",
+      "visible": true
+    },
+    {
+      "id": 14754,
+      "name": "After refus\u00e9",
+      "reference": null,
+      "visible": true
+    },
+    {
+      "id": 14755,
+      "name": "To Meet",
+      "reference": "to_meet",
+      "visible": true
+    },
+    {
+      "id": 14756,
+      "name": "Interview",
+      "reference": "interviewed",
+      "visible": true
+    },
+    {
+      "id": 14757,
+      "name": "Proposition!",
+      "reference": null,
+      "visible": true
+    },
+    {
+      "id": 14758,
+      "name": "Archived",
+      "reference": "archived",
+      "visible": false
+    }
+  ],
+  "status": "draft"
 }
 ```
 
@@ -494,7 +510,7 @@ EOF
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `reference` | String | ✔ | | Job reference | |
-`profession_reference` | String | | | Reference for a given profession | "sales" / "finance" / "dev_backend" / etc. See Professions endpoint for the whole list of valid values
+`profession_reference` | String | | | Reference for a given profession | "sales" / "finance" / "dev_backend" / etc. See [Professions endpoint](#professions)
 `name` | String | | | Job name | Full-Stack Developer
 `description` | Text | | | Job description (Explain the job, not the company)
 `profile` | Text | | | Job profile (Explain who you're looking for)
@@ -520,3 +536,86 @@ Parameter | Type | Required | Default | Description | Example
 `office_id` | Integer | | | Office id in the WelcomeKit database | 42
 `office_zip_code` | String | | | Office zip code | 75002
 `office_country_code` | String | | | Office country code | FR
+
+
+## Update job status
+
+<aside class="notice">
+This endpoint requires <code>jobs_rw</code> scope.
+</aside>
+
+```shell
+curl -X PUT "https://www.welcomekit.co/api/v1/external/jobs/:reference/update_status" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: bearer wk-api-key" \
+    -d @- <<EOF
+{
+  "status": "published"
+}
+EOF
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "name": "A job name",
+  "reference": "WTTJ_ZyDmzZ6",
+  "stages": [
+    {
+      "id": 14600,
+      "name": "New",
+      "reference": "initial",
+      "visible": true
+    },
+    {
+      "id": 14601,
+      "name": "Refused",
+      "reference": "refused",
+      "visible": true
+    },
+    {
+      "id": 14602,
+      "name": "To Meet",
+      "reference": "to_meet",
+      "visible": true
+    },
+    {
+      "id": 14603,
+      "name": "Interview",
+      "reference": "interviewed",
+      "visible": true
+    },
+    {
+      "id": 14604,
+      "name": "Propositione",
+      "reference": "made_offer",
+      "visible": true
+    },
+    {
+      "id": 14605,
+      "name": "Archived",
+      "reference": "archived",
+      "visible": false
+    },
+    {
+      "id": 14730,
+      "name": "last column",
+      "reference": "",
+      "visible": true
+    }
+  ],
+  "status": "published"
+}
+```
+
+### HTTP Request
+
+`PUT https://www.welcomekit.co/api/v1/external/jobs/:reference/update_status`
+
+### Query Parameters
+
+Parameter | Type | Required | Default | Description | Example
+--- | --- | --- | --- | --- | ---
+`reference` | String | ✔ | | Job reference | |
+`status` | String | ✔ | | Job status | draft, published, archived |
