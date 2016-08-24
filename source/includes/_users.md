@@ -8,7 +8,6 @@ This endpoint requires <code>me_r</code> scope.
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/users/current" \
-    -d "organizations=true&jobs=true" \
     -H "Content-Type: application/json" \
     -H "Authorization: bearer wk-api-key"
 ```
@@ -33,3 +32,4 @@ Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `organizations` | Boolean | | | Include organizations |
 `jobs` | Boolean | | | Include jobs |
+`stages` | Boolean | | | Include jobs stages |

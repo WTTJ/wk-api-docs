@@ -295,50 +295,6 @@ EOF
 {
   "name": "Fake Job",
   "reference": "WTTJ_KmqkD1Y",
-  "stages": [
-    {
-      "id": 14752,
-      "name": "New",
-      "reference": "initial",
-      "visible": true
-    },
-    {
-      "id": 14753,
-      "name": "Refused",
-      "reference": "refused",
-      "visible": true
-    },
-    {
-      "id": 14754,
-      "name": "After refus\u00e9",
-      "reference": null,
-      "visible": true
-    },
-    {
-      "id": 14755,
-      "name": "To Meet",
-      "reference": "to_meet",
-      "visible": true
-    },
-    {
-      "id": 14756,
-      "name": "Interview",
-      "reference": "interviewed",
-      "visible": true
-    },
-    {
-      "id": 14757,
-      "name": "Proposition!",
-      "reference": null,
-      "visible": true
-    },
-    {
-      "id": 14758,
-      "name": "Archived",
-      "reference": "archived",
-      "visible": false
-    }
-  ],
   "status": "draft"
 }
 ```
@@ -424,50 +380,6 @@ EOF
 {
   "name": "Fake Job",
   "reference": "WTTJ_KmqkD1Y",
-  "stages": [
-    {
-      "id": 14752,
-      "name": "New",
-      "reference": "initial",
-      "visible": true
-    },
-    {
-      "id": 14753,
-      "name": "Refused",
-      "reference": "refused",
-      "visible": true
-    },
-    {
-      "id": 14754,
-      "name": "After refus\u00e9",
-      "reference": null,
-      "visible": true
-    },
-    {
-      "id": 14755,
-      "name": "To Meet",
-      "reference": "to_meet",
-      "visible": true
-    },
-    {
-      "id": 14756,
-      "name": "Interview",
-      "reference": "interviewed",
-      "visible": true
-    },
-    {
-      "id": 14757,
-      "name": "Proposition!",
-      "reference": null,
-      "visible": true
-    },
-    {
-      "id": 14758,
-      "name": "Archived",
-      "reference": "archived",
-      "visible": false
-    }
-  ],
   "status": "draft"
 }
 ```
@@ -532,50 +444,6 @@ EOF
 {
   "name": "A job name",
   "reference": "WTTJ_ZyDmzZ6",
-  "stages": [
-    {
-      "id": 14600,
-      "name": "New",
-      "reference": "initial",
-      "visible": true
-    },
-    {
-      "id": 14601,
-      "name": "Refused",
-      "reference": "refused",
-      "visible": true
-    },
-    {
-      "id": 14602,
-      "name": "To Meet",
-      "reference": "to_meet",
-      "visible": true
-    },
-    {
-      "id": 14603,
-      "name": "Interview",
-      "reference": "interviewed",
-      "visible": true
-    },
-    {
-      "id": 14604,
-      "name": "Propositione",
-      "reference": "made_offer",
-      "visible": true
-    },
-    {
-      "id": 14605,
-      "name": "Archived",
-      "reference": "archived",
-      "visible": false
-    },
-    {
-      "id": 14730,
-      "name": "last column",
-      "reference": "",
-      "visible": true
-    }
-  ],
   "status": "published"
 }
 ```
