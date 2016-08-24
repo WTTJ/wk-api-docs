@@ -12,6 +12,7 @@ includes:
   - jobs
   - professions
   - candidates
+  - users
 
 search: true
 ---

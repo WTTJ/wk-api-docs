@@ -2,10 +2,6 @@
 
 ## Get current user
 
-<aside class="notice">
-This endpoint requires <code>me_r</code> scope.
-</aside>
-
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/users/current" \
     -H "Content-Type: application/json" \
@@ -21,6 +17,17 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/users/current" \
 }
 
 ```
+
+<aside class="notice">
+This endpoint requires <code>me_r</code> scope.
+</aside>
+
+This endpoints lets you get:
+
+* Information about the current user
+* All organizations this user has acces to
+* All jobs related to these organizations
+* All stages (aka columns) related to these jobs
 
 ### HTTP Request
 
