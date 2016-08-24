@@ -11,8 +11,6 @@ includes:
   - jobs
   - professions
   - candidates
-  - requests
-  - users
 
 search: true
 ---
