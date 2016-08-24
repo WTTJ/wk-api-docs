@@ -47,17 +47,19 @@ case ENV['TARGET'].to_s.downcase
 when 'preprod'
   activate :deploy do |deploy|
     deploy.deploy_method = :rsync
-    deploy.host          = '146.185.187.199'
+    # https://github.com/middleman-contrib/middleman-deploy/pull/113
+    deploy.host          = 'wk-api-docs@146.185.187.199'
+    #deploy.user          = 'wk-api-docs'
     deploy.path          = '/var/www/wk-api-docs/preprod/current'
-    deploy.user          = 'wk-api-docs'
     deploy.clean         = true
   end
 when 'production'
   activate :deploy do |deploy|
     deploy.deploy_method = :rsync
-    deploy.host          = '5.101.104.223'
+    # https://github.com/middleman-contrib/middleman-deploy/pull/113
+    deploy.host          = 'wk-api-docs@5.101.104.223'
+    #deploy.user          = 'wk-api-docs'
     deploy.path          = '/var/www/wk-api-docs/production/current'
-    deploy.user          = 'wk-api-docs'
     deploy.clean         = true
   end
 end
