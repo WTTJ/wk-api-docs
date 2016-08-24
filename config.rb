@@ -42,3 +42,22 @@ end
 # Deploy Configuration
 # If you want Middleman to listen on a different port, you can set that below
 set :port, 4567
+
+case ENV['TARGET'].to_s.downcase
+when 'preprod'
+  activate :deploy do |deploy|
+    deploy.deploy_method = :rsync
+    deploy.host          = '146.185.187.199'
+    deploy.path          = '/var/www/wk-api-docs/preprod/current'
+    deploy.user          = 'wk-api-docs'
+    deploy.clean         = true
+  end
+when 'production'
+  activate :deploy do |deploy|
+    deploy.deploy_method = :rsync
+    deploy.host          = '5.101.104.223'
+    deploy.path          = '/var/www/wk-api-docs/production/current'
+    deploy.user          = 'wk-api-docs'
+    deploy.clean         = true
+  end
+end
