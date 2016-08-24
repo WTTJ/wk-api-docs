@@ -209,24 +209,34 @@ html, body {
   }
 
   .toc-footer {
-    padding: 1em 0;
     margin-top: 1em;
-    border-top: 1px solid $nav-footer-border-color;
-    opacity: 0.5;
 
     li,a {
       color: $nav-text;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    li {
+      padding: 0;
     }
 
-    li {
-      font-size: 0.8em;
-      line-height: 1.7;
-      text-decoration: none;
+    a{
+      display: block;
+      padding: 10px 15px;
+
+      &.toc-footer-request {
+        border-top: 1px solid $nav-footer-border-color;
+        border-bottom: 1px solid $nav-footer-border-color;
+      }
+
+      &.toc-footer-copyright {
+        font-size: 11px;
+        opacity: 0.5;
+      }
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   }
 
@@ -453,6 +463,10 @@ html, body {
 
     td {
       padding: 10px;
+    }
+
+    td > code.prettyprint {
+      white-space: nowrap;
     }
 
     tr:last-child {
