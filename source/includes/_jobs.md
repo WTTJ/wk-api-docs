@@ -2,18 +2,6 @@
 
 ## Get jobs dependencies
 
-<aside class="notice">
-This endpoint requires <code>jobs_r</code> or <code>jobs_rw</code> scope.
-</aside>
-
-In order to create a job, you may need the following information :
-
-* `salary_currencies`
-* `salary_periods`
-* `contract_types`
-* `experience_levels`
-* `education_levels`
-
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     -H "Content-Type: application/json" \
@@ -46,48 +34,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
         "fr": "Stage"
       }
     },
-    {
-      "id": "INTERIM",
-      "name": {
-        "en": "Interim",
-        "fr": "Int\u00e9rim"
-      }
-    },
-    {
-      "id": "FREELANCE",
-      "name": {
-        "en": "Freelance",
-        "fr": "Freelance"
-      }
-    },
-    {
-      "id": "SALARIED",
-      "name": {
-        "en": "Salaried Employee",
-        "fr": "Contractuel"
-      }
-    },
-    {
-      "id": "APPRENTICE",
-      "name": {
-        "en": "Apprenticeship",
-        "fr": "Apprentissage / Alternance"
-      }
-    },
-    {
-      "id": "VIE",
-      "name": {
-        "en": "International internship",
-        "fr": "V.I.E."
-      }
-    },
-    {
-      "id": "FRANCHISE",
-      "name": {
-        "en": "Franchise",
-        "fr": "Franchise"
-      }
-    }
+    ...
   ],
   "education_levels": [
     {
@@ -105,61 +52,13 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
       }
     },
     {
-      "id": "BEP",
-      "name": {
-        "en": "BTEC First Diploma",
-        "fr": "BEP"
-      }
-    },
-    {
       "id": "BAC",
       "name": {
         "en": "BTEC National Diploma",
         "fr": "Bac"
       }
     },
-    {
-      "id": "BAC_1",
-      "name": {
-        "en": "A-levels",
-        "fr": "Bac +1"
-      }
-    },
-    {
-      "id": "BAC_2",
-      "name": {
-        "en": "BTEC Higher National Diploma",
-        "fr": "Bac +2"
-      }
-    },
-    {
-      "id": "BAC_3",
-      "name": {
-        "en": "Bachelor's Degree",
-        "fr": "Bac +3"
-      }
-    },
-    {
-      "id": "BAC_4",
-      "name": {
-        "en": "-",
-        "fr": "Bac +4"
-      }
-    },
-    {
-      "id": "BAC_5",
-      "name": {
-        "en": "Master's Degree",
-        "fr": "Bac +5 / Master"
-      }
-    },
-    {
-      "id": "PHD",
-      "name": {
-        "en": "PhD and more",
-        "fr": "> Bac +5 / Doctorat"
-      }
-    }
+    ...
   ],
   "experience_levels": [
     {
@@ -183,55 +82,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
         "fr": "1 \u00e0 2 ans"
       }
     },
-    {
-      "id": "2_TO_3_YEARS",
-      "name": {
-        "en": "2 - 3 years",
-        "fr": "2 \u00e0 3 ans"
-      }
-    },
-    {
-      "id": "3_TO_4_YEARS",
-      "name": {
-        "en": "3 - 4 years",
-        "fr": "3 \u00e0 4 ans"
-      }
-    },
-    {
-      "id": "4_TO_5_YEARS",
-      "name": {
-        "en": "4 - 5 years",
-        "fr": "4 \u00e0 5 ans"
-      }
-    },
-    {
-      "id": "5_TO_7_YEARS",
-      "name": {
-        "en": "5 - 7 years",
-        "fr": "5 \u00e0 7 ans"
-      }
-    },
-    {
-      "id": "7_TO_10_YEARS",
-      "name": {
-        "en": "7 - 10 years",
-        "fr": "7 \u00e0 10 ans"
-      }
-    },
-    {
-      "id": "10_TO_15_YEARS",
-      "name": {
-        "en": "10 - 15 years",
-        "fr": "10 \u00e0 15 ans"
-      }
-    },
-    {
-      "id": "MORE_THAN_15_YEARS",
-      "name": {
-        "en": "More than 15 years",
-        "fr": "Plus de 15 ans"
-      }
-    }
+    ...
   ],
   "salary_currencies": [
     "EUR",
@@ -246,19 +97,36 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
 }
 ```
 
+<aside class="notice">
+This endpoint requires <code>jobs_r</code> or <code>jobs_rw</code> scope.
+</aside>
+
+In order to create a job, you will need the following information:
+
+* `salary_currencies`
+  - authorized currencies when specifying a salary
+  - _examples: EUR, USD_
+* `salary_periods`
+  - authorized periods when specifying a salary
+  - _examples: yearly, monhtly, etc._
+* `contract_types`
+  - authorized contract types
+  - _examples: UNLIMITED, INTERNSHIP, etc._
+* `experience_levels`
+  - authorized experience levels
+  - _examples: PHD, NO_DIPLOMA, etc._
+* `education_levels`
+  - authorized education levels
+  - _examples: 1_TO_2_YEARS, MORE_THAN_15_YEARS, etc._
+
+NB: you will also need [authorized professions](#professions) to create any job offer.
+
 ### HTTP Request
 
 `GET https://www.welcomekit.co/api/v1/external/jobs/dependencies`
 
 
 ## Create a job
-
-<aside class="notice">
-This endpoint requires <code>jobs_rw</code> scope.
-</aside>
-
-Before being able to use this endpoint, you need to contact
-support@welcomekit.co to get the reference for the targeted company.
 
 ```shell
 curl -X POST "https://www.welcomekit.co/api/v1/external/jobs" \
@@ -295,6 +163,7 @@ EOF
 {
   "name": "Fake Job",
   "reference": "WTTJ_KmqkD1Y",
+  "status": "draft",
   "stages": [
     {
       "id": 14752,
@@ -338,10 +207,13 @@ EOF
       "reference": "archived",
       "visible": false
     }
-  ],
-  "status": "draft"
+  ]
 }
 ```
+
+<aside class="notice">
+This endpoint requires <code>jobs_rw</code> scope.
+</aside>
 
 ### HTTP Request
 
@@ -351,38 +223,37 @@ EOF
 
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
-`organization_reference` | String | ✔ | | Reference for a given organization/company | aEioU123
-`profession_reference` | String | ✔ | | Reference for a given profession | "sales" / "finance" / "dev_backend" / etc. See [Professions endpoint](#professions)
+`organization_reference` | String | ✔ | | Reference of the associated organization/company | aEioU123
+`profession_reference` | String | ✔ | | Reference of the associated profession | "sales" / "finance" / "dev_backend" / etc. See [Professions endpoint](#professions)
 `name` | String | ✔ | | Job name | Full-Stack Developer
 `description` | Text | ✔ | | Job description (Explain the job, not the company)
 `profile` | Text | ✔ | | Job profile (Explain who you're looking for)
-`contract_type` | String | ✔ | |  Contract type for this job | UNLIMITED / LIMITED / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
+`contract_type` | String | ✔ | |  Contract type for this job | UNLIMITED / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
 `salary_min` | Integer | | | Minimum salary for a given `salary_period` | 45000
 `salary_max` | Integer | | | Maximum salary for a given `salary_period` | 55000
 `salary_currency` | String | | | Currency for the given salary | EUR / USD. See [jobs dependencies](#get-jobs-dependencies)
 `salary_period` | String | | | Period for the given salary | yearly, monthly, daily, none. See [jobs dependencies](#get-jobs-dependencies)
 `is_remote` | Boolean | | | Is remote work authorized for this job? | true / false
 `is_full_time` | Boolean | | | Is it a full time job? | true / false
-`contract_duration_min` | Integer | Required for CDD | | Minimum duration of the contract in months. | 1, 2, .., 24
-`contract_duration_max` | Integer | | | Maximum duration of the contract in months. Required for 'CDD' | 1, 2, .., 24
-`department_id` | Integer | | | Department ID. This is only used by companies having a career website generated through WelcomeKit.co | 1
-`office_id` | Integer | | | Office ID. In WelcomeKit, an office is like a "location".If the office wasn't created for the targeted company, you will need to contact support@welcomekit.co first. Also, if you don't have an `office_id` you can call the API with `office_zip_code` or `office_country_code` which may be enough for us to find the associated office | 1
-`office_zip_code` | String | | | Office zip code (`office_id` will be found from this). See: comment related to `office_id` | 75002
-`office_country_code` | String | | | Office country code (`office_id` will be found from this). See: comment related to `office_id` | FR
-`education_level` | String | | | Minimum education level ID | "BAC", "BAC_5", "PHD", etc. See [jobs dependencies](#get-jobs-dependencies)
+`contract_duration_min` | Integer | Required for 'CDD' | | Minimum duration of the contract in months. | 1, 2, .., 24
+`contract_duration_max` | Integer | Required for 'CDD' | | Maximum duration of the contract in months. | 1, 2, .., 24
+`department_id` | Integer | | | Department ID. Mainly used by companies which have a careers website managed through WelcomeKit.co | 1
+`office_id` | Integer | See below | | Office ID. An office is like a "location". If the office wasn't created for the targeted company, you will need to contact support@welcomekit.co first. Also, if you don't have an `office_id` you can call the API with `office_zip_code` or `office_country_code` which may be enough for us to retrieve the associated office. | 1
+`office_zip_code` | String | See below | | Office zip code (`office_id` will be found from this). See: comment related to `office_id` | 75002
+`office_country_code` | String | See below | | Office country code (`office_id` will be found from this). See: comment related to `office_id` | FR
+`education_level` | String | | | Minimum education level ID | `BAC`, `BAC_5`, `PHD`, etc. See [jobs dependencies](#get-jobs-dependencies)
 `experience_level` | String | | | Minimum experience level ID | `LESS_THAN_6_MONTHS`, `6_MONTHS_TO_1_YEAR`, `1_TO_2_YEARS`, etc. See [jobs dependencies](#get-jobs-dependencies)
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
 `start_date` | String | | | Start date for this job (YYYY-MM-DD) | 2015-11-26
 `external_origin` | String | | | External provider name | |
-`external_reference` | String | | | External provider Reference / ID for this job | |
+`external_reference` | String | | | External provider Reference / ID for this job. The couple `external_origin` / `external_reference` must be unique. | |
 
-Also, in the required parameters, you have to call this endpoint with AT LEAST ONE of the following attributes:
 
-Parameter | Type | Required | Default | Description | Example
---- | --- | --- | --- | --- | ---
-`office_id` | Integer | | | Office id in the WelcomeKit database | 42
-`office_zip_code` | String | | | Office zip code | 75002
-`office_country_code` | String | | | Office country code | FR
+Also, in the **required parameters**, you have to call this endpoint with **AT LEAST ONE** of the following attributes:
+
+* `office_id`
+* `office_zip_code`
+* `office_country_code`
 
 
 ## Update a job
@@ -424,6 +295,7 @@ EOF
 {
   "name": "Fake Job",
   "reference": "WTTJ_KmqkD1Y",
+  "status": "draft",
   "stages": [
     {
       "id": 14752,
@@ -467,8 +339,7 @@ EOF
       "reference": "archived",
       "visible": false
     }
-  ],
-  "status": "draft"
+  ]
 }
 ```
 
@@ -485,35 +356,28 @@ Parameter | Type | Required | Default | Description | Example
 `name` | String | | | Job name | Full-Stack Developer
 `description` | Text | | | Job description (Explain the job, not the company)
 `profile` | Text | | | Job profile (Explain who you're looking for)
-`contract_type` | String | | |  Contract type for this job | UNLIMITED / LIMITED / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
+`contract_type` | String | | |  Contract type for this job | UNLIMITED / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
 `salary_min` | Integer | | | Minimum salary for a given `salary_period` | 45000
 `salary_max` | Integer | | | Maximum salary for a given `salary_period` | 55000
 `salary_currency` | String | | | Currency for the given salary | EUR / USD. See [jobs dependencies](#get-jobs-dependencies)
 `salary_period` | String | | | Period for the given salary | yearly, monthly, daily, none. See [jobs dependencies](#get-jobs-dependencies)
 `is_remote` | Boolean | | | Is remote work authorized for this job? | true / false
 `is_full_time` | Boolean | | | Is it a full time job? | true / false
-`contract_duration_min` | Integer | Required for CDD | | Minimum duration of the contract in months. | 1, 2, .., 24
-`contract_duration_max` | Integer | | | Maximum duration of the contract in months. Required for 'CDD' | 1, 2, .., 24
-`department_id` | Integer | | | Department ID. This is only used by companies having a career website generated through WelcomeKit.co | 1
-`office_id` | Integer | | | Office ID. In WelcomeKit, an office is like a "location".If the office wasn't created for the targeted company, you will need to contact support@welcomekit.co first. Also, if you don't have an `office_id` you can call the API with `office_zip_code` or `office_country_code` which may be enough for us to find the associated office | 1
+`contract_duration_min` | Integer | | | Minimum duration of the contract in months. | 1, 2, .., 24
+`contract_duration_max` | Integer | | | Maximum duration of the contract in months. | 1, 2, .., 24
+`department_id` | Integer | | | Department ID. Mainly used by companies which have a careers website managed through WelcomeKit.co | 1
+`office_id` | Integer | | | Office ID. An office is like a "location". If the office wasn't created for the targeted company, you will need to contact support@welcomekit.co first. Also, if you don't have an `office_id` you can call the API with `office_zip_code` or `office_country_code` which may be enough for us to retrieve the associated office. | 1
 `office_zip_code` | String | | | Office zip code (`office_id` will be found from this). See: comment related to `office_id` | 75002
 `office_country_code` | String | | | Office country code (`office_id` will be found from this). See: comment related to `office_id` | FR
-`education_level` | String | | | Minimum education level ID | "BAC", "BAC_5", "PHD", etc. See [jobs dependencies](#get-jobs-dependencies)
+`education_level` | String | | | Minimum education level ID | `BAC`, `BAC_5`, `PHD`, etc. See [jobs dependencies](#get-jobs-dependencies)
 `experience_level` | String | | | Minimum experience level ID | `LESS_THAN_6_MONTHS`, `6_MONTHS_TO_1_YEAR`, `1_TO_2_YEARS`, etc. See [jobs dependencies](#get-jobs-dependencies)
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
 `start_date` | String | | | Start date for this job (YYYY-MM-DD) | 2015-11-26
 `external_origin` | String | | | External provider name | |
-`external_reference` | String | | | External provider Reference / ID for this job | |
-`office_id` | Integer | | | Office id in the WelcomeKit database | 42
-`office_zip_code` | String | | | Office zip code | 75002
-`office_country_code` | String | | | Office country code | FR
+`external_reference` | String | | | External provider Reference / ID for this job. The couple `external_origin` / `external_reference` must be unique. | |
 
 
 ## Update job status
-
-<aside class="notice">
-This endpoint requires <code>jobs_rw</code> scope.
-</aside>
 
 ```shell
 curl -X PUT "https://www.welcomekit.co/api/v1/external/jobs/:reference/update_status" \
@@ -532,6 +396,7 @@ EOF
 {
   "name": "A job name",
   "reference": "WTTJ_ZyDmzZ6",
+  "status": "published",
   "stages": [
     {
       "id": 14600,
@@ -575,10 +440,21 @@ EOF
       "reference": "",
       "visible": true
     }
-  ],
-  "status": "published"
+  ]
 }
 ```
+
+<aside class="notice">
+This endpoint requires <code>jobs_rw</code> scope.
+</aside>
+
+The default status for a job offer is "draft". In order to see it live, you will need to publish it.
+
+Summary:
+
+* `draft`: private job offer (still visible on main view of the dashboard)
+* `published`: public job offer visible on all `cms_sites_references`
+* `archived`: private job offer (visibile from archived jobs only)
 
 ### HTTP Request
 
@@ -589,4 +465,4 @@ EOF
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `reference` | String | ✔ | | Job reference | |
-`status` | String | ✔ | | Job status | draft, published, archived |
+`status` | String | ✔ | | Job status | `draft`, `published`, `archived` |

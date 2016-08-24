@@ -2,10 +2,6 @@
 
 ## Create a candidate
 
-<aside class="notice">
-This endpoint requires <code>candidates_rw</code> scope.
-</aside>
-
 ```shell
 curl -X POST "https://www.welcomekit.co/api/v1/external/candidates" \
     -H "Content-Type: application/json" \
@@ -57,6 +53,14 @@ EOF
 }
 ```
 
+<aside class="notice">
+This endpoint requires <code>candidates_rw</code> scope.
+</aside>
+
+This endpoint lets you create new candidates for a given `job_reference`.
+
+For example, you could create a Chrome Extension which makes it easy for recruiters to create new candidates... :)
+
 ### HTTP Request
 
 `POST https://www.welcomekit.co/api/v1/external/candidates`
@@ -69,11 +73,11 @@ Parameter | Type | Required | Default | Description | Example
 `job_reference` | String | ✔ | | Job reference | WTTJ_KmqkD1Y
 `job_stage_id` | Integer | ✔ | | Job stage id | 42
 `email` | String | ✔ | | Email | test@example.com
-`firstname` | String | ✔ | | First name |
-`lastname` | String | ✔ | | Last name |
+`firstname` | String | ✔ | | First name | John
+`lastname` | String | ✔ | | Last name | Doe
 `civility` | String | | | Civility | Mr, Ms
 `tag_list` | String | | | Comma separated list of tags | foo,bar
-`origin` | String | | | Candidate origin | dashboard, careers, wttj_v1, wttj, smgo, chrome-extension
+`origin` | String | | | Candidate origin | external
 `subtitle` | String | | | Subtitle | CTO @ WTTJ
 `phone` | String | | | Phone number | 0606060606
 `remote_image_url` | String | | | Avatar url | http://example.com/avatar.png
