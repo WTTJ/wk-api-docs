@@ -28,7 +28,6 @@ EOF
   "job_id": 3027,
   "job_reference": "WTTJ_KmqkD1Y",
   "modal_path": "/dashboard/o/Pg4eV6k/jobs/WTTJ_KmqkD1Y/card/wttj-d655345409a6097309156b05",
-  "origin": null,
   "portfolio_size": null,
   "portfolio_url": null,
   "resume_content_type": null,

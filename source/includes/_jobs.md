@@ -158,7 +158,6 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/jobs" \
   "experience_level": "1_TO_2_YEARS",
   "apply_url": "http://company.com/jobs/superjob/apply/",
   "start_date": "2016-09-01",
-  "external_origin": "PROVIDER_NAME",
   "external_reference": "PROVIDER_REFERENCE",
   "cms_sites_references": "wttj_fr,smgo_fr"
 }
@@ -210,7 +209,7 @@ Parameter | Type | Required | Default | Description | Example
 `experience_level` | String | | | Minimum experience level ID | `LESS_THAN_6_MONTHS`, `6_MONTHS_TO_1_YEAR`, `1_TO_2_YEARS`, etc. See [jobs dependencies](#get-jobs-dependencies)
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
 `start_date` | String | | | Start date for this job (YYYY-MM-DD) | 2015-11-26
-`external_reference` | String | | | External provider Reference / ID for this job. The couple `external_origin` / `external_reference` must be unique. | |
+`external_reference` | String | | | External provider Reference / ID for this job. (unique constraint) | |
 `cms_sites_references` | String | | | Comma separated list of cms sites references to publish this job | `wttj_fr,smgo_fr`, `wttj_fr`, etc. See [jobs dependencies](#get-jobs-dependencies)
 
 
@@ -248,7 +247,6 @@ curl -X PUT "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
   "experience_level": "1_TO_2_YEARS",
   "apply_url": "http://company.com/jobs/superjob/apply/",
   "start_date": "2016-09-01",
-  "external_origin": "PROVIDER_NAME",
   "external_reference": "PROVIDER_REFERENCE",
   "cms_sites_references": "wttj_fr,smgo_fr"
 }
@@ -296,7 +294,7 @@ Parameter | Type | Required | Default | Description | Example
 `experience_level` | String | | | Minimum experience level ID | `LESS_THAN_6_MONTHS`, `6_MONTHS_TO_1_YEAR`, `1_TO_2_YEARS`, etc. See [jobs dependencies](#get-jobs-dependencies)
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
 `start_date` | String | | | Start date for this job (YYYY-MM-DD) | 2015-11-26
-`external_reference` | String | | | External provider Reference / ID for this job. The couple `external_origin` / `external_reference` must be unique. | |
+`external_reference` | String | | | External provider Reference / ID for this job. (unique constraint) | |
 `cms_sites_references` | String | | | Comma separated list of cms sites references to publish this job | `wttj_fr,smgo_fr`, `wttj_fr`, etc. See [jobs dependencies](#get-jobs-dependencies)
 
 
