@@ -77,7 +77,6 @@ Parameter | Type | Required | Default | Description | Example
 `lastname` | String | ✔ | | Last name | Doe
 `civility` | String | | | Civility | Mr, Ms
 `tag_list` | String | | | Comma separated list of tags | foo,bar
-`origin` | String | | | Candidate origin | external
 `subtitle` | String | | | Subtitle | CTO @ WTTJ
 `phone` | String | | | Phone number | 0606060606
 `remote_image_url` | String | | | Avatar url | http://example.com/avatar.png
