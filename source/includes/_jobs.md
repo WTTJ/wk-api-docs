@@ -201,7 +201,6 @@ Parameter | Type | Required | Default | Description | Example
 `experience_level` | String | | | Minimum experience level ID | `LESS_THAN_6_MONTHS`, `6_MONTHS_TO_1_YEAR`, `1_TO_2_YEARS`, etc. See [jobs dependencies](#get-jobs-dependencies)
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
 `start_date` | String | | | Start date for this job (YYYY-MM-DD) | 2015-11-26
-`external_origin` | String | | | External provider name | |
 `external_reference` | String | | | External provider Reference / ID for this job. The couple `external_origin` / `external_reference` must be unique. | |
 
 
@@ -285,7 +284,6 @@ Parameter | Type | Required | Default | Description | Example
 `experience_level` | String | | | Minimum experience level ID | `LESS_THAN_6_MONTHS`, `6_MONTHS_TO_1_YEAR`, `1_TO_2_YEARS`, etc. See [jobs dependencies](#get-jobs-dependencies)
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
 `start_date` | String | | | Start date for this job (YYYY-MM-DD) | 2015-11-26
-`external_origin` | String | | | External provider name | |
 `external_reference` | String | | | External provider Reference / ID for this job. The couple `external_origin` / `external_reference` must be unique. | |
 
 
