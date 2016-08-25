@@ -93,6 +93,10 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     "monthly",
     "daily",
     "none"
+  ],
+  "cms_sites_references": [
+    "wttj_fr",
+    "smgo_fr"
   ]
 }
 ```
@@ -152,7 +156,8 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/jobs" \
   "apply_url": "http://company.com/jobs/superjob/apply/",
   "start_date": "2016-09-01",
   "external_origin": "PROVIDER_NAME",
-  "external_reference": "PROVIDER_REFERENCE"
+  "external_reference": "PROVIDER_REFERENCE",
+  "cms_sites_references": "wttj_fr,smgo_fr"
 }
 EOF
 ```
@@ -163,7 +168,8 @@ EOF
 {
   "name": "Fake Job",
   "reference": "WTTJ_KmqkD1Y",
-  "status": "draft"
+  "status": "draft",
+  "cms_sites_references": "wttj_fr,smgo_fr"
 }
 ```
 
@@ -202,6 +208,7 @@ Parameter | Type | Required | Default | Description | Example
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
 `start_date` | String | | | Start date for this job (YYYY-MM-DD) | 2015-11-26
 `external_reference` | String | | | External provider Reference / ID for this job. The couple `external_origin` / `external_reference` must be unique. | |
+`cms_sites_references` | String | | | Comma separated list of cms sites references to publish this job | wttj_fr,smgo_fr
 
 
 Also, in the **required parameters**, you have to call this endpoint with **AT LEAST ONE** of the following attributes:
@@ -239,7 +246,8 @@ curl -X PUT "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
   "apply_url": "http://company.com/jobs/superjob/apply/",
   "start_date": "2016-09-01",
   "external_origin": "PROVIDER_NAME",
-  "external_reference": "PROVIDER_REFERENCE"
+  "external_reference": "PROVIDER_REFERENCE",
+  "cms_sites_references": "wttj_fr,smgo_fr"
 }
 EOF
 ```
@@ -250,7 +258,8 @@ EOF
 {
   "name": "Fake Job",
   "reference": "WTTJ_KmqkD1Y",
-  "status": "draft"
+  "status": "draft",
+  "cms_sites_references": "wttj_fr,smgo_fr"
 }
 ```
 
@@ -285,6 +294,7 @@ Parameter | Type | Required | Default | Description | Example
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
 `start_date` | String | | | Start date for this job (YYYY-MM-DD) | 2015-11-26
 `external_reference` | String | | | External provider Reference / ID for this job. The couple `external_origin` / `external_reference` must be unique. | |
+`cms_sites_references` | String | | | Comma separated list of cms sites references to publish this job | wttj_fr,smgo_fr
 
 
 ## Update job status
@@ -306,7 +316,8 @@ EOF
 {
   "name": "A job name",
   "reference": "WTTJ_ZyDmzZ6",
-  "status": "published"
+  "status": "published",
+  "cms_sites_references": ""
 }
 ```
 
