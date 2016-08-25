@@ -211,7 +211,7 @@ Parameter | Type | Required | Default | Description | Example
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
 `start_date` | String | | | Start date for this job (YYYY-MM-DD) | 2015-11-26
 `external_reference` | String | | | External provider Reference / ID for this job. The couple `external_origin` / `external_reference` must be unique. | |
-`cms_sites_references` | String | | | Comma separated list of cms sites references to publish this job | wttj_fr,smgo_fr. See See [jobs dependencies](#get-jobs-dependencies)
+`cms_sites_references` | String | | | Comma separated list of cms sites references to publish this job | `wttj_fr,smgo_fr`, `wttj_fr`, etc. See [jobs dependencies](#get-jobs-dependencies)
 
 
 Also, in the **required parameters**, you have to call this endpoint with **AT LEAST ONE** of the following attributes:
@@ -297,7 +297,7 @@ Parameter | Type | Required | Default | Description | Example
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
 `start_date` | String | | | Start date for this job (YYYY-MM-DD) | 2015-11-26
 `external_reference` | String | | | External provider Reference / ID for this job. The couple `external_origin` / `external_reference` must be unique. | |
-`cms_sites_references` | String | | | Comma separated list of cms sites references to publish this job | wttj_fr,smgo_fr. See See [jobs dependencies](#get-jobs-dependencies)
+`cms_sites_references` | String | | | Comma separated list of cms sites references to publish this job | `wttj_fr,smgo_fr`, `wttj_fr`, etc. See [jobs dependencies](#get-jobs-dependencies)
 
 
 ## Update job status
