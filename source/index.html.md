@@ -13,6 +13,8 @@ includes:
   - professions
   - candidates
   - users
+  - departments
+  - offices
 
 search: true
 ---
