@@ -136,7 +136,7 @@ NB: you will also need [authorized professions](#professions) to create any job 
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
-    -d "organization_reference=Pg4eV6k"
+    -d "organization_reference=Pg4eV6k" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
@@ -174,6 +174,8 @@ Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `organization_reference` | String | ✔ | | Reference of the associated organization/company | aEioU123
 `stages` | Boolean | | false | Return job stages | true / false
+`per_page` | Integer | | 100 | Number of jobs per page |
+`page` | Integer | | 1 | Page offset |
 
 
 ## Get job

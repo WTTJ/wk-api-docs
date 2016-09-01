@@ -1,5 +1,126 @@
 # Candidates
 
+## Get candidates for job
+
+```shell
+curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
+    -d "job_reference=WTTJ_KmqkD1Y" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer WK_API_KEY"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "reference": "wttj-d655345409a6097309156b05",
+    "cover_letter": "",
+    "created_at": "2016-08-23T12:55:27.206+02:00",
+    "job_id": 3027,
+    "job_reference": "WTTJ_KmqkD1Y",
+    "modal_path": "/dashboard/o/Pg4eV6k/jobs/WTTJ_KmqkD1Y/card/wttj-d655345409a6097309156b05",
+    "portfolio_size": null,
+    "portfolio_url": null,
+    "resume_content_type": null,
+    "resume_size": null,
+    "resume_url": null,
+    "stage_id": 14600,
+    "updated_at": "2016-08-23T12:55:27.206+02:00",
+    "profile": {
+      "address": null,
+      "avatar_url": "http://wk.dev/assets/default-avatar-7cbb7b9749a7cf8864001cde13e2a9a94e612bf083430d66ede0966f5bafb296.png",
+      "city": null,
+      "civility": "Mr",
+      "country_code": null,
+      "country_name": null,
+      "email": "test@example.com",
+      "firstname": "Foo",
+      "lastname": "Bar",
+      "phone": null,
+      "subtitle": null,
+      "zip_code": null
+    },
+    "origin": "external"
+  }
+]
+```
+
+<aside class="notice">
+This endpoint requires <code>candidates_r</code> or <code>candidates_rw</code> scope.
+</aside>
+
+### HTTP Request
+
+`GET https://www.welcomekit.co/api/v1/external/candidates`
+
+### Query Parameters
+
+Parameter | Type | Required | Default | Description | Example
+--- | --- | --- | --- | --- | ---
+`job_reference` | String | ✔ | | Job reference | WTTJ_dggjZDa
+`per_page` | Integer | | 100 | Number of jobs per page |
+`page` | Integer | | 1 | Page offset |
+
+
+## Get Candidate
+
+```shell
+curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer WK_API_KEY"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "reference": "wttj-d655345409a6097309156b05",
+  "cover_letter": "",
+  "created_at": "2016-08-23T12:55:27.206+02:00",
+  "job_id": 3027,
+  "job_reference": "WTTJ_KmqkD1Y",
+  "modal_path": "/dashboard/o/Pg4eV6k/jobs/WTTJ_KmqkD1Y/card/wttj-d655345409a6097309156b05",
+  "portfolio_size": null,
+  "portfolio_url": null,
+  "resume_content_type": null,
+  "resume_size": null,
+  "resume_url": null,
+  "stage_id": 14600,
+  "updated_at": "2016-08-23T12:55:27.206+02:00",
+  "profile": {
+    "address": null,
+    "avatar_url": "http://wk.dev/assets/default-avatar-7cbb7b9749a7cf8864001cde13e2a9a94e612bf083430d66ede0966f5bafb296.png",
+    "city": null,
+    "civility": "Mr",
+    "country_code": null,
+    "country_name": null,
+    "email": "test@example.com",
+    "firstname": "Foo",
+    "lastname": "Bar",
+    "phone": null,
+    "subtitle": null,
+    "zip_code": null
+  },
+  "origin": "external"
+}
+```
+
+<aside class="notice">
+This endpoint requires <code>candidates_r</code> or <code>candidates_rw</code> scope.
+</aside>
+
+### HTTP Request
+
+`GET https://www.welcomekit.co/api/v1/external/candidates/:reference`
+
+### Query Parameters
+
+Parameter | Type | Required | Default | Description | Example
+--- | --- | --- | --- | --- | ---
+`reference` | String | ✔ | | Candidate reference | wttj-d655345409a6097309156b05
+
+
 ## Create a candidate
 
 ```shell
@@ -49,7 +170,8 @@ EOF
     "phone": null,
     "subtitle": null,
     "zip_code": null
-  }
+  },
+  "origin": "external"
 }
 ```
 
