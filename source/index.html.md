@@ -15,6 +15,7 @@ includes:
   - users
   - departments
   - offices
+  - errors
 
 search: true
 ---
