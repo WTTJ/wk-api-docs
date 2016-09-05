@@ -57,3 +57,24 @@ WelcomeKit uses OAuth tokens to allow access to the API. We expect the OAuth tok
 <aside class="notice">
 You must replace <code>WK_API_KEY</code> with your personal API key.
 </aside>
+
+# Scopes
+
+WelcomeKit uses
+[OAuth scopes](https://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-3.3)
+to protect API endpoints.
+
+
+Scope | Description
+--- | ---
+`me_r` |  Read access on your personnal information
+`organizations_rw` |  Read and Write access on your organizations
+`organizations_r` |  Read access on your organizations
+`jobs_rw` |  Read and Write access on your job offers
+`jobs_r` |  Read access on your job offers
+`offices_rw` |  Read and Write access on your offices
+`offices_r` |  Read access on your offices
+`departments_rw` |  Read and Write access on your departments
+`departments_r` |  Read access on your departments
+`candidates_rw` |  Read and Write access on your candidates
+`candidates_r` |  Read access on your candidates
