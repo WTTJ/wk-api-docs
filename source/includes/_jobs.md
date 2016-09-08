@@ -132,6 +132,86 @@ NB: you will also need [authorized professions](#professions) to create any job 
 
 `GET https://www.welcomekit.co/api/v1/external/jobs/dependencies`
 
+## Get jobs for organization
+
+```shell
+curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
+    -d "organization_reference=Pg4eV6k" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer WK_API_KEY"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "name": "Fake Job 1",
+    "reference": "WTTJ_KmqkD1Y",
+    "status": "published",
+    "cms_sites_references": "wttj_fr,smgo_fr"
+  },
+  {
+    "name": "Fake Job 2",
+    "reference": "WTTJ_KmqkD2Y",
+    "status": "draft",
+    "cms_sites_references": "wttj_fr,smgo_fr"
+  }
+]
+```
+
+<aside class="notice">
+This endpoint requires <code>jobs_r</code> or <code>jobs_rw</code> scope.
+</aside>
+
+### HTTP Request
+
+`GET https://www.welcomekit.co/api/v1/external/jobs`
+
+### Query Parameters
+
+Parameter | Type | Required | Default | Description | Example
+--- | --- | --- | --- | --- | ---
+`organization_reference` | String | ✔ | | Reference of the associated organization/company | aEioU123
+`stages` | Boolean | | false | Return job stages | true / false
+`per_page` | Integer | | 100 | Number of jobs per page |
+`page` | Integer | | 1 | Page offset |
+
+
+## Get job
+
+```shell
+curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer WK_API_KEY"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "name": "Fake Job 1",
+  "reference": "WTTJ_KmqkD1Y",
+  "status": "published",
+  "cms_sites_references": "wttj_fr,smgo_fr"
+}
+```
+
+<aside class="notice">
+This endpoint requires <code>jobs_r</code> or <code>jobs_rw</code> scope.
+</aside>
+
+### HTTP Request
+
+`GET https://www.welcomekit.co/api/v1/external/jobs/:reference`
+
+### Query Parameters
+
+Parameter | Type | Required | Default | Description | Example
+--- | --- | --- | --- | --- | ---
+`reference` | String | ✔ | | Job reference | aEioU123
+`stages` | Boolean | | false | Return job stages | true / false
+
 
 ## Create a job
 
