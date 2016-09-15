@@ -132,13 +132,12 @@ NB: you will also need [authorized professions](#professions) to create any job 
 
 `GET https://www.welcomekit.co/api/v1/external/jobs/dependencies`
 
-## Get jobs for organization
+## List jobs
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
-    -d "organization_reference=Pg4eV6k" \
-    -H "Content-Type: application/json" \
-    -H "Authorization: Bearer WK_API_KEY"
+    -H "Authorization: Bearer WK_API_KEY" |
+    -d "organization_reference=Pg4eV6k"
 ```
 
 > The above command returns JSON structured like this:
@@ -164,6 +163,8 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
 This endpoint requires <code>jobs_r</code> or <code>jobs_rw</code> scope.
 </aside>
 
+This endpoint lets you retrieve all jobs for a given organization.
+
 ### HTTP Request
 
 `GET https://www.welcomekit.co/api/v1/external/jobs`
@@ -178,7 +179,7 @@ Parameter | Type | Required | Default | Description | Example
 `page` | Integer | | 1 | Page offset |
 
 
-## Get job
+## Retrieve a job
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \

@@ -1,11 +1,10 @@
 # Candidates
 
-## Get candidates for job
+## List candidates
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
     -d "job_reference=WTTJ_KmqkD1Y" \
-    -H "Content-Type: application/json" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
 
@@ -50,6 +49,8 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
 This endpoint requires <code>candidates_r</code> or <code>candidates_rw</code> scope.
 </aside>
 
+This endpoint lets you retrieve all candidates for a given job reference.
+
 ### HTTP Request
 
 `GET https://www.welcomekit.co/api/v1/external/candidates`
@@ -63,7 +64,7 @@ Parameter | Type | Required | Default | Description | Example
 `page` | Integer | | 1 | Page offset |
 
 
-## Get Candidate
+## Retrieve a candidate
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \

@@ -12,9 +12,9 @@ includes:
   - jobs
   - professions
   - candidates
-  - users
   - departments
   - offices
+  - users
   - errors
 
 search: true
@@ -24,16 +24,18 @@ search: true
 
 <a href="https://www.welcomekit.co/" target="_blank">Welcome Kit</a> provides you a powerful API which gives you full control over most of your recruiting data.
 
-For now, the WelcomeKit API can be used to:
+For now, the Welcome Kit API can be used to:
 
-* Create and update jobs for a given organization
+* Get all your candidates for a given job
 * Create candidates for a given job
+* Create and update jobs for a given organization
+* Configure your organization (departments / offices / etc.)
 
 <strong>In order to use the following endpoints, you will have to request an authentication token at <code>support@welcomekit.co</code>.</strong>
 
 Also, feel free to leave feedback, issues or features requests on the associated <a href="https://github.com/WelcomeToTheJungle/wk-api-docs" target="_blank">GitHub repository</a>!
 
-# Authentication
+# Authentication & Scopes
 
 > Example:
 
@@ -44,7 +46,7 @@ curl "WK_API_ENDPOINT_HERE"
 
 > Make sure to replace `WK_API_KEY` with your API key.
 
-WelcomeKit uses OAuth tokens to allow access to the API. We expect the OAuth token to be included in all API requests:
+Welcome Kit uses OAuth tokens to allow access to the API. We expect the OAuth token to be included in all API requests:
 
 * 1/ Either in a header that looks like the following:
 
@@ -58,18 +60,15 @@ WelcomeKit uses OAuth tokens to allow access to the API. We expect the OAuth tok
 You must replace <code>WK_API_KEY</code> with your personal API key.
 </aside>
 
-# Scopes
+Also note that Welcome Kit uses [OAuth scopes](https://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-3.3) to protect its API endpoints.
 
-WelcomeKit uses
-[OAuth scopes](https://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-3.3)
-to protect API endpoints.
-
+Depending on the level of access you need, please ask us the required scopes from the list below:
 
 Scope | Description
 --- | ---
 `me_r` |  Read access on your personnal information
-`organizations_rw` |  Read and Write access on your organizations
-`organizations_r` |  Read access on your organizations
+`organizations_rw` |  Read and Write access on your organization(s)
+`organizations_r` |  Read access on your organization(s)
 `jobs_rw` |  Read and Write access on your job offers
 `jobs_r` |  Read access on your job offers
 `offices_rw` |  Read and Write access on your offices

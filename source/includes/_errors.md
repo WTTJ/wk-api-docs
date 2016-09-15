@@ -1,6 +1,6 @@
 # Errors
 
-The WelcomeKit API uses the following HTTP status codes:
+The Welcome Kit API uses the following HTTP status codes:
 
 Status Code | Meaning
 ---------- | -------
@@ -12,7 +12,7 @@ Status Code | Meaning
 `500` | Internal Server Error -- We had a problem with our server. Try again later.
 `503` | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
 
-When the Welcomkit API returns error messages, it does in JSON format:
+Error messages are returned in JSON format as described below:
 
 ```
 {
@@ -24,6 +24,6 @@ When the Welcomkit API returns error messages, it does in JSON format:
 Error Codes | Meaning
 ------------|--------
 `not_found` | Resource not found
-`validation_failed` | Some params are invalid
+`validation_failed` | Some parameters are invalid
 `unauthorized` | You OAuth access_token is invalid
 `invalid_scope` | OAuth access_token scope is not authorized

@@ -1,11 +1,10 @@
 # Departments
 
-## Get departments for organization
+## List departments
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/departments" \
     -d "organization_reference=Pg4eV6k" \
-    -H "Content-Type: application/json" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
 
@@ -27,6 +26,10 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/departments" \
 This endpoint requires <code>departments_r</code> or <code>departments_rw</code> scope.
 </aside>
 
+This endpoint lets you retrieve all departments (aka teams) for a given organization.
+
+Departments are used on careers websites to organize job offers.
+
 ### HTTP Request
 
 `GET https://www.welcomekit.co/api/v1/external/departments`
@@ -40,7 +43,7 @@ Parameter | Type | Required | Default | Description | Example
 `page` | Integer | | 1 | Page offset |
 
 
-## Get Candidate
+## Retrieve a department
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/departments/:id" \
@@ -75,7 +78,7 @@ Parameter | Type | Required | Default | Description | Example
 `id` | Integer | ✔ | | Department id | 42
 
 
-## Create an department
+## Create a department
 
 ```shell
 curl -X POST "https://www.welcomekit.co/api/v1/external/departments" \

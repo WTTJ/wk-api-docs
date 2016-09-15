@@ -1,6 +1,6 @@
 # Professions
 
-## Get all professions
+## List available professions
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/professions" \
