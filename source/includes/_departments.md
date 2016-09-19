@@ -126,3 +126,50 @@ Parameter | Type | Required | Default | Description | Example
 `is_active` | Boolean | | | Department active? | true / false
 `description` | Text | | | Description |
 
+
+## Update a department
+
+```shell
+curl -X PUT "https://www.welcomekit.co/api/v1/external/departments/:id" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer WK_API_KEY" \
+    -d @- <<EOF
+{
+  "name": "Tech",
+  "is_active": true,
+  "slug": "tech",
+  "description": "Foo bar"
+}
+EOF
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 42,
+  "name": "Tech",
+  "is_active": true,
+  "slug": "tech",
+  "description": "Foo bar"
+}
+```
+
+<aside class="notice">
+This endpoint requires <code>departments_rw</code> scope.
+</aside>
+
+This endpoint lets you update departments for a given `id`.
+
+### HTTP Request
+
+`PUT https://www.welcomekit.co/api/v1/external/departments/:id`
+
+### Query Parameters
+
+Parameter | Type | Required | Default | Description | Example
+--- | --- | --- | --- | --- | ---
+`name` | String | ✔ | | Name |
+`is_active` | Boolean | | | Department active? | true / false
+`description` | Text | | | Description |
+

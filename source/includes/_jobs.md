@@ -145,16 +145,58 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
 ```json
 [
   {
-    "name": "Fake Job 1",
-    "reference": "WTTJ_KmqkD1Y",
-    "status": "published",
-    "cms_sites_references": "wttj_fr,smgo_fr"
+		"name" : "Fake Job 1",
+		"external_reference" : "PROVIDER_REFERENCE1",
+		"salary_min" : 45000,
+		"organization_reference" : "Pg4eV6k",
+		"status" : "draft",
+		"salary_period" : "yearly",
+		"profile" : "Fake Job Profile",
+		"apply_url" : "http://company.com/jobs/superjob/apply/",
+		"company_description" : "Fake Company Description.",
+		"contract_duration_min" : null,
+		"salary_max" : 50000,
+		"experience_level" : "1_TO_2_YEARS",
+		"salary_currency" : "EUR",
+		"department_id" : null,
+		"is_full_time" : true,
+		"profession_reference" : "sales",
+		"cms_sites_references" : "wttj_fr,smgo_fr",
+		"contract_duration_max" : null,
+		"start_date" : "2016-09-01T00:00:00.000+02:00",
+		"description" : "Fake Job Description.",
+		"contract_type" : "UNLIMITED",
+		"is_remote" : true,
+		"office_id" : 196,
+		"reference" : "WTTJ_gld0A7L",
+		"education_level" : "BAC_5"
   },
   {
-    "name": "Fake Job 2",
-    "reference": "WTTJ_KmqkD2Y",
-    "status": "draft",
-    "cms_sites_references": "wttj_fr,smgo_fr"
+		"name" : "Fake Job 2",
+		"external_reference" : "PROVIDER_REFERENCE2",
+		"salary_min" : 45000,
+		"organization_reference" : "Pg4eV6k",
+		"status" : "draft",
+		"salary_period" : "yearly",
+		"profile" : "Fake Job Profile",
+		"apply_url" : "http://company.com/jobs/superjob/apply/",
+		"company_description" : "Fake Company Description.",
+		"contract_duration_min" : null,
+		"salary_max" : 50000,
+		"experience_level" : "1_TO_2_YEARS",
+		"salary_currency" : "EUR",
+		"department_id" : null,
+		"is_full_time" : true,
+		"profession_reference" : "sales",
+		"cms_sites_references" : "wttj_fr,smgo_fr",
+		"contract_duration_max" : null,
+		"start_date" : "2016-09-01T00:00:00.000+02:00",
+		"description" : "Fake Job Description.",
+		"contract_type" : "UNLIMITED",
+		"is_remote" : true,
+		"office_id" : 196,
+		"reference" : "WTTJ_gld0A7L",
+		"education_level" : "BAC_5"
   }
 ]
 ```
@@ -225,6 +267,7 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/jobs" \
   "organization_reference": "Pg4eV6k",
   "profession_reference": "sales",
   "name": "Fake Job",
+  "company_description": "Fake Company Description.",
   "description": "Fake Job Description.",
   "profile": "Fake Job Profile",
   "contract_type": "UNLIMITED",
@@ -249,10 +292,31 @@ EOF
 
 ```json
 {
-  "name": "Fake Job",
-  "reference": "WTTJ_KmqkD1Y",
-  "status": "draft",
-  "cms_sites_references": "wttj_fr,smgo_fr"
+	"name" : "Fake Job",
+	"external_reference" : "PROVIDER_REFERENCE1",
+	"salary_min" : 45000,
+	"organization_reference" : "Pg4eV6k",
+	"status" : "draft",
+	"salary_period" : "yearly",
+	"profile" : "Fake Job Profile",
+	"apply_url" : "http://company.com/jobs/superjob/apply/",
+	"company_description" : "Fake Company Description.",
+	"contract_duration_min" : null,
+	"salary_max" : 50000,
+	"experience_level" : "1_TO_2_YEARS",
+	"salary_currency" : "EUR",
+	"department_id" : null,
+	"is_full_time" : true,
+	"profession_reference" : "sales",
+	"cms_sites_references" : "wttj_fr,smgo_fr",
+	"contract_duration_max" : null,
+	"start_date" : "2016-09-01T00:00:00.000+02:00",
+	"description" : "Fake Job Description.",
+	"contract_type" : "UNLIMITED",
+	"is_remote" : true,
+	"office_id" : 196,
+	"reference" : "WTTJ_gld0A7L",
+	"education_level" : "BAC_5"
 }
 ```
 
@@ -271,6 +335,7 @@ Parameter | Type | Required | Default | Description | Example
 `organization_reference` | String | ✔ | | Reference of the associated organization/company | aEioU123
 `profession_reference` | String | ✔ | | Reference of the associated profession | "sales" / "finance" / "dev_backend" / etc. See [Professions endpoint](#professions)
 `name` | String | ✔ | | Job name | Full-Stack Developer
+`company_description` | Text | ✔ | | Company description (Describe the company)
 `description` | Text | ✔ | | Job description (Explain the job, not the company)
 `profile` | Text | ✔ | | Job profile (Explain who you're looking for)
 `contract_type` | String | ✔ | |  Contract type for this job | UNLIMITED / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
@@ -314,6 +379,7 @@ curl -X PUT "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
     -d @- <<EOF
 {
   "name": "Fake Job",
+  "company_description": "Fake Company Description.",
   "description": "Fake Job Description.",
   "profile": "Fake Job Profile",
   "contract_type": "UNLIMITED",
@@ -338,10 +404,31 @@ EOF
 
 ```json
 {
-  "name": "Fake Job",
-  "reference": "WTTJ_KmqkD1Y",
-  "status": "draft",
-  "cms_sites_references": "wttj_fr,smgo_fr"
+	"name" : "Fake Job",
+	"external_reference" : "PROVIDER_REFERENCE1",
+	"salary_min" : 45000,
+	"organization_reference" : "Pg4eV6k",
+	"status" : "draft",
+	"salary_period" : "yearly",
+	"profile" : "Fake Job Profile",
+	"apply_url" : "http://company.com/jobs/superjob/apply/",
+	"company_description" : "Fake Company Description.",
+	"contract_duration_min" : null,
+	"salary_max" : 50000,
+	"experience_level" : "1_TO_2_YEARS",
+	"salary_currency" : "EUR",
+	"department_id" : null,
+	"is_full_time" : true,
+	"profession_reference" : "sales",
+	"cms_sites_references" : "wttj_fr,smgo_fr",
+	"contract_duration_max" : null,
+	"start_date" : "2016-09-01T00:00:00.000+02:00",
+	"description" : "Fake Job Description.",
+	"contract_type" : "UNLIMITED",
+	"is_remote" : true,
+	"office_id" : 196,
+	"reference" : "WTTJ_gld0A7L",
+	"education_level" : "BAC_5"
 }
 ```
 
@@ -356,6 +443,7 @@ Parameter | Type | Required | Default | Description | Example
 `reference` | String | ✔ | | Job reference | |
 `profession_reference` | String | | | Reference for a given profession | "sales" / "finance" / "dev_backend" / etc. See [Professions endpoint](#professions)
 `name` | String | | | Job name | Full-Stack Developer
+`company_description` | Text | ✔ | | Company description (Describe the company)
 `description` | Text | | | Job description (Explain the job, not the company)
 `profile` | Text | | | Job profile (Explain who you're looking for)
 `contract_type` | String | | |  Contract type for this job | UNLIMITED / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
@@ -396,10 +484,31 @@ EOF
 
 ```json
 {
-  "name": "A job name",
-  "reference": "WTTJ_ZyDmzZ6",
-  "status": "published",
-  "cms_sites_references": ""
+	"name" : "Fake Job",
+	"external_reference" : "PROVIDER_REFERENCE1",
+	"salary_min" : 45000,
+	"organization_reference" : "Pg4eV6k",
+	"status" : "published",
+	"salary_period" : "yearly",
+	"profile" : "Fake Job Profile",
+	"apply_url" : "http://company.com/jobs/superjob/apply/",
+	"company_description" : "Fake Company Description.",
+	"contract_duration_min" : null,
+	"salary_max" : 50000,
+	"experience_level" : "1_TO_2_YEARS",
+	"salary_currency" : "EUR",
+	"department_id" : null,
+	"is_full_time" : true,
+	"profession_reference" : "sales",
+	"cms_sites_references" : "wttj_fr,smgo_fr",
+	"contract_duration_max" : null,
+	"start_date" : "2016-09-01T00:00:00.000+02:00",
+	"description" : "Fake Job Description.",
+	"contract_type" : "UNLIMITED",
+	"is_remote" : true,
+	"office_id" : 196,
+	"reference" : "WTTJ_gld0A7L",
+	"education_level" : "BAC_5"
 }
 ```
 

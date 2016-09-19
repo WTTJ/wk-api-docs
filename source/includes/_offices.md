@@ -142,3 +142,63 @@ Parameter | Type | Required | Default | Description | Example
 `is_active` | Boolean | | | Office active? | true / false
 `is_headquarter` | Boolean | | | Office is organization headquarter? | true / false
 `description` | Text | | | Description |
+
+
+## Update an office
+
+```shell
+curl -X PUT "https://www.welcomekit.co/api/v1/external/offices/:id" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer WK_API_KEY" \
+    -d @- <<EOF
+{
+  "name": "Paris",
+  "address": "11 bis rue Bachaumont",
+  "zip_code": "75002",
+  "city": "Paris",
+  "country_code": "FR",
+  "is_active": true,
+  "is_headquarter": true,
+  "description": "Foo bar"
+}
+EOF
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 42,
+  "name": "Paris",
+  "address": "11 bis rue Bachaumont",
+  "zip_code": "75002",
+  "city": "Paris",
+  "country_code": "FR",
+  "is_active": true,
+  "is_headquarter": true,
+  "description": "Foo bar"
+}
+```
+
+<aside class="notice">
+This endpoint requires <code>offices_rw</code> scope.
+</aside>
+
+This endpoint lets you update existing offices for a given `id`.
+
+### HTTP Request
+
+`PUT https://www.welcomekit.co/api/v1/external/offices/:id`
+
+### Query Parameters
+
+Parameter | Type | Required | Default | Description | Example
+--- | --- | --- | --- | --- | ---
+`name` | String | ✔ | | Name |
+`address` | String | ✔ | | Address |
+`zip_code` | String | ✔ | | Zip code |
+`city` | String | ✔ | | City |
+`country_code` | String | ✔ | | Country code | US, FR
+`is_active` | Boolean | | | Office active? | true / false
+`is_headquarter` | Boolean | | | Office is organization headquarter? | true / false
+`description` | Text | | | Description |
