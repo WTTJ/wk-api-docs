@@ -136,7 +136,7 @@ NB: you will also need [authorized professions](#professions) to create any job 
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
-    -H "Authorization: Bearer WK_API_KEY" |
+    -H "Authorization: Bearer WK_API_KEY" \
     -d "organization_reference=Pg4eV6k"
 ```
 
@@ -161,7 +161,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
 		"department_id" : null,
 		"is_full_time" : true,
 		"profession_reference" : "sales",
-		"cms_sites_references" : "wttj_fr,smgo_fr",
+		"cms_sites_references" : "wttj_fr",
 		"contract_duration_max" : null,
 		"start_date" : "2016-09-01T00:00:00.000+02:00",
 		"description" : "Fake Job Description.",
@@ -225,18 +225,60 @@ Parameter | Type | Required | Default | Description | Example
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
-    -H "Content-Type: application/json" \
-    -H "Authorization: Bearer WK_API_KEY"
+    -H "Authorization: Bearer WK_API_KEY" \
+    -d "stages=true"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "name": "Fake Job 1",
-  "reference": "WTTJ_KmqkD1Y",
-  "status": "published",
-  "cms_sites_references": "wttj_fr,smgo_fr"
+  "name" : "Fake Job 2",
+  "external_reference" : "PROVIDER_REFERENCE2",
+  "salary_min" : 45000,
+  "organization_reference" : "Pg4eV6k",
+  "status" : "draft",
+  "salary_period" : "yearly",
+  "profile" : "Fake Job Profile",
+  "apply_url" : "http://company.com/jobs/superjob/apply/",
+  "company_description" : "Fake Company Description.",
+  "contract_duration_min" : null,
+  "salary_max" : 50000,
+  "experience_level" : "1_TO_2_YEARS",
+  "salary_currency" : "EUR",
+  "department_id" : null,
+  "is_full_time" : true,
+  "profession_reference" : "sales",
+  "cms_sites_references" : "wttj_fr,smgo_fr",
+  "contract_duration_max" : null,
+  "start_date" : "2016-09-01T00:00:00.000+02:00",
+  "description" : "Fake Job Description.",
+  "contract_type" : "UNLIMITED",
+  "is_remote" : true,
+  "office_id" : 196,
+  "reference" : "WTTJ_gld0A7L",
+  "education_level" : "BAC_5",
+  "stages" : [
+    {
+      "visible" : true,
+      "reference" : "initial",
+      "id" : 5395,
+      "name" : "Nouveau"
+    },
+    {
+      "reference" : "refused",
+      "visible" : true,
+      "id" : 5396,
+      "name" : "Refusé"
+    },
+    {
+      "id" : 5397,
+      "name" : "À rencontrer",
+      "reference" : null,
+      "visible" : true
+    },
+    ...
+  ]
 }
 ```
 

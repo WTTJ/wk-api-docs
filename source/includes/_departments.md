@@ -89,7 +89,6 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/departments" \
   "organization_reference": "Pg4eV6k",
   "name": "Tech",
   "is_active": true,
-  "slug": "tech",
   "description": "Foo bar"
 }
 EOF
@@ -123,9 +122,11 @@ Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `organization_reference` | String | ✔ | | Organization reference | Pg4eV6k
 `name` | String | ✔ | | Name |
+`slug` | String | | | Slug (used on careers websites) |
 `is_active` | Boolean | | | Department active? | true / false
 `description` | Text | | | Description |
 
+NB: the slug is automaticcally generated from the department's name.
 
 ## Update a department
 
@@ -135,10 +136,7 @@ curl -X PUT "https://www.welcomekit.co/api/v1/external/departments/:id" \
     -H "Authorization: Bearer WK_API_KEY" \
     -d @- <<EOF
 {
-  "name": "Tech",
-  "is_active": true,
-  "slug": "tech",
-  "description": "Foo bar"
+  "name": "Whatever",
 }
 EOF
 ```
@@ -148,7 +146,7 @@ EOF
 ```json
 {
   "id": 42,
-  "name": "Tech",
+  "name": "Whatever",
   "is_active": true,
   "slug": "tech",
   "description": "Foo bar"
@@ -169,7 +167,9 @@ This endpoint lets you update departments for a given `id`.
 
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
-`name` | String | ✔ | | Name |
+`id` | String | ✔ | | Department ID |
+`name` | String | | | Name |
+`slug` | String | | | Slug |
 `is_active` | Boolean | | | Department active? | true / false
 `description` | Text | | | Description |
 

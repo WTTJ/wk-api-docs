@@ -4,7 +4,7 @@
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/offices" \
-    -H "Content-Type: application/json" \
+    -d "organization_reference=Pg4eV6k" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
 
@@ -152,14 +152,7 @@ curl -X PUT "https://www.welcomekit.co/api/v1/external/offices/:id" \
     -H "Authorization: Bearer WK_API_KEY" \
     -d @- <<EOF
 {
-  "name": "Paris",
-  "address": "11 bis rue Bachaumont",
-  "zip_code": "75002",
-  "city": "Paris",
-  "country_code": "FR",
-  "is_active": true,
-  "is_headquarter": true,
-  "description": "Foo bar"
+  "name": "France"
 }
 EOF
 ```
@@ -169,7 +162,7 @@ EOF
 ```json
 {
   "id": 42,
-  "name": "Paris",
+  "name": "France",
   "address": "11 bis rue Bachaumont",
   "zip_code": "75002",
   "city": "Paris",
@@ -194,11 +187,12 @@ This endpoint lets you update existing offices for a given `id`.
 
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
-`name` | String | ✔ | | Name |
-`address` | String | ✔ | | Address |
-`zip_code` | String | ✔ | | Zip code |
-`city` | String | ✔ | | City |
-`country_code` | String | ✔ | | Country code | US, FR
+`id` | String | ✔ | | Office ID |
+`name` | String | | | Name |
+`address` | String | | | Address |
+`zip_code` | String | | | Zip code |
+`city` | String | | | City |
+`country_code` | String | | | Country code | US, FR
 `is_active` | Boolean | | | Office active? | true / false
 `is_headquarter` | Boolean | | | Office is organization headquarter? | true / false
 `description` | Text | | | Description |

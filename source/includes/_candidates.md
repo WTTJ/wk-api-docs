@@ -41,7 +41,8 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
       "zip_code": null
     },
     "origin": "external"
-  }
+  },
+  ...
 ]
 ```
 
