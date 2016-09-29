@@ -195,7 +195,7 @@ Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `organization_reference` | String | ✔ | | Organization reference | Pg4eV6k
 `job_reference` | String | ✔ | | Job reference | WTTJ_KmqkD1Y
-`job_stage_id` | Integer | ✔ | | Job stage id | 42
+`job_stage_id` | Integer |  | | Job stage id | 42
 `email` | String | ✔ | | Email | test@example.com
 `firstname` | String | ✔ | | First name | John
 `lastname` | String | ✔ | | Last name | Doe
