@@ -136,8 +136,7 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/candidates" \
   "lastname": "Bar",
   "civility": "Mr",
   "organization_reference": "Pg4eV6k",
-  "job_reference": "WTTJ_KmqkD1Y",
-  "job_stage_id": 42
+  "job_reference": "WTTJ_KmqkD1Y"
 }
 EOF
 ```
