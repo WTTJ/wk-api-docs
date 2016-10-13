@@ -14,17 +14,17 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
 {
   "contract_types": [
     {
-      "id": "UNLIMITED",
+      "id": "FULL_TIME",
         "name": {
-          "en": "Unlimited Contract",
+          "en": "Full-Time",
           "fr": "CDI"
         }
     },
     {
-      "id": "LIMITED",
+      "id": "TEMPORARY",
       "name": {
-        "en": "Limited duration",
-        "fr": "CDD"
+        "en": "Temporary",
+        "fr": "CDD / Temporaire"
       }
     },
     {
@@ -115,7 +115,7 @@ In order to create a job, you will need the following information:
   - *examples: yearly, monhtly, etc.*
 * `contract_types`
   - authorized contract types
-  - *examples: UNLIMITED, INTERNSHIP, etc.*
+  - *examples: FULL_TIME, PART_TIME, TEMPORARY, FREELANCE, INTERNSHIP, APPRENTICESHIP*
 * `experience_levels`
   - authorized experience levels
   - *examples: PHD, NO_DIPLOMA, etc.*
@@ -159,13 +159,12 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
 		"experience_level" : "1_TO_2_YEARS",
 		"salary_currency" : "EUR",
 		"department_id" : null,
-		"is_full_time" : true,
 		"profession_reference" : "sales",
 		"cms_sites_references" : "wttj_fr",
 		"contract_duration_max" : null,
 		"start_date" : "2016-09-01T00:00:00.000+02:00",
 		"description" : "Fake Job Description.",
-		"contract_type" : "UNLIMITED",
+		"contract_type" : "FULL_TIME",
 		"is_remote" : true,
 		"office_id" : 196,
 		"reference" : "WTTJ_gld0A7L",
@@ -186,13 +185,12 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
 		"experience_level" : "1_TO_2_YEARS",
 		"salary_currency" : "EUR",
 		"department_id" : null,
-		"is_full_time" : true,
 		"profession_reference" : "sales",
 		"cms_sites_references" : "wttj_fr,smgo_fr",
 		"contract_duration_max" : null,
 		"start_date" : "2016-09-01T00:00:00.000+02:00",
 		"description" : "Fake Job Description.",
-		"contract_type" : "UNLIMITED",
+		"contract_type" : "FULL_TIME",
 		"is_remote" : true,
 		"office_id" : 196,
 		"reference" : "WTTJ_gld0A7L",
@@ -247,13 +245,12 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
   "experience_level" : "1_TO_2_YEARS",
   "salary_currency" : "EUR",
   "department_id" : null,
-  "is_full_time" : true,
   "profession_reference" : "sales",
   "cms_sites_references" : "wttj_fr,smgo_fr",
   "contract_duration_max" : null,
   "start_date" : "2016-09-01T00:00:00.000+02:00",
   "description" : "Fake Job Description.",
-  "contract_type" : "UNLIMITED",
+  "contract_type" : "FULL_TIME",
   "is_remote" : true,
   "office_id" : 196,
   "reference" : "WTTJ_gld0A7L",
@@ -312,13 +309,12 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/jobs" \
   "company_description": "Fake Company Description.",
   "description": "Fake Job Description.",
   "profile": "Fake Job Profile",
-  "contract_type": "UNLIMITED",
+  "contract_type": "FULL_TIME",
   "salary_min": "45000",
   "salary_max": "50000",
   "salary_currency": "EUR",
   "salary_period": "yearly",
   "is_remote": "true",
-  "is_full_time": "true",
   "office_zip_code": "75002",
   "education_level": "BAC_5",
   "experience_level": "1_TO_2_YEARS",
@@ -348,13 +344,12 @@ EOF
 	"experience_level" : "1_TO_2_YEARS",
 	"salary_currency" : "EUR",
 	"department_id" : null,
-	"is_full_time" : true,
 	"profession_reference" : "sales",
 	"cms_sites_references" : "wttj_fr,smgo_fr",
 	"contract_duration_max" : null,
 	"start_date" : "2016-09-01T00:00:00.000+02:00",
 	"description" : "Fake Job Description.",
-	"contract_type" : "UNLIMITED",
+	"contract_type" : "FULL_TIME",
 	"is_remote" : true,
 	"office_id" : 196,
 	"reference" : "WTTJ_gld0A7L",
@@ -380,13 +375,12 @@ Parameter | Type | Required | Default | Description | Example
 `company_description` | Text | ✔ | | Company description (Describe the company)
 `description` | Text | ✔ | | Job description (Explain the job, not the company)
 `profile` | Text | ✔ | | Job profile (Explain who you're looking for)
-`contract_type` | String | ✔ | |  Contract type for this job | UNLIMITED / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
+`contract_type` | String | ✔ | |  Contract type for this job | FULL_TIME / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
 `salary_min` | Integer | | | Minimum salary for a given `salary_period` | 45000
 `salary_max` | Integer | | | Maximum salary for a given `salary_period` | 55000
 `salary_currency` | String | | | Currency for the given salary | EUR / USD. See [jobs dependencies](#get-jobs-dependencies)
 `salary_period` | String | | | Period for the given salary | yearly, monthly, daily, none. See [jobs dependencies](#get-jobs-dependencies)
 `is_remote` | Boolean | | | Is remote work authorized for this job? | true / false
-`is_full_time` | Boolean | | | Is it a full time job? | true / false
 `contract_duration_min` | Integer | Required for 'CDD' | | Minimum duration of the contract in months. | 1, 2, .., 24
 `contract_duration_max` | Integer | Required for 'CDD' | | Maximum duration of the contract in months. | 1, 2, .., 24
 `department_id` | Integer | | | Department ID. Mainly used by companies which have a careers website managed through WelcomeKit.co | 1
@@ -424,13 +418,12 @@ curl -X PUT "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
   "company_description": "Fake Company Description.",
   "description": "Fake Job Description.",
   "profile": "Fake Job Profile",
-  "contract_type": "UNLIMITED",
+  "contract_type": "FULL_TIME",
   "salary_min": "45000",
   "salary_max": "50000",
   "salary_currency": "EUR",
   "salary_period": "yearly",
   "is_remote": "true",
-  "is_full_time": "true",
   "office_zip_code": "75002",
   "education_level": "BAC_5",
   "experience_level": "1_TO_2_YEARS",
@@ -460,13 +453,12 @@ EOF
 	"experience_level" : "1_TO_2_YEARS",
 	"salary_currency" : "EUR",
 	"department_id" : null,
-	"is_full_time" : true,
 	"profession_reference" : "sales",
 	"cms_sites_references" : "wttj_fr,smgo_fr",
 	"contract_duration_max" : null,
 	"start_date" : "2016-09-01T00:00:00.000+02:00",
 	"description" : "Fake Job Description.",
-	"contract_type" : "UNLIMITED",
+	"contract_type" : "FULL_TIME",
 	"is_remote" : true,
 	"office_id" : 196,
 	"reference" : "WTTJ_gld0A7L",
@@ -488,13 +480,12 @@ Parameter | Type | Required | Default | Description | Example
 `company_description` | Text | ✔ | | Company description (Describe the company)
 `description` | Text | | | Job description (Explain the job, not the company)
 `profile` | Text | | | Job profile (Explain who you're looking for)
-`contract_type` | String | | |  Contract type for this job | UNLIMITED / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
+`contract_type` | String | | |  Contract type for this job | FULL_TIME / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
 `salary_min` | Integer | | | Minimum salary for a given `salary_period` | 45000
 `salary_max` | Integer | | | Maximum salary for a given `salary_period` | 55000
 `salary_currency` | String | | | Currency for the given salary | EUR / USD. See [jobs dependencies](#get-jobs-dependencies)
 `salary_period` | String | | | Period for the given salary | yearly, monthly, daily, none. See [jobs dependencies](#get-jobs-dependencies)
 `is_remote` | Boolean | | | Is remote work authorized for this job? | true / false
-`is_full_time` | Boolean | | | Is it a full time job? | true / false
 `contract_duration_min` | Integer | | | Minimum duration of the contract in months. | 1, 2, .., 24
 `contract_duration_max` | Integer | | | Maximum duration of the contract in months. | 1, 2, .., 24
 `department_id` | Integer | | | Department ID. Mainly used by companies which have a careers website managed through WelcomeKit.co | 1
@@ -540,13 +531,12 @@ EOF
 	"experience_level" : "1_TO_2_YEARS",
 	"salary_currency" : "EUR",
 	"department_id" : null,
-	"is_full_time" : true,
 	"profession_reference" : "sales",
 	"cms_sites_references" : "wttj_fr,smgo_fr",
 	"contract_duration_max" : null,
 	"start_date" : "2016-09-01T00:00:00.000+02:00",
 	"description" : "Fake Job Description.",
-	"contract_type" : "UNLIMITED",
+	"contract_type" : "FULL_TIME",
 	"is_remote" : true,
 	"office_id" : 196,
 	"reference" : "WTTJ_gld0A7L",
