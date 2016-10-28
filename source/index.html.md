@@ -5,7 +5,7 @@ language_tabs:
   - shell
 
 toc_footers:
-  - <a href="mailto:support@welcomekit.co" class="toc-footer-request">Request a token</a>
+  - <a href="mailto:contact@welcomekit.co" class="toc-footer-request">Request a token</a>
   - <a href="https://github.com/tripit/slate" target="_blank" class="toc-footer-copyright">Powered by Slate</a>
 
 includes:
@@ -31,7 +31,7 @@ For now, the Welcome Kit API can be used to:
 * Create and update jobs for a given organization
 * Configure your organization (departments / offices / etc.)
 
-<strong>In order to use the following endpoints, you will have to request an authentication token at <code>support@welcomekit.co</code>.</strong>
+<strong>In order to use the following endpoints, you will have to request an authentication token at <code>contact@welcomekit.co</code>.</strong>
 
 Also, feel free to leave feedback, issues or features requests on the associated <a href="https://github.com/WelcomeToTheJungle/wk-api-docs" target="_blank">GitHub repository</a>!
 
