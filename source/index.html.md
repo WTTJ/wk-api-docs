@@ -16,6 +16,7 @@ includes:
   - offices
   - users
   - errors
+  - faq
 
 search: true
 ---

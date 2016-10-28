@@ -5,7 +5,7 @@
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/users/current" \
     -H "Content-Type: application/json" \
-    -H "Authorization: bearer wk-api-key"
+    -H "Authorization: bearer WK_API_KEY"
 ```
 
 > The above command returns JSON structured like this:
