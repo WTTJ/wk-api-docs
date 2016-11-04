@@ -40,7 +40,8 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
       "subtitle": null,
       "zip_code": null
     },
-    "origin": "external"
+    "origin": "external",
+    "archived": false
   },
   ...
 ]
@@ -104,7 +105,8 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
     "subtitle": null,
     "zip_code": null
   },
-  "origin": "external"
+  "origin": "external",
+  "archived": false
 }
 ```
 
@@ -172,7 +174,8 @@ EOF
     "subtitle": null,
     "zip_code": null
   },
-  "origin": "external"
+  "origin": "external",
+  "archived": false
 }
 ```
 
@@ -204,6 +207,7 @@ Parameter | Type | Required | Default | Description | Example
 `phone` | String | | | Phone number | 0606060606
 `remote_image_url` | String | | | Avatar url | http://example.com/avatar.png
 `comment` | Text | | | A comment about this candidate | Lorem ipsum…
+`archived` | Boolean | | | Archive user | true,false
 `media_website` | String | | | Candidate website url  | https://me.com
 `media_github` | String | | | Profile url on Github | https://github.com/me
 `media_stackoverflow` | String | | | Profile url on Stackoverflow  | https://stackoverflow.com/users/me
