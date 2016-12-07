@@ -303,6 +303,7 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/jobs" \
     -H "Authorization: Bearer WK_API_KEY" \
     -d @- <<EOF
 {
+  "status": "published",
   "organization_reference": "Pg4eV6k",
   "profession_reference": "sales",
   "name": "Fake Job",
@@ -334,7 +335,7 @@ EOF
 	"external_reference" : "PROVIDER_REFERENCE1",
 	"salary_min" : 45000,
 	"organization_reference" : "Pg4eV6k",
-	"status" : "draft",
+	"status" : "published",
 	"salary_period" : "yearly",
 	"profile" : "Fake Job Profile",
 	"apply_url" : "http://company.com/jobs/superjob/apply/",
@@ -376,6 +377,7 @@ Parameter | Type | Required | Default | Description | Example
 `description` | Text | ✔ | | Job description (Explain the job, not the company)
 `profile` | Text | ✔ | | Job profile (Explain who you're looking for)
 `contract_type` | String | ✔ | |  Contract type for this job | FULL_TIME / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
+`status` | String | | | Job status | `draft`, `published`, `archived` |
 `salary_min` | Integer | | | Minimum salary for a given `salary_period` | 45000
 `salary_max` | Integer | | | Maximum salary for a given `salary_period` | 55000
 `salary_currency` | String | | | Currency for the given salary | EUR / USD. See [jobs dependencies](#get-jobs-dependencies)
