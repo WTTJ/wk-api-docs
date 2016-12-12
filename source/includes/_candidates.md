@@ -30,7 +30,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
       "address": null,
       "avatar_url": "http://wk.dev/assets/default-avatar-7cbb7b9749a7cf8864001cde13e2a9a94e612bf083430d66ede0966f5bafb296.png",
       "city": null,
-      "civility": "Mr",
       "country_code": null,
       "country_name": null,
       "email": "test@example.com",
@@ -95,7 +94,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
     "address": null,
     "avatar_url": "http://wk.dev/assets/default-avatar-7cbb7b9749a7cf8864001cde13e2a9a94e612bf083430d66ede0966f5bafb296.png",
     "city": null,
-    "civility": "Mr",
     "country_code": null,
     "country_name": null,
     "email": "test@example.com",
@@ -136,7 +134,6 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/candidates" \
   "email": "test@example.com",
   "firstname": "Foo",
   "lastname": "Bar",
-  "civility": "Mr",
   "organization_reference": "Pg4eV6k",
   "job_reference": "WTTJ_KmqkD1Y"
 }
@@ -164,7 +161,6 @@ EOF
     "address": null,
     "avatar_url": "http://wk.dev/assets/default-avatar-7cbb7b9749a7cf8864001cde13e2a9a94e612bf083430d66ede0966f5bafb296.png",
     "city": null,
-    "civility": "Mr",
     "country_code": null,
     "country_name": null,
     "email": "test@example.com",
@@ -201,7 +197,6 @@ Parameter | Type | Required | Default | Description | Example
 `email` | String | ✔ | | Email | test@example.com
 `firstname` | String | ✔ | | First name | John
 `lastname` | String | ✔ | | Last name | Doe
-`civility` | String | ✔ | | Civility | Mr, Ms
 `tag_list` | String | | | Comma separated list of tags | foo,bar
 `subtitle` | String | | | Subtitle | CTO @ WTTJ
 `phone` | String | | | Phone number | 0606060606
