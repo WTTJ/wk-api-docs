@@ -387,8 +387,10 @@ Parameter | Type | Required | Default | Description | Example
 `contract_duration_max` | Integer | Recommended for 'TEMPORARY' contract type | | Maximum duration of the contract in months. | 1, 2, .., 24
 `department_id` | Integer | | | Department ID. Mainly used by companies which have a careers website managed through WelcomeKit.co | 1
 `office_id` | Integer | See below | | Office ID. An office is like a "location". If the office wasn't created for the targeted company, you will need to contact support@welcomekit.co first. Also, if you don't have an `office_id` you can call the API with `office_zip_code` or `office_country_code` which may be enough for us to retrieve the associated office. | 1
-`office_zip_code` | String | See below | | Office zip code (`office_id` will be found from this). See: comment related to `office_id` | 75002
-`office_country_code` | String | See below | | Office country code (`office_id` will be found from this). See: comment related to `office_id` | FR
+`office_address` | String | See below | | Office zip code (office will be found or created from this). See: comment related to `office_id` | 11b rue Bachaumont
+`office_zip_code` | String | See below | | Office zip code (office will be found or created from this). See: comment related to `office_id` | 75002
+`office_city` | String | See below | | Office zip code (office will be found or created from this). See: comment related to `office_id` | Paris
+`office_country_code` | String | See below | | Office country code (office will be found or created from this). See: comment related to `office_id` | FR
 `education_level` | String | | | Minimum education level ID | `BAC`, `BAC_5`, `PHD`, etc. See [jobs dependencies](#get-jobs-dependencies)
 `experience_level` | String | | | Minimum experience level ID | `LESS_THAN_6_MONTHS`, `6_MONTHS_TO_1_YEAR`, `1_TO_2_YEARS`, etc. See [jobs dependencies](#get-jobs-dependencies)
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
@@ -400,8 +402,15 @@ Parameter | Type | Required | Default | Description | Example
 Also, in the **required parameters**, you have to call this endpoint with **AT LEAST ONE** of the following attributes:
 
 * `office_id`
-* `office_zip_code`
-* `office_country_code`
+* `office_address` (mandatory for creation)
+* `office_zip_code` (mandatory for creation)
+* `office_city` (mandatory for creation)
+* `office_country_code` (mandatory for creation)
+
+If the related office is not found from the previous parameters, we will try to create the office if the following conditions are respected:
+
+* access to <code>offices_rw</code> scope
+* all mandatory attributes to create an office: `office_address`, `office_zip_code`, `office_city`, `office_country_code`
 
 
 ## Update a job
@@ -492,8 +501,10 @@ Parameter | Type | Required | Default | Description | Example
 `contract_duration_max` | Integer | | | Maximum duration of the contract in months. | 1, 2, .., 24
 `department_id` | Integer | | | Department ID. Mainly used by companies which have a careers website managed through WelcomeKit.co | 1
 `office_id` | Integer | | | Office ID. An office is like a "location". If the office wasn't created for the targeted company, you will need to contact support@welcomekit.co first. Also, if you don't have an `office_id` you can call the API with `office_zip_code` or `office_country_code` which may be enough for us to retrieve the associated office. | 1
-`office_zip_code` | String | | | Office zip code (`office_id` will be found from this). See: comment related to `office_id` | 75002
-`office_country_code` | String | | | Office country code (`office_id` will be found from this). See: comment related to `office_id` | FR
+`office_address` | String | | | Office zip code (office will be found or created from this). See: comment related to `office_id` | 11b rue Bachaumont
+`office_zip_code` | String | | | Office zip code (office will be found or created from this). See: comment related to `office_id` | 75002
+`office_city` | String | | | Office zip code (office will be found or created from this). See: comment related to `office_id` | Paris
+`office_country_code` | String | | | Office country code (office will be found or created from this). See: comment related to `office_id` | FR
 `education_level` | String | | | Minimum education level ID | `BAC`, `BAC_5`, `PHD`, etc. See [jobs dependencies](#get-jobs-dependencies)
 `experience_level` | String | | | Minimum experience level ID | `LESS_THAN_6_MONTHS`, `6_MONTHS_TO_1_YEAR`, `1_TO_2_YEARS`, etc. See [jobs dependencies](#get-jobs-dependencies)
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
