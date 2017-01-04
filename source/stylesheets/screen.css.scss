@@ -278,19 +278,32 @@ html, body {
 // CUSTOM LOGO
 #nav-logo {
   display: block;
-  padding: 10px;
-  color: rgba(255,255,255,0.5);
+  padding: 10px 10px 20px 10px;
   text-decoration: none;
-  text-transform: uppercase;
   text-align: center;
 
-  img {
-    height: 20px;
+  .logo-wk-svg {
+    width: 50px;
+    height: 50px;
+
+    .logo-wk-path {
+      fill: #3dd095;
+    }
+  }
+
+  strong {
+    display: block;
+    margin-top: 10px;
+    color: #3dd095;
+    text-transform: uppercase;
   }
 
   span {
     display: block;
     margin-top: 5px;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
   }
 }
 
@@ -373,6 +386,20 @@ html, body {
     content: '';
     display: block;
     clear: both;
+  }
+
+  a {
+    color: #148cf0;
+    text-decoration: underline;
+
+    &:hover {
+      color: #0f7fdc;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: #085ea7;
+    }
   }
 
   &>h1, &>h2, &>h3, &>h4, &>h5, &>h6, &>p, &>table, &>ul, &>ol, &>aside, &>dl {
