@@ -25,7 +25,7 @@ under the License.
     <style>
       <%= Rouge::Themes::Base16::Monokai.render(:scope => '.highlight') %>
     </style>
-    <%= favicon_tag "/images/favicon.png" %>
+    <%= favicon_tag "/images/favicon.png?v2" %>
     <%= stylesheet_link_tag :screen, media: :screen %>
     <%= stylesheet_link_tag :print, media: :print %>
     <% if current_page.data.search %>
@@ -44,7 +44,8 @@ under the License.
     </a>
     <div class="tocify-wrapper">
       <a href="https://www.welcomekit.co/" target="_blank" id="nav-logo">
-        <%= image_tag "logo.svg" %>
+        <%= partial 'shared/logo' %>
+        <strong>Welcome Kit</strong>
         <span>API Reference</span>
       </a>
       <% if language_tabs %>
