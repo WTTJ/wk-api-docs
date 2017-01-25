@@ -376,6 +376,7 @@ Parameter | Type | Required | Default | Description | Example
 `company_description` | Text | ✔ | | Company description (Describe the company)
 `description` | Text | ✔ | | Job description (Explain the job, not the company)
 `profile` | Text | ✔ | | Job profile (Explain who you're looking for)
+`recruitment_process` | Text | | | Job Recruitment Process (Delay / Interviews / Tests / etc.)
 `contract_type` | String | ✔ | |  Contract type for this job | FULL_TIME / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
 `status` | String | | | Job status | `draft`, `published`, `archived` |
 `salary_min` | Integer | | | Minimum salary for a given `salary_period` | 45000
@@ -491,6 +492,7 @@ Parameter | Type | Required | Default | Description | Example
 `company_description` | Text | ✔ | | Company description (Describe the company)
 `description` | Text | | | Job description (Explain the job, not the company)
 `profile` | Text | | | Job profile (Explain who you're looking for)
+`recruitment_process` | Text | | | Job Recruitment Process (Delay / Interviews / Tests / etc.)
 `contract_type` | String | | |  Contract type for this job | FULL_TIME / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
 `salary_min` | Integer | | | Minimum salary for a given `salary_period` | 45000
 `salary_max` | Integer | | | Maximum salary for a given `salary_period` | 55000
