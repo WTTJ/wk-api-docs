@@ -19,11 +19,11 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
     "job_id": 3027,
     "job_reference": "WTTJ_KmqkD1Y",
     "modal_path": "/dashboard/o/Pg4eV6k/jobs/WTTJ_KmqkD1Y/card/wttj-d655345409a6097309156b05",
-    "portfolio_size": null,
-    "portfolio_url": null,
-    "resume_content_type": null,
-    "resume_size": null,
-    "resume_url": null,
+    "portfolio_size": 4242,
+    "portfolio_url": "http://cdn.com/porfolio.pdf",
+    "resume_content_type": "application/pdf",
+    "resume_size": 4242,
+    "resume_url": "http://cdn.com/resume.pdf",
     "stage_id": 14600,
     "updated_at": "2016-08-23T12:55:27.206+02:00",
     "profile": {
@@ -83,11 +83,11 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
   "job_id": 3027,
   "job_reference": "WTTJ_KmqkD1Y",
   "modal_path": "/dashboard/o/Pg4eV6k/jobs/WTTJ_KmqkD1Y/card/wttj-d655345409a6097309156b05",
-  "portfolio_size": null,
-  "portfolio_url": null,
-  "resume_content_type": null,
-  "resume_size": null,
-  "resume_url": null,
+  "portfolio_size": 4242,
+  "portfolio_url": "http://cdn.com/porfolio.pdf",
+  "resume_content_type": "application/pdf",
+  "resume_size": 4242,
+  "resume_url": "http://cdn.com/resume.pdf",
   "stage_id": 14600,
   "updated_at": "2016-08-23T12:55:27.206+02:00",
   "profile": {
@@ -135,7 +135,9 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/candidates" \
   "firstname": "Foo",
   "lastname": "Bar",
   "organization_reference": "Pg4eV6k",
-  "job_reference": "WTTJ_KmqkD1Y"
+  "job_reference": "WTTJ_KmqkD1Y",
+  "remote_resume_url": "http://example.com/resume.pdf",
+  "remote_portfolio_url": "http://example.com/portfolio.pdf"
 }
 EOF
 ```
@@ -150,11 +152,11 @@ EOF
   "job_id": 3027,
   "job_reference": "WTTJ_KmqkD1Y",
   "modal_path": "/dashboard/o/Pg4eV6k/jobs/WTTJ_KmqkD1Y/card/wttj-d655345409a6097309156b05",
-  "portfolio_size": null,
-  "portfolio_url": null,
-  "resume_content_type": null,
-  "resume_size": null,
-  "resume_url": null,
+  "portfolio_size": 4242,
+  "portfolio_url": "http://cdn.com/porfolio.pdf",
+  "resume_content_type": "application/pdf",
+  "resume_size": 4242,
+  "resume_url": "http://cdn.com/resume.pdf",
   "stage_id": 14600,
   "updated_at": "2016-08-23T12:55:27.206+02:00",
   "profile": {
@@ -201,6 +203,8 @@ Parameter | Type | Required | Default | Description | Example
 `subtitle` | String | | | Subtitle | CTO @ WTTJ
 `phone` | String | | | Phone number | 0606060606
 `remote_image_url` | String | | | Avatar url | http://example.com/avatar.png
+`remote_resume_url` | String | | | Resume url | http://example.com/resume.pdf
+`remote_portfolio_url` | String | | | Portfolio url | http://example.com/portfolio.pdf
 `comment` | Text | | | A comment about this candidate | Lorem ipsum…
 `archived` | Boolean | | | Archive user | true,false
 `media_website` | String | | | Candidate website url  | https://me.com
