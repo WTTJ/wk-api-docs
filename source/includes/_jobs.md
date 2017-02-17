@@ -124,7 +124,7 @@ In order to create a job, you will need the following information:
   - *examples: 1_TO_2_YEARS, MORE_THAN_15_YEARS, etc.*
 * `cms_sites_references`
   - authorized cms sites references
-  - *examples: wttj_fr,smgo_fr, etc.*
+  - *examples: wttj_fr,smgo_fr,btbw_fr etc.*
 
 NB: you will also need [authorized professions](#professions) to create any job offer.
 
@@ -186,7 +186,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
 		"salary_currency" : "EUR",
 		"department_id" : null,
 		"profession_reference" : "sales",
-		"cms_sites_references" : "wttj_fr,smgo_fr",
+		"cms_sites_references" : "wttj_fr,smgo_fr,btbw_fr",
 		"contract_duration_max" : null,
 		"start_date" : "2016-09-01T00:00:00.000+02:00",
 		"description" : "Fake Job Description.",
@@ -397,7 +397,7 @@ Parameter | Type | Required | Default | Description | Example
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
 `start_date` | String | | | Start date for this job (YYYY-MM-DD) | 2015-11-26
 `external_reference` | String | | | External provider Reference / ID for this job. (unique constraint) | |
-`cms_sites_references` | String | | | Comma separated list of cms sites references to publish this job | `wttj_fr,smgo_fr`, `wttj_fr`, etc. See [jobs dependencies](#get-jobs-dependencies)
+`cms_sites_references` | String | | | Comma separated list of cms sites references to publish this job | `wttj_fr,smgo_fr,btbw_fr`, `wttj_fr`, etc. See [jobs dependencies](#get-jobs-dependencies)
 
 
 Also, in the **required parameters**, you have to call this endpoint with **AT LEAST ONE** of the following attributes:
@@ -512,7 +512,7 @@ Parameter | Type | Required | Default | Description | Example
 `apply_url` | String | | | Job application URL. Do not input anything if you want to use WelcomeKit as your ATS | http://company.com/jobs/superjob/apply/
 `start_date` | String | | | Start date for this job (YYYY-MM-DD) | 2015-11-26
 `external_reference` | String | | | External provider Reference / ID for this job. (unique constraint) | |
-`cms_sites_references` | String | | | Comma separated list of cms sites references to publish this job | `wttj_fr,smgo_fr`, `wttj_fr`, etc. See [jobs dependencies](#get-jobs-dependencies)
+`cms_sites_references` | String | | | Comma separated list of cms sites references to publish this job | `wttj_fr,smgo_fr,btbw_fr`, `wttj_fr`, etc. See [jobs dependencies](#get-jobs-dependencies)
 
 
 ## Update job status
