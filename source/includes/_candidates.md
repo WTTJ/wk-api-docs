@@ -203,7 +203,7 @@ Parameter | Type | Required | Default | Description | Example
 `subtitle` | String | | | Subtitle | CTO @ WTTJ
 `phone` | String | | | Phone number | 0606060606
 `remote_image_url` | String | | | Avatar url | http://example.com/avatar.png
-`remote_resume_url` | String | | | Resume url (file type: PDF, maximum file size: 2MB) | http://example.com/resume.pdf
+`remote_resume_url` | String | | | Resume url (file type: PDF, DOC, DOCX, ODT maximum file size: 5MB) | http://example.com/resume.pdf
 `remote_portfolio_url` | String | | | Portfolio url (file type: PDF, maximum file size: 10MB) | http://example.com/portfolio.pdf
 `comment` | Text | | | A comment about this candidate | Lorem ipsum…
 `archived` | Boolean | | | Archive user | true,false
@@ -295,7 +295,7 @@ Parameter | Type | Required | Default | Description | Example
 `subtitle` | String | | | Subtitle | CTO @ WTTJ
 `phone` | String | | | Phone number | 0606060606
 `remote_image_url` | String | | | Avatar url | http://example.com/avatar.png
-`remote_resume_url` | String | | | Resume url (file type: PDF, maximum file size: 2MB) | http://example.com/resume.pdf
+`remote_resume_url` | String | | | Resume url (file type: PDF, DOC, DOCX, ODT maximum file size: 5MB) | http://example.com/resume.pdf
 `remote_portfolio_url` | String | | | Portfolio url (file type: PDF, maximum file size: 10MB) | http://example.com/portfolio.pdf
 `archived` | Boolean | | | Archive user | true,false
 `media_website` | String | | | Candidate website url  | https://me.com
