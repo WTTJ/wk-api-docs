@@ -15,6 +15,7 @@ includes:
   - departments
   - offices
   - users
+  - embed
   - errors
   - faq
 
