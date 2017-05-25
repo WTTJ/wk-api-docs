@@ -403,15 +403,15 @@ Parameter | Type | Required | Default | Description | Example
 Also, in the **required parameters**, you have to call this endpoint with **AT LEAST ONE** of the following attributes:
 
 * `office_id`
-* `office_address` (mandatory for creation)
-* `office_zip_code` (mandatory for creation)
+* `office_address`
+* `office_zip_code`
 * `office_city` (mandatory for creation)
 * `office_country_code` (mandatory for creation)
 
 If the related office is not found from the previous parameters, we will try to create the office if the following conditions are respected:
 
 * access to <code>offices_rw</code> scope
-* all mandatory attributes to create an office: `office_address`, `office_zip_code`, `office_city`, `office_country_code`
+* all mandatory attributes to create an office: `office_city`, `office_country_code`
 
 
 ## Update a job

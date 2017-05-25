@@ -135,8 +135,8 @@ Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `organization_reference` | String | ✔ | | Organization reference | Pg4eV6k
 `name` | String | ✔ | | Name |
-`address` | String | ✔ | | Address |
-`zip_code` | String | ✔ | | Zip code |
+`address` | String | | | Address |
+`zip_code` | String | | | Zip code |
 `city` | String | ✔ | | City |
 `country_code` | String | ✔ | | Country code | US, FR
 `is_active` | Boolean | | | Office active? | true / false
