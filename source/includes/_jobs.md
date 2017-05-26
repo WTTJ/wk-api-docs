@@ -384,8 +384,8 @@ Parameter | Type | Required | Default | Description | Example
 `salary_currency` | String | | | Currency for the given salary | EUR / USD. See [jobs dependencies](#get-jobs-dependencies)
 `salary_period` | String | | | Period for the given salary | yearly, monthly, daily, none. See [jobs dependencies](#get-jobs-dependencies)
 `is_remote` | Boolean | | | Is remote work authorized for this job? | true / false
-`contract_duration_min` | Integer | Recommended for 'TEMPORARY' contract type | | Minimum duration of the contract in months. | 1, 2, .., 24
-`contract_duration_max` | Integer | Recommended for 'TEMPORARY' contract type | | Maximum duration of the contract in months. | 1, 2, .., 24
+`contract_duration_min` | Integer | Recommended for 'TEMPORARY' contract type | | Minimum duration of the contract in months. | 1, 2, .., 36
+`contract_duration_max` | Integer | Recommended for 'TEMPORARY' contract type | | Maximum duration of the contract in months. | 1, 2, .., 36
 `department_id` | Integer | | | Department ID. Mainly used by companies which have a careers website managed through WelcomeKit.co | 1
 `office_id` | Integer | See below | | Office ID. An office is like a "location". If the office wasn't created for the targeted company, you will need to contact support@welcomekit.co first. Also, if you don't have an `office_id` you can call the API with `office_zip_code` or `office_country_code` which may be enough for us to retrieve the associated office. | 1
 `office_address` | String | See below | | Office zip code (office will be found or created from this). See: comment related to `office_id` | 11b rue Bachaumont
@@ -499,8 +499,8 @@ Parameter | Type | Required | Default | Description | Example
 `salary_currency` | String | | | Currency for the given salary | EUR / USD. See [jobs dependencies](#get-jobs-dependencies)
 `salary_period` | String | | | Period for the given salary | yearly, monthly, daily, none. See [jobs dependencies](#get-jobs-dependencies)
 `is_remote` | Boolean | | | Is remote work authorized for this job? | true / false
-`contract_duration_min` | Integer | | | Minimum duration of the contract in months. | 1, 2, .., 24
-`contract_duration_max` | Integer | | | Maximum duration of the contract in months. | 1, 2, .., 24
+`contract_duration_min` | Integer | | | Minimum duration of the contract in months. | 1, 2, .., 36
+`contract_duration_max` | Integer | | | Maximum duration of the contract in months. | 1, 2, .., 36
 `department_id` | Integer | | | Department ID. Mainly used by companies which have a careers website managed through WelcomeKit.co | 1
 `office_id` | Integer | | | Office ID. An office is like a "location". If the office wasn't created for the targeted company, you will need to contact support@welcomekit.co first. Also, if you don't have an `office_id` you can call the API with `office_zip_code` or `office_country_code` which may be enough for us to retrieve the associated office. | 1
 `office_address` | String | | | Office zip code (office will be found or created from this). See: comment related to `office_id` | 11b rue Bachaumont
