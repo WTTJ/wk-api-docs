@@ -220,6 +220,7 @@ Parameter | Type | Required | Default | Description | Example
 `media_vimeo` | String | | | Profile url on Vimeo | https://vimeo.com/me
 `media_twitter` | String | | | Profile url on Twitter | https://twitter.com/me
 `cover_letter` | String | | | Cover letter | Lorem ipsum…
+`referrer` | String | | | Referrer | http://github.com/me
 
 
 ## Update a candidate
