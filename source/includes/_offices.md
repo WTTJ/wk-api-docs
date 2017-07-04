@@ -19,7 +19,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/offices" \
     "zip_code": "75002",
     "city": "Paris",
     "country_code": "FR",
-    "is_active": true,
     "is_headquarter": true,
     "description": "Foo bar"
   }
@@ -61,7 +60,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/offices/:id" \
   "zip_code": "75002",
   "city": "Paris",
   "country_code": "FR",
-  "is_active": true,
   "is_headquarter": true,
   "description": "Foo bar"
 }
@@ -96,7 +94,6 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/offices" \
   "zip_code": "75002",
   "city": "Paris",
   "country_code": "FR",
-  "is_active": true,
   "is_headquarter": true,
   "description": "Foo bar"
 }
@@ -113,7 +110,6 @@ EOF
   "zip_code": "75002",
   "city": "Paris",
   "country_code": "FR",
-  "is_active": true,
   "is_headquarter": true,
   "description": "Foo bar"
 }
@@ -139,7 +135,6 @@ Parameter | Type | Required | Default | Description | Example
 `zip_code` | String | | | Zip code |
 `city` | String | ✔ | | City |
 `country_code` | String | ✔ | | Country code | US, FR
-`is_active` | Boolean | | | Office active? | true / false
 `is_headquarter` | Boolean | | | Office is organization headquarter? | true / false
 `description` | Text | | | Description |
 
@@ -167,7 +162,6 @@ EOF
   "zip_code": "75002",
   "city": "Paris",
   "country_code": "FR",
-  "is_active": true,
   "is_headquarter": true,
   "description": "Foo bar"
 }
@@ -193,6 +187,5 @@ Parameter | Type | Required | Default | Description | Example
 `zip_code` | String | | | Zip code |
 `city` | String | | | City |
 `country_code` | String | | | Country code | US, FR
-`is_active` | Boolean | | | Office active? | true / false
 `is_headquarter` | Boolean | | | Office is organization headquarter? | true / false
 `description` | Text | | | Description |
