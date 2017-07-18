@@ -35,7 +35,7 @@ For now, the Welcome Kit API can be used to:
 
 <strong>In order to use the following endpoints, you will have to request an authentication token at <code>contact@welcomekit.co</code>.</strong>
 
-Also, feel free to leave feedback, issues or features requests on the associated <a href="https://github.com/WelcomeToTheJungle/wk-api-docs" target="_blank">GitHub repository</a>!
+Also, feel free to leave feedback, issues or features requests on the associated <a href="https://github.com/WTTJ/wk-api-docs" target="_blank">GitHub repository</a>!
 
 # Authentication & Scopes
 
