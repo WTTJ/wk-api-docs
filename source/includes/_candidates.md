@@ -61,6 +61,15 @@ This endpoint lets you retrieve all candidates for a given job reference.
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `job_reference` | String | ✔ | | Job reference | WTTJ_dggjZDa
+`email` | String |  | | Candidate email | example@example.co
+`origin` | String |  | | Candidate origin | website:cms:wttj_fr
+`referrer` | String |  | | Candidate referrer | wttj-d655345409a6097309156b05
+`archived` | String |  | | Return candidate archived or not | true/false
+`job_stage_name` | String |  | | Candidate job stage name | refused
+`job_stage_id` | String |  | | Candidate job stage id | 123
+`job_stage_reference` | String |  | | Candidate job stage reference | refused
+`created_at` | String | | | Candidates added from this date (YYYY-MM-DD) | 2015-11-26
+`updated_at` | String | | | Candidates added from this date (YYYY-MM-DD) | 2015-11-26
 `per_page` | Integer | | 100 | Number of jobs per page |
 `page` | Integer | | 1 | Page offset |
 `stage` | Boolean |  | false | Return job stage | true/false
