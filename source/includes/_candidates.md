@@ -64,6 +64,7 @@ Parameter | Type | Required | Default | Description | Example
 `per_page` | Integer | | 100 | Number of jobs per page |
 `page` | Integer | | 1 | Page offset |
 `stage` | Boolean |  | false | Return job stage | true/false
+`tags` | Boolean |  | false | Return tags | true/false
 
 
 ## Retrieve a candidate
@@ -123,6 +124,7 @@ Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `reference` | String | ✔ | | Candidate reference | wttj-d655345409a6097309156b05
 `stage` | Boolean |  | false | Return job stage | true/false
+`tags` | Boolean |  | false | Return tags | true/false
 
 
 ## Create a candidate
