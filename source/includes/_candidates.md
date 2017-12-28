@@ -47,7 +47,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
 ```
 
 <aside class="notice">
-This endpoint requires <code>candidates_r</code> or <code>candidates_rw</code> scope.
+This endpoint requires <code>candidates_r</code> , <code>candidates_rw</code> or <code>my_candidates_rw</code> scope.
 </aside>
 
 This endpoint lets you retrieve all candidates for a given job reference.
@@ -120,7 +120,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
 ```
 
 <aside class="notice">
-This endpoint requires <code>candidates_r</code> or <code>candidates_rw</code> scope.
+This endpoint requires <code>candidates_r</code> , <code>candidates_rw</code> or <code>my_candidates_rw</code> scope.
 </aside>
 
 ### HTTP Request
@@ -191,7 +191,7 @@ EOF
 ```
 
 <aside class="notice">
-This endpoint requires <code>candidates_rw</code> scope.
+This endpoint requires <code>candidates_rw</code> or <code>my_candidates_rw</code> scope.
 </aside>
 
 This endpoint lets you create new candidates for a given `job_reference`.
@@ -289,7 +289,7 @@ EOF
 ```
 
 <aside class="notice">
-This endpoint requires <code>candidates_rw</code> scope.
+This endpoint requires <code>candidates_rw</code> or <code>my_candidates_rw</code> scope.
 </aside>
 
 This endpoint lets you update candidates for a given `reference`.
