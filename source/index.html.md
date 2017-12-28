@@ -77,6 +77,5 @@ Scope | Description
 `offices_r` |  Read access on your offices
 `departments_rw` |  Read and Write access on your departments
 `departments_r` |  Read access on your departments
-`my_candidates_rw` |  Read and Write access on your added candidates
 `candidates_rw` |  Read and Write access on your candidates
 `candidates_r` |  Read access on your candidates
