@@ -13,6 +13,7 @@ includes:
   - professions
   - candidates
   - departments
+  - comments
   - offices
   - users
   - embed
@@ -79,3 +80,4 @@ Scope | Description
 `departments_r` |  Read access on your departments
 `candidates_rw` |  Read and Write access on your candidates
 `candidates_r` |  Read access on your candidates
+`comments_w` | Write access on comments for a candidate
