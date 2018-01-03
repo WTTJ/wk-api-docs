@@ -14,6 +14,7 @@ includes:
   - candidates
   - departments
   - comments
+  - emails
   - offices
   - users
   - embed
