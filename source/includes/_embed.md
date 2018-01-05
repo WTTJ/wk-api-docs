@@ -19,6 +19,10 @@ curl -X GET "https://www.welcomekit.co/api/v1/embed" \
       "name": "CDI - Full Stack Developper",
       "slug": "full-stack-developper_paris",
       "description": "<p>Hello World…</p>",
+      "profile": "<p>Hello World…</p>",
+      "recruitment_process": "<p>Hello World…</p>",
+      "salary_min": "30000",
+      "salary_max": "40000",
       "created_at": {
         "fr": "Le 09 Novembre 2015 à 13h26",
         "en": "09 November 2015 at 13h26"
