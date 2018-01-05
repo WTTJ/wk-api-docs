@@ -14,7 +14,6 @@ curl -X GET "https://wk.test/api/v1/external/emails" \
 [
   {
     "id": 12345,
-    "user_id": 1234,
     "subject": "Greetings",
     "body": "Email body",
     "from_email": "test@example.com",
@@ -68,7 +67,6 @@ EOF
 ```json
 {
   "id": 12345,
-  "user_id": 1234,
   "subject": "Greetings",
   "body": "Email body",
   "from_email": "test@example.com",
