@@ -225,6 +225,8 @@ Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `organization_reference` | String | ✔ | | Reference of the associated organization/company | aEioU123
 `stages` | Boolean | | false | Return job stages | true / false
+`websites` | Boolean | | false | Return job associated websites | true / false
+`status` | String | | | Filter by status | draft / published / archived
 `per_page` | Integer | | 100 | Number of jobs per page |
 `page` | Integer | | 1 | Page offset |
 `status` | String | | | Returns jobs with this specific status | draft / published / archived
@@ -239,6 +241,7 @@ Parameter | Type | Required | Default | Description | Example
 curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
     -H "Authorization: Bearer WK_API_KEY" \
     -d "stages=true"
+    -d "websites=true"
 ```
 
 > The above command returns JSON structured like this:
@@ -294,6 +297,13 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
   "updated_at" : "2017-11-13T17:15:26.146+01:00",
   "published_at" : null,
   "archived_at" : null
+  "websites_urls" : [
+    {
+      "website_reference":"wttj_fr",
+      "url":"https://www.welcomekit.co/companies/wttj/jobs/company"
+    },
+    ...
+  ]
 }
 ```
 
@@ -311,6 +321,7 @@ Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `reference` | String | ✔ | | Job reference | aEioU123
 `stages` | Boolean | | false | Return job stages | true / false
+`websites` | Boolean | | false | Return job associated websited | true / false
 
 
 ## Create a job
