@@ -3,7 +3,7 @@
 ## List candidate emails
 
 ```shell
-curl -X GET "https://wk.test/api/v1/external/emails" \
+curl -X GET "https://www.welcomekit.co/api/v1/external/emails" \
     -d "candidate_reference=wttj-d655345409a6097309156b05" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
@@ -48,7 +48,7 @@ Parameter | Type | Required | Default | Description | Example
 ## Create an email
 
 ```shell
-curl -X POST "https://wk.test/api/v1/external/emails" \
+curl -X POST "https://www.welcomekit.co/api/v1/external/emails" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer WK_API_KEY" \
     -d @- <<EOF
