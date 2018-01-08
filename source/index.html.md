@@ -15,6 +15,7 @@ includes:
   - departments
   - comments
   - emails
+  - documents
   - offices
   - users
   - embed
