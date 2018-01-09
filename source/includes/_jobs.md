@@ -300,7 +300,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
   "websites_urls" : [
     {
       "website_reference":"wttj_fr",
-      "url":"https://www.welcomekit.co/companies/wttj/jobs/company"
+      "url":"https://www.welcometothejungle.co/companies/wttj/jobs/fake-job-2"
     },
     ...
   ]
