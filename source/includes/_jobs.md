@@ -218,9 +218,9 @@ Parameter | Type | Required | Default | Description | Example
 `status` | String | | | Filter by status | draft / published / archived
 `per_page` | Integer | | 100 | Number of jobs per page |
 `page` | Integer | | 1 | Page offset |
-`created_at` | String | | | Jobs created from this date (YYYY-MM-DD) | 2015-11-26
-`updated_at` | String | | | Jobs updated from this date (YYYY-MM-DD) | 2015-11-26
-`published_at` | String | | | Jobs published from this date (YYYY-MM-DD) | 2015-11-26
+`created_after` | String | | | Jobs created from this date (YYYY-MM-DD) | 2015-11-26
+`updated_after` | String | | | Jobs updated from this date (YYYY-MM-DD) | 2015-11-26
+`published_after` | String | | | Jobs published from this date (YYYY-MM-DD) | 2015-11-26
 
 
 ## Retrieve a job
