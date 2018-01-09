@@ -164,10 +164,10 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
     "description" : "Fake Job Description.",
     "contract_type" : "FULL_TIME",
     "salary": {
-      "salary_min": "30000",
-      "salary_max": "40000",
-      "salary_currency": "EUR",
-      "salary_period": "yearly"
+      "min": "30000",
+      "max": "40000",
+      "currency": "EUR",
+      "period": "yearly"
     },
     "is_remote" : true,
     "office_id" : 196,
@@ -196,10 +196,10 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
     "description" : "Fake Job Description.",
     "contract_type" : "FULL_TIME",
     "salary": {
-      "salary_min": "30000",
-      "salary_max": "40000",
-      "salary_currency": "EUR",
-      "salary_period": "yearly"
+      "min": "30000",
+      "max": "40000",
+      "currency": "EUR",
+      "period": "yearly"
     },
     "is_remote" : true,
     "office_id" : 196,
@@ -269,10 +269,10 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
   "description" : "Fake Job Description.",
   "contract_type" : "FULL_TIME",
   "salary": {
-    "salary_min": "30000",
-    "salary_max": "40000",
-    "salary_currency": "EUR",
-    "salary_period": "yearly"
+    "min": "30000",
+    "max": "40000",
+    "currency": "EUR",
+    "period": "yearly"
   },
   "is_remote" : true,
   "office_id" : 196,
@@ -383,10 +383,10 @@ EOF
   "description" : "Fake Job Description.",
   "contract_type" : "FULL_TIME",
   "salary": {
-    "salary_min": "30000",
-    "salary_max": "40000",
-    "salary_currency": "EUR",
-    "salary_period": "yearly"
+    "min": "30000",
+    "max": "40000",
+    "currency": "EUR",
+    "period": "yearly"
   },
   "is_remote" : true,
   "office_id" : 196,
@@ -509,10 +509,10 @@ EOF
   "description" : "Fake Job Description.",
   "contract_type" : "FULL_TIME",
   "salary": {
-    "salary_min": "30000",
-    "salary_max": "40000",
-    "salary_currency": "EUR",
-    "salary_period": "yearly"
+    "min": "30000",
+    "max": "40000",
+    "currency": "EUR",
+    "period": "yearly"
   },
   "is_remote" : true,
   "office_id" : 196,
@@ -596,10 +596,10 @@ EOF
   "description" : "Fake Job Description.",
   "contract_type" : "FULL_TIME",
   "salary": {
-    "salary_min": "30000",
-    "salary_max": "40000",
-    "salary_currency": "EUR",
-    "salary_period": "yearly"
+    "min": "30000",
+    "max": "40000",
+    "currency": "EUR",
+    "period": "yearly"
   },
   "is_remote" : true,
   "office_id" : 196,
