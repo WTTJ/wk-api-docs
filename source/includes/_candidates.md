@@ -88,6 +88,7 @@ Parameter | Type | Required | Default | Description | Example
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
     -d "stage=true" \
+    -d "tags=true" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
@@ -128,6 +129,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
     "subtitle": null,
     "zip_code": null
   },
+  "tags": ["ruby","react","go","elixir","react native"],
   "origin": "external",
   "archived": false
 }
