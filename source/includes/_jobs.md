@@ -302,7 +302,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
   "created_at" : "2017-11-13T17:15:26.146+01:00",
   "updated_at" : "2017-11-13T17:15:26.146+01:00",
   "published_at" : null,
-  "archived_at" : null
+  "archived_at" : null,
   "websites_urls" : [
     {
       "website_reference":"wttj_fr",
