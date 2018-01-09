@@ -173,7 +173,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
     "education_level" : "BAC_5",
     "created_at" : "2017-11-13T17:15:26.146+01:00",
     "updated_at" : "2017-11-13T17:15:26.146+01:00",
-    "published_at" : null,
+    "published_at" : "2017-11-13T18:00:01.146+01:00",
     "archived_at" : null
   },
   {
@@ -203,7 +203,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
     "education_level" : "BAC_5",
     "created_at" : "2017-11-13T17:15:26.146+01:00",
     "updated_at" : "2017-11-13T17:15:26.146+01:00",
-    "published_at" : null,
+    "published_at" : "2017-11-13T18:00:01.146+01:00",
     "archived_at" : null
   }
 ]
@@ -375,7 +375,7 @@ EOF
   "education_level" : "BAC_5",
   "created_at" : "2017-11-13T17:15:26.146+01:00",
   "updated_at" : "2017-11-13T17:15:26.146+01:00",
-  "published_at" : null,
+  "published_at" : "2017-11-13T18:00:01.146+01:00",
   "archived_at" : null
 }
 ```
