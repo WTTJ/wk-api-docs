@@ -346,12 +346,10 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/jobs" \
   "description": "Fake Job Description.",
   "profile": "Fake Job Profile",
   "contract_type": "FULL_TIME",
-  "salary": {
-    "salary_min": "30000",
-    "salary_max": "40000",
-    "salary_currency":,
-    "salary_period":
-  },
+  "salary_min": "30000",
+  "salary_max": "40000",
+  "salary_currency": "EUR",
+  "salary_period": "yearly",
   "is_remote": "true",
   "office_zip_code": "75002",
   "education_level": "BAC_5",
@@ -474,12 +472,10 @@ curl -X PUT "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
   "description": "Fake Job Description.",
   "profile": "Fake Job Profile",
   "contract_type": "FULL_TIME",
-  "salary": {
-    "salary_min": "30000",
-    "salary_max": "40000",
-    "salary_currency": "EUR",
-    "salary_period": "yearly"
-  },
+  "salary_min": "30000",
+  "salary_max": "40000",
+  "salary_currency": "EUR",
+  "salary_period": "yearly",
   "is_remote": "true",
   "office_zip_code": "75002",
   "education_level": "BAC_5",
