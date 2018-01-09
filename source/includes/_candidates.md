@@ -5,6 +5,7 @@
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
     -d "job_reference=WTTJ_KmqkD1Y" \
+    -d "stage=true" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
 
@@ -25,6 +26,12 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
     "resume_size": 4242,
     "resume_url": "http://cdn.com/resume.pdf",
     "stage_id": 14600,
+    "stage":{
+      "id": 14600,
+      "name":"Refusé",
+      "reference":"refused",
+      "visible":true
+    },
     "updated_at": "2016-08-23T12:55:27.206+02:00",
     "profile": {
       "address": null,
@@ -80,6 +87,7 @@ Parameter | Type | Required | Default | Description | Example
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
+    -d "stage=true" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
@@ -100,6 +108,12 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
   "resume_size": 4242,
   "resume_url": "http://cdn.com/resume.pdf",
   "stage_id": 14600,
+  "stage":{
+    "id": 14600,
+    "name":"Refusé",
+    "reference":"refused",
+    "visible":true
+  },
   "updated_at": "2016-08-23T12:55:27.206+02:00",
   "profile": {
     "address": null,
