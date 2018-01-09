@@ -82,4 +82,8 @@ Scope | Description
 `departments_r` |  Read access on your departments
 `candidates_rw` |  Read and Write access on your candidates
 `candidates_r` |  Read access on your candidates
-`comments_w` | Write access on comments for a candidate
+`documents_rw` |  Read and Write access on your candidates files
+`documents_r` |  Read access on your candidates files
+`emails_rw` |  Read and Write access on your candidates emails
+`emails_r` |  Read access on your candidates emails
+`comments_w` | Write access on your candidates comments
