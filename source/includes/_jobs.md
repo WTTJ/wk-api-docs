@@ -137,7 +137,9 @@ NB: you will also need [authorized professions](#professions) to create any job 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
     -H "Authorization: Bearer WK_API_KEY" \
-    -d "organization_reference=Pg4eV6k"
+    -d "organization_reference=Pg4eV6k" \
+    -d "status=published" \
+    -d "created_after=2017-10-30"
 ```
 
 > The above command returns JSON structured like this:
@@ -149,7 +151,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
     "external_reference" : "PROVIDER_REFERENCE1",
     "salary_min" : 45000,
     "organization_reference" : "Pg4eV6k",
-    "status" : "draft",
+    "status" : "published",
     "salary_period" : "yearly",
     "profile" : "Fake Job Profile",
     "apply_url" : "http://company.com/jobs/superjob/apply/",
@@ -179,7 +181,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
     "external_reference" : "PROVIDER_REFERENCE2",
     "salary_min" : 45000,
     "organization_reference" : "Pg4eV6k",
-    "status" : "draft",
+    "status" : "published",
     "salary_period" : "yearly",
     "profile" : "Fake Job Profile",
     "apply_url" : "http://company.com/jobs/superjob/apply/",
@@ -223,12 +225,12 @@ Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `organization_reference` | String | ✔ | | Reference of the associated organization/company | aEioU123
 `stages` | Boolean | | false | Return job stages | true / false
-`status` | String | | | Filter by status | draft / published / archived
 `per_page` | Integer | | 100 | Number of jobs per page |
 `page` | Integer | | 1 | Page offset |
-`created_after` | String | | | Jobs created from this date (YYYY-MM-DD) | 2015-11-26
-`updated_after` | String | | | Jobs updated from this date (YYYY-MM-DD) | 2015-11-26
-`published_after` | String | | | Jobs published from this date (YYYY-MM-DD) | 2015-11-26
+`status` | String | | | Returns jobs with this specific status | draft / published / archived
+`created_after` | String | | | Returns jobs created after this date (YYYY-MM-DD) | 2015-11-26
+`updated_after` | String | | | Returns jobs updated after this date (YYYY-MM-DD) | 2015-11-26
+`published_after` | String | | | Returns jobs published after this date (YYYY-MM-DD) | 2015-11-26
 
 
 ## Retrieve a job
