@@ -137,7 +137,9 @@ NB: you will also need [authorized professions](#professions) to create any job 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
     -H "Authorization: Bearer WK_API_KEY" \
-    -d "organization_reference=Pg4eV6k"
+    -d "organization_reference=Pg4eV6k" \
+    -d "status=published" \
+    -d "created_after=2017-10-30"
 ```
 
 > The above command returns JSON structured like this:
@@ -145,56 +147,64 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
 ```json
 [
   {
-		"name" : "Fake Job 1",
-		"external_reference" : "PROVIDER_REFERENCE1",
-		"salary_min" : 45000,
-		"organization_reference" : "Pg4eV6k",
-		"status" : "draft",
-		"salary_period" : "yearly",
-		"profile" : "Fake Job Profile",
-		"apply_url" : "http://company.com/jobs/superjob/apply/",
-		"company_description" : "Fake Company Description.",
-		"contract_duration_min" : null,
-		"salary_max" : 50000,
-		"experience_level" : "1_TO_2_YEARS",
-		"salary_currency" : "EUR",
-		"department_id" : null,
-		"profession_reference" : "sales",
-		"cms_sites_references" : "wttj_fr",
-		"contract_duration_max" : null,
-		"start_date" : "2016-09-01T00:00:00.000+02:00",
-		"description" : "Fake Job Description.",
-		"contract_type" : "FULL_TIME",
-		"is_remote" : true,
-		"office_id" : 196,
-		"reference" : "WTTJ_gld0A7L",
-		"education_level" : "BAC_5"
+    "name" : "Fake Job 1",
+    "external_reference" : "PROVIDER_REFERENCE1",
+    "salary_min" : 45000,
+    "organization_reference" : "Pg4eV6k",
+    "status" : "published",
+    "salary_period" : "yearly",
+    "profile" : "Fake Job Profile",
+    "apply_url" : "http://company.com/jobs/superjob/apply/",
+    "company_description" : "Fake Company Description.",
+    "contract_duration_min" : null,
+    "salary_max" : 50000,
+    "experience_level" : "1_TO_2_YEARS",
+    "salary_currency" : "EUR",
+    "department_id" : null,
+    "profession_reference" : "sales",
+    "cms_sites_references" : "wttj_fr",
+    "contract_duration_max" : null,
+    "start_date" : "2016-09-01T00:00:00.000+02:00",
+    "description" : "Fake Job Description.",
+    "contract_type" : "FULL_TIME",
+    "is_remote" : true,
+    "office_id" : 196,
+    "reference" : "WTTJ_gld0A7L",
+    "education_level" : "BAC_5",
+    "created_at" : "2017-11-13T17:15:26.146+01:00",
+    "updated_at" : "2017-11-13T17:15:26.146+01:00",
+    "published_at" : "2017-11-13T18:00:01.146+01:00",
+    "archived_at" : null
   },
   {
-		"name" : "Fake Job 2",
-		"external_reference" : "PROVIDER_REFERENCE2",
-		"salary_min" : 45000,
-		"organization_reference" : "Pg4eV6k",
-		"status" : "draft",
-		"salary_period" : "yearly",
-		"profile" : "Fake Job Profile",
-		"apply_url" : "http://company.com/jobs/superjob/apply/",
-		"company_description" : "Fake Company Description.",
-		"contract_duration_min" : null,
-		"salary_max" : 50000,
-		"experience_level" : "1_TO_2_YEARS",
-		"salary_currency" : "EUR",
-		"department_id" : null,
-		"profession_reference" : "sales",
-		"cms_sites_references" : "wttj_fr,smgo_fr,btbw_fr",
-		"contract_duration_max" : null,
-		"start_date" : "2016-09-01T00:00:00.000+02:00",
-		"description" : "Fake Job Description.",
-		"contract_type" : "FULL_TIME",
-		"is_remote" : true,
-		"office_id" : 196,
-		"reference" : "WTTJ_gld0A7L",
-		"education_level" : "BAC_5"
+    "name" : "Fake Job 2",
+    "external_reference" : "PROVIDER_REFERENCE2",
+    "salary_min" : 45000,
+    "organization_reference" : "Pg4eV6k",
+    "status" : "published",
+    "salary_period" : "yearly",
+    "profile" : "Fake Job Profile",
+    "apply_url" : "http://company.com/jobs/superjob/apply/",
+    "company_description" : "Fake Company Description.",
+    "contract_duration_min" : null,
+    "salary_max" : 50000,
+    "experience_level" : "1_TO_2_YEARS",
+    "salary_currency" : "EUR",
+    "department_id" : null,
+    "profession_reference" : "sales",
+    "cms_sites_references" : "wttj_fr,smgo_fr,btbw_fr",
+    "contract_duration_max" : null,
+    "start_date" : "2016-09-01T00:00:00.000+02:00",
+    "description" : "Fake Job Description.",
+    "contract_type" : "FULL_TIME",
+    "is_remote" : true,
+    "office_id" : 196,
+    "reference" : "WTTJ_gld0A7L",
+    "education_level" : "BAC_5",
+    "created_at" : "2017-11-13T17:15:26.146+01:00",
+    "updated_at" : "2017-11-13T17:15:26.146+01:00",
+    "published_at" : "2017-11-13T18:00:01.146+01:00",
+    "archived_at" : null
   }
 ]
 ```
@@ -217,6 +227,10 @@ Parameter | Type | Required | Default | Description | Example
 `stages` | Boolean | | false | Return job stages | true / false
 `per_page` | Integer | | 100 | Number of jobs per page |
 `page` | Integer | | 1 | Page offset |
+`status` | String | | | Returns jobs with this specific status | draft / published / archived
+`created_after` | String | | | Returns jobs created after this date (YYYY-MM-DD) | 2015-11-26
+`updated_after` | String | | | Returns jobs updated after this date (YYYY-MM-DD) | 2015-11-26
+`published_after` | String | | | Returns jobs published after this date (YYYY-MM-DD) | 2015-11-26
 
 
 ## Retrieve a job
@@ -275,7 +289,11 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
       "visible" : true
     },
     ...
-  ]
+  ],
+  "created_at" : "2017-11-13T17:15:26.146+01:00",
+  "updated_at" : "2017-11-13T17:15:26.146+01:00",
+  "published_at" : null,
+  "archived_at" : null
 }
 ```
 
@@ -331,30 +349,34 @@ EOF
 
 ```json
 {
-	"name" : "Fake Job",
-	"external_reference" : "PROVIDER_REFERENCE1",
-	"salary_min" : 45000,
-	"organization_reference" : "Pg4eV6k",
-	"status" : "published",
-	"salary_period" : "yearly",
-	"profile" : "Fake Job Profile",
-	"apply_url" : "http://company.com/jobs/superjob/apply/",
-	"company_description" : "Fake Company Description.",
-	"contract_duration_min" : null,
-	"salary_max" : 50000,
-	"experience_level" : "1_TO_2_YEARS",
-	"salary_currency" : "EUR",
-	"department_id" : null,
-	"profession_reference" : "sales",
-	"cms_sites_references" : "wttj_fr,smgo_fr",
-	"contract_duration_max" : null,
-	"start_date" : "2016-09-01T00:00:00.000+02:00",
-	"description" : "Fake Job Description.",
-	"contract_type" : "FULL_TIME",
-	"is_remote" : true,
-	"office_id" : 196,
-	"reference" : "WTTJ_gld0A7L",
-	"education_level" : "BAC_5"
+  "name" : "Fake Job",
+  "external_reference" : "PROVIDER_REFERENCE1",
+  "salary_min" : 45000,
+  "organization_reference" : "Pg4eV6k",
+  "status" : "published",
+  "salary_period" : "yearly",
+  "profile" : "Fake Job Profile",
+  "apply_url" : "http://company.com/jobs/superjob/apply/",
+  "company_description" : "Fake Company Description.",
+  "contract_duration_min" : null,
+  "salary_max" : 50000,
+  "experience_level" : "1_TO_2_YEARS",
+  "salary_currency" : "EUR",
+  "department_id" : null,
+  "profession_reference" : "sales",
+  "cms_sites_references" : "wttj_fr,smgo_fr",
+  "contract_duration_max" : null,
+  "start_date" : "2016-09-01T00:00:00.000+02:00",
+  "description" : "Fake Job Description.",
+  "contract_type" : "FULL_TIME",
+  "is_remote" : true,
+  "office_id" : 196,
+  "reference" : "WTTJ_gld0A7L",
+  "education_level" : "BAC_5",
+  "created_at" : "2017-11-13T17:15:26.146+01:00",
+  "updated_at" : "2017-11-13T17:15:26.146+01:00",
+  "published_at" : "2017-11-13T18:00:01.146+01:00",
+  "archived_at" : null
 }
 ```
 
@@ -451,30 +473,34 @@ EOF
 
 ```json
 {
-	"name" : "Fake Job",
-	"external_reference" : "PROVIDER_REFERENCE1",
-	"salary_min" : 45000,
-	"organization_reference" : "Pg4eV6k",
-	"status" : "draft",
-	"salary_period" : "yearly",
-	"profile" : "Fake Job Profile",
-	"apply_url" : "http://company.com/jobs/superjob/apply/",
-	"company_description" : "Fake Company Description.",
-	"contract_duration_min" : null,
-	"salary_max" : 50000,
-	"experience_level" : "1_TO_2_YEARS",
-	"salary_currency" : "EUR",
-	"department_id" : null,
-	"profession_reference" : "sales",
-	"cms_sites_references" : "wttj_fr,smgo_fr",
-	"contract_duration_max" : null,
-	"start_date" : "2016-09-01T00:00:00.000+02:00",
-	"description" : "Fake Job Description.",
-	"contract_type" : "FULL_TIME",
-	"is_remote" : true,
-	"office_id" : 196,
-	"reference" : "WTTJ_gld0A7L",
-	"education_level" : "BAC_5"
+  "name" : "Fake Job",
+  "external_reference" : "PROVIDER_REFERENCE1",
+  "salary_min" : 45000,
+  "organization_reference" : "Pg4eV6k",
+  "status" : "draft",
+  "salary_period" : "yearly",
+  "profile" : "Fake Job Profile",
+  "apply_url" : "http://company.com/jobs/superjob/apply/",
+  "company_description" : "Fake Company Description.",
+  "contract_duration_min" : null,
+  "salary_max" : 50000,
+  "experience_level" : "1_TO_2_YEARS",
+  "salary_currency" : "EUR",
+  "department_id" : null,
+  "profession_reference" : "sales",
+  "cms_sites_references" : "wttj_fr,smgo_fr",
+  "contract_duration_max" : null,
+  "start_date" : "2016-09-01T00:00:00.000+02:00",
+  "description" : "Fake Job Description.",
+  "contract_type" : "FULL_TIME",
+  "is_remote" : true,
+  "office_id" : 196,
+  "reference" : "WTTJ_gld0A7L",
+  "education_level" : "BAC_5",
+  "created_at" : "2017-11-13T17:15:26.146+01:00",
+  "updated_at" : "2017-11-13T17:15:26.146+01:00",
+  "published_at" : null,
+  "archived_at" : null
 }
 ```
 
@@ -532,30 +558,34 @@ EOF
 
 ```json
 {
-	"name" : "Fake Job",
-	"external_reference" : "PROVIDER_REFERENCE1",
-	"salary_min" : 45000,
-	"organization_reference" : "Pg4eV6k",
-	"status" : "published",
-	"salary_period" : "yearly",
-	"profile" : "Fake Job Profile",
-	"apply_url" : "http://company.com/jobs/superjob/apply/",
-	"company_description" : "Fake Company Description.",
-	"contract_duration_min" : null,
-	"salary_max" : 50000,
-	"experience_level" : "1_TO_2_YEARS",
-	"salary_currency" : "EUR",
-	"department_id" : null,
-	"profession_reference" : "sales",
-	"cms_sites_references" : "wttj_fr,smgo_fr",
-	"contract_duration_max" : null,
-	"start_date" : "2016-09-01T00:00:00.000+02:00",
-	"description" : "Fake Job Description.",
-	"contract_type" : "FULL_TIME",
-	"is_remote" : true,
-	"office_id" : 196,
-	"reference" : "WTTJ_gld0A7L",
-	"education_level" : "BAC_5"
+  "name" : "Fake Job",
+  "external_reference" : "PROVIDER_REFERENCE1",
+  "salary_min" : 45000,
+  "organization_reference" : "Pg4eV6k",
+  "status" : "published",
+  "salary_period" : "yearly",
+  "profile" : "Fake Job Profile",
+  "apply_url" : "http://company.com/jobs/superjob/apply/",
+  "company_description" : "Fake Company Description.",
+  "contract_duration_min" : null,
+  "salary_max" : 50000,
+  "experience_level" : "1_TO_2_YEARS",
+  "salary_currency" : "EUR",
+  "department_id" : null,
+  "profession_reference" : "sales",
+  "cms_sites_references" : "wttj_fr,smgo_fr",
+  "contract_duration_max" : null,
+  "start_date" : "2016-09-01T00:00:00.000+02:00",
+  "description" : "Fake Job Description.",
+  "contract_type" : "FULL_TIME",
+  "is_remote" : true,
+  "office_id" : 196,
+  "reference" : "WTTJ_gld0A7L",
+  "education_level" : "BAC_5",
+  "created_at" : "2017-11-13T17:15:26.146+01:00",
+  "updated_at" : "2017-11-13T17:15:26.146+01:00",
+  "published_at" : "2017-11-13T17:15:26.146+01:00",
+  "archived_at" : null
 }
 ```
 

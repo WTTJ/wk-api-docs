@@ -5,6 +5,7 @@
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
     -d "job_reference=WTTJ_KmqkD1Y" \
+    -d "stage=true" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
 
@@ -25,6 +26,12 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
     "resume_size": 4242,
     "resume_url": "http://cdn.com/resume.pdf",
     "stage_id": 14600,
+    "stage":{
+      "id": 14600,
+      "name":"Refusé",
+      "reference":"refused",
+      "visible":true
+    },
     "updated_at": "2016-08-23T12:55:27.206+02:00",
     "profile": {
       "address": null,
@@ -61,14 +68,27 @@ This endpoint lets you retrieve all candidates for a given job reference.
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `job_reference` | String | ✔ | | Job reference | WTTJ_dggjZDa
+`email` | String |  | | Candidate email | example@example.co
+`origin` | String |  | | Candidate origin | website:cms:wttj_fr
+`referrer` | String |  | | Candidate referrer | wttj-d655345409a6097309156b05
+`archived` | String |  | | Return candidate archived or not | true/false
+`job_stage_name` | String |  | | Candidate job stage name | refused
+`job_stage_id` | String |  | | Candidate job stage id | 123
+`job_stage_reference` | String |  | | Candidate job stage reference | refused
+`created_at` | String | | | Candidates added from this date (YYYY-MM-DD) | 2015-11-26
+`updated_at` | String | | | Candidates added from this date (YYYY-MM-DD) | 2015-11-26
 `per_page` | Integer | | 100 | Number of jobs per page |
 `page` | Integer | | 1 | Page offset |
+`stage` | Boolean |  | false | Returns related job stage (ie. refused, hired, etc.) | true/false
+`tags` | Boolean |  | false | Returns related tags | true/false
 
 
 ## Retrieve a candidate
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
+    -d "stage=true" \
+    -d "tags=true" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
@@ -89,6 +109,12 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
   "resume_size": 4242,
   "resume_url": "http://cdn.com/resume.pdf",
   "stage_id": 14600,
+  "stage":{
+    "id": 14600,
+    "name":"Refusé",
+    "reference":"refused",
+    "visible":true
+  },
   "updated_at": "2016-08-23T12:55:27.206+02:00",
   "profile": {
     "address": null,
@@ -103,6 +129,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
     "subtitle": null,
     "zip_code": null
   },
+  "tags": ["ruby","react","go","elixir","react native"],
   "origin": "external",
   "archived": false
 }
@@ -121,6 +148,8 @@ This endpoint requires <code>candidates_r</code> or <code>candidates_rw</code> s
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `reference` | String | ✔ | | Candidate reference | wttj-d655345409a6097309156b05
+`stage` | Boolean |  | false | Returns related job stage (ie. refused, hired, etc.) | true/false
+`tags` | Boolean |  | false | Returns related tags | true/false
 
 
 ## Create a candidate
