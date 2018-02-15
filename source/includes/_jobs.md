@@ -228,8 +228,8 @@ This endpoint lets you retrieve all jobs for a given organization.
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `organization_reference` | String | ✔ | | Reference of the associated organization/company | aEioU123
-`stages` | Boolean | | false | Return job stages | true / false
-`websites` | Boolean | | false | Return job associated websites | true / false
+`stages` | Boolean | | false | Returns job stages | true / false
+`websites` | Boolean | | false | Returns associated websites URLs | true / false
 `status` | String | | | Filter by status | draft / published / archived
 `per_page` | Integer | | 100 | Number of jobs per page |
 `page` | Integer | | 1 | Page offset |
@@ -244,7 +244,7 @@ Parameter | Type | Required | Default | Description | Example
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
     -H "Authorization: Bearer WK_API_KEY" \
-    -d "stages=true"
+    -d "stages=true" \
     -d "websites=true"
 ```
 
@@ -303,11 +303,12 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
   "updated_at" : "2017-11-13T17:15:26.146+01:00",
   "published_at" : null,
   "archived_at" : null,
-  "websites_urls" : [
-    {
-      "website_reference":"wttj_fr",
-      "url":"https://www.welcometothejungle.co/companies/wttj/jobs/fake-job-2"
-    },
+  "websites" : [
+     {
+        "reference" : "wttj_fr",
+        "name" : "Welcome to the Jungle",
+        "url" : "http://preprod.welcometothejungle.co/companies/wttj/jobs/fake-job-2"
+     },
     ...
   ]
 }
@@ -326,8 +327,8 @@ This endpoint requires <code>jobs_r</code> or <code>jobs_rw</code> scope.
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `reference` | String | ✔ | | Job reference | aEioU123
-`stages` | Boolean | | false | Return job stages | true / false
-`websites` | Boolean | | false | Return job associated websited | true / false
+`stages` | Boolean | | false | Returns job stages | true / false
+`websites` | Boolean | | false | Returns associated websites URLs | true / false
 
 
 ## Create a job

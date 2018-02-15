@@ -9,7 +9,7 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/comments" \
     -d @- <<EOF
 {
   "candidate_reference": "wttj-d655345409a6097309156b05",
-  "content": "Foo",
+  "content": "Foo"
 }
 EOF
 ```
