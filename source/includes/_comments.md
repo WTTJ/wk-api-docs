@@ -1,6 +1,6 @@
 # Comments
 
-## Post comment
+## Create a comment
 
 ```shell
 curl -X POST "https://www.welcomekit.co/api/v1/external/comments" \
@@ -26,10 +26,10 @@ EOF
 ```
 
 <aside class="notice">
-This endpoint requires <code>comments_w</code>, and <code>my_candidtates_rw</code> or <code>candidates_rw</code> scope.
+This endpoint requires <code>comments_w</code>, and <code>candidates_*</code> or <code>my_candidates_*</code> scopes.
 </aside>
 
-This endpoint lets you create new comment for a given `candidate_reference`.
+This endpoint lets you create new comments for a given `candidate_reference`.
 
 ### HTTP Request
 
@@ -40,4 +40,4 @@ This endpoint lets you create new comment for a given `candidate_reference`.
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `candidate_reference` | String | ✔ | | Candidate reference | wttj-d655345409a6097309156b05
-`content` | String | ✔ | | Comment content |
+`content` | String | ✔ | | Comment content (plain text, html or markdown) | Lipsum.
