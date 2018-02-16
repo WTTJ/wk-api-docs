@@ -11,7 +11,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/embed" \
 
 ```json
 {
-  "name": "Jukebox",
+  "name": "Welcome to the Jungle",
   "jobs": [
     {
       "id": 42,
@@ -22,10 +22,10 @@ curl -X GET "https://www.welcomekit.co/api/v1/embed" \
       "profile": "<p>Hello World…</p>",
       "recruitment_process": "<p>Hello World…</p>",
       "salary": {
-        "salary_min": "30000",
-        "salary_max": "40000",
-        "salary_currency": "EUR",
-        "salary_period": "yearly"
+        "min": "30000",
+        "max": "40000",
+        "currency": "EUR",
+        "period": "yearly"
       },
       "created_at": {
         "fr": "Le 09 Novembre 2015 à 13h26",
@@ -53,14 +53,21 @@ curl -X GET "https://www.welcomekit.co/api/v1/embed" \
       },
       "cms_sites_references": [
         "wttj_fr"
+      ],
+      "websites_urls" : [
+         {
+            "reference" : "wttj_fr",
+            "url" : "https://www.welcometothejungle.co/companies/wttj/jobs/fake-job-2"
+         },
+        ...
       ]
     }
   ],
-  "sites": [
+  "websites": [
     {
-      "reference": "wk-careers_wttj",
+      "reference": "wttj_careers",
       "kind": "single",
-      "url": "http://welcometothejungle.co"
+      "url": "https://wttj.welcomekit.co"
     }
   ]
 }
