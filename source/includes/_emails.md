@@ -28,7 +28,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/emails" \
 ```
 
 <aside class="notice">
-This endpoint requires <code>emails_r</code> or <code>emails_rw</code>, and <code>my_candidtates_rw</code>, <code>candidates_r</code> or <code>candidates_rw</code> scope.
+This endpoint requires <code>emails_*</code>, and <code>candidates_*</code> or <code>my_candidates_*</code> scopes.
 </aside>
 
 This endpoint lets you retrieve all mails for a given candidate reference.

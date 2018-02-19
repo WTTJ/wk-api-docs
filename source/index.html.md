@@ -11,8 +11,8 @@ toc_footers:
 includes:
   - jobs
   - professions
-  - candidates
   - departments
+  - candidates
   - comments
   - emails
   - documents
@@ -80,8 +80,9 @@ Scope | Description
 `offices_r` |  Read access on your offices
 `departments_rw` |  Read and Write access on your departments
 `departments_r` |  Read access on your departments
-`candidates_rw` |  Read and Write access on your candidates
-`candidates_r` |  Read access on your candidates
+`candidates_rw` |  Read and Write access on all candidates (limited to user's role)
+`candidates_r` |  Read access on all candidates (limited to user's role)
+`my_candidates_rw` |  Read and Write access on all candidates this user created through the API <br/>(mainly useful for synchronization with external services without giving access to all your candidates)
 `documents_rw` |  Read and Write access on your candidates files
 `documents_r` |  Read access on your candidates files
 `emails_rw` |  Read and Write access on your candidates emails

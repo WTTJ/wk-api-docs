@@ -53,7 +53,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
 ```
 
 <aside class="notice">
-This endpoint requires <code>candidates_r</code> or <code>candidates_rw</code> scope.
+This endpoint requires <code>candidates_*</code> or <code>my_candidates_*</code> scope.
 </aside>
 
 This endpoint lets you retrieve all candidates for a given job reference.
@@ -133,7 +133,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
 ```
 
 <aside class="notice">
-This endpoint requires <code>candidates_r</code> or <code>candidates_rw</code> scope.
+This endpoint requires <code>candidates_*</code> or <code>my_candidates_*</code> scope.
 </aside>
 
 ### HTTP Request
@@ -203,12 +203,14 @@ EOF
 ```
 
 <aside class="notice">
-This endpoint requires <code>candidates_rw</code> scope.
+This endpoint requires <code>candidates_rw</code> or <code>my_candidates_rw</code> scope.
 </aside>
 
 This endpoint lets you create new candidates for a given `job_reference`.
 
-For example, you could create a Chrome Extension which makes it easy for recruiters to create new candidates... :)
+For example, you could create a [Chrome Extension](https://chrome.google.com/webstore/detail/welcomekitco-chrome-exten/lejhdnpgccgidknkedecghdkamgmempj) which makes it easy for recruiters to create new candidates... :)
+
+Also, if you don't want to give full access to all your candidates to external services, you may use the `my_candidates_rw` scope which will let them create candidates and only access to the candidates they created.
 
 ### HTTP Request
 
@@ -300,7 +302,7 @@ EOF
 ```
 
 <aside class="notice">
-This endpoint requires <code>candidates_rw</code> scope.
+This endpoint requires <code>candidates_rw</code> or <code>my_candidates_rw</code> scope.
 </aside>
 
 This endpoint lets you update candidates for a given `reference`.
