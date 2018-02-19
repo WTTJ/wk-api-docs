@@ -42,7 +42,7 @@ This endpoint lets you retrieve all emails for a given candidate reference.
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `candidate_reference` | String | ✔ | | Candidate reference | wttj-d655345409a6097309156b05
-`per_page` | Integer | | 100 | Number of jobs per page |
+`per_page` | Integer | | 100 | Number of emails per page |
 `page` | Integer | | 1 | Page offset |
 
 ## Create an email

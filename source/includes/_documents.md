@@ -1,6 +1,6 @@
 # Documents
 
-## List candidate attached files
+## List candidate documents
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/documents" \
@@ -30,7 +30,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/documents" \
 This endpoint requires <code>documents_*</code>, and <code>candidates_*</code> or <code>my_candidates_*</code> scopes.
 </aside>
 
-This endpoint lets you retrieve all attached files for a given candidate reference.
+This endpoint lets you retrieve all attached documents for a given `candidate_reference`.
 
 ### HTTP Request
 
@@ -41,10 +41,10 @@ This endpoint lets you retrieve all attached files for a given candidate referen
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `candidate_reference` | String | ✔ | | Candidate reference | wttj-d655345409a6097309156b05
-`per_page` | Integer | | 100 | Number of jobs per page |
+`per_page` | Integer | | 100 | Number of documents per page |
 `page` | Integer | | 1 | Page offset |
 
-## Attach files to a candidate
+## Attach documents to a candidate
 
 ```shell
 curl -X POST "https://www.welcomekit.co/api/v1/external/documents" \
@@ -83,7 +83,7 @@ EOF
 This endpoint requires <code>documents_rw</code>, and <code>my_candidtates_rw</code> or <code>candidates_rw</code> scope.
 </aside>
 
-This endpoint lets you attach new files for a given `candidate_reference`.
+This endpoint lets you attach new documents for a given `candidate_reference`.
 
 ### HTTP Request
 
@@ -94,4 +94,4 @@ This endpoint lets you attach new files for a given `candidate_reference`.
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `candidate_reference` | String | ✔ | | Candidate reference | wttj-d655345409a6097309156b05
-`remote_file_urls` | Array |  | | candidate files | ["http://example.com/pdf"]
+`remote_file_urls` | Array |  | | Array of files | `[ {"filename": "resume", "file": "http://example.com/resume.pdf"} ]`
