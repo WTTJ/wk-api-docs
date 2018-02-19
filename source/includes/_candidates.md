@@ -72,7 +72,6 @@ Parameter | Type | Required | Default | Description | Example
 `referrer` | String |  | | Filter by referrer | www.linkedin.com
 `job_stage_id` | String |  | | Filter by job stage id | 123
 `job_stage_reference` | String |  | | Filter by job stage reference | refused
-`job_stage_name` | String |  | | Filter by job stage name | Refusé
 `archived` | String |  | both | Only returns archived candidates or not | true/false
 `created_after` | String | | | Only returns candidates created after this date (YYYY-MM-DD) | 2015-11-26
 `updated_after` | String | | | Only returns candidates updated after this date (YYYY-MM-DD) | 2015-11-26
