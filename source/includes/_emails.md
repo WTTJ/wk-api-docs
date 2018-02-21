@@ -113,4 +113,4 @@ Parameter | Type | Required | Default | Description | Example
 `from_email` | String | ✔ | | Email sender | whatever@wherever.com
 `to` | String | ✔ | | Email receiver | whatever@wherever.com
 `send_email` | String |  | false | Let Welcome Kit send the related email to the candidate? | true/false
-`remote_file_urls` | Array |  | | Email attachments (PDF, JPG, etc.) | ["http://example.com/documents/whatever.pdf"]
+`remote_file_urls` | Array |  | | Email attachments (PDF, JPG, etc.) | `[ {"filename": "resume", "url": "http://example.com/resume.pdf"} ]`

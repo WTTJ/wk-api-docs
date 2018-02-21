@@ -94,4 +94,4 @@ This endpoint lets you attach new documents for a given `candidate_reference`.
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `candidate_reference` | String | ✔ | | Candidate reference | wttj-d655345409a6097309156b05
-`remote_file_urls` | Array |  | | Array of files | `[ {"filename": "resume", "file": "http://example.com/resume.pdf"} ]`
+`remote_file_urls` | Array |  | | Array of files | `[ {"filename": "resume", "url": "http://example.com/resume.pdf"} ]`
