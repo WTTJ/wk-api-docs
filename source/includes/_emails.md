@@ -57,7 +57,13 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/emails" \
   "subject": "Greetings",
   "body": "Email body",
   "from_email": "test@example.com",
-  "to": "example@test.com"
+  "to": "example@test.com",
+  "remote_file_urls": [
+    {
+      "filename": "resume",
+      "url": "http://example.com/resume.pdf"
+    }
+  ]
 }
 EOF
 ```
@@ -74,7 +80,14 @@ EOF
   "created_at": "2018-01-03T16:17:07.501+01:00",
   "origin": "api",
   "candidate_reference": "wttj-d655345409a6097309156b05",
-  "attachments": []
+  "attachments": [
+    {
+      "filename": "resume",
+      "file_url": "http://example.com/resume.pdf",
+      "size": 433348,
+      "content_type": "application/pdf"
+    }
+  ]
 }
 ```
 
