@@ -54,8 +54,8 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/documents" \
 {
   "candidate_reference": "wttj-d655345409a6097309156b05",
   "remote_file_urls": [
-    {"filename": "resume", "file": "http://example.com/resume.pdf"},
-    {"filename": "portfolio", "file": "http://example.com/portfolio.pdf"}
+    {"filename": "resume", "url": "http://example.com/resume.pdf"},
+    {"filename": "portfolio", "url": "http://example.com/portfolio.pdf"}
   ]
 }
 EOF
