@@ -149,17 +149,13 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
   {
     "name" : "Fake Job 1",
     "external_reference" : "PROVIDER_REFERENCE1",
-    "salary_min" : 45000,
     "organization_reference" : "Pg4eV6k",
-    "status" : "published",
-    "salary_period" : "yearly",
+    "status" : "draft",
     "profile" : "Fake Job Profile",
     "apply_url" : "http://company.com/jobs/superjob/apply/",
     "company_description" : "Fake Company Description.",
     "contract_duration_min" : null,
-    "salary_max" : 50000,
     "experience_level" : "1_TO_2_YEARS",
-    "salary_currency" : "EUR",
     "department_id" : null,
     "profession_reference" : "sales",
     "cms_sites_references" : "wttj_fr",
@@ -167,6 +163,12 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
     "start_date" : "2016-09-01T00:00:00.000+02:00",
     "description" : "Fake Job Description.",
     "contract_type" : "FULL_TIME",
+    "salary": {
+      "min": "30000",
+      "max": "40000",
+      "currency": "EUR",
+      "period": "yearly"
+    },
     "is_remote" : true,
     "office_id" : 196,
     "reference" : "WTTJ_gld0A7L",
@@ -179,17 +181,13 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
   {
     "name" : "Fake Job 2",
     "external_reference" : "PROVIDER_REFERENCE2",
-    "salary_min" : 45000,
     "organization_reference" : "Pg4eV6k",
-    "status" : "published",
-    "salary_period" : "yearly",
+    "status" : "draft",
     "profile" : "Fake Job Profile",
     "apply_url" : "http://company.com/jobs/superjob/apply/",
     "company_description" : "Fake Company Description.",
     "contract_duration_min" : null,
-    "salary_max" : 50000,
     "experience_level" : "1_TO_2_YEARS",
-    "salary_currency" : "EUR",
     "department_id" : null,
     "profession_reference" : "sales",
     "cms_sites_references" : "wttj_fr,smgo_fr,btbw_fr",
@@ -197,6 +195,12 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
     "start_date" : "2016-09-01T00:00:00.000+02:00",
     "description" : "Fake Job Description.",
     "contract_type" : "FULL_TIME",
+    "salary": {
+      "min": "30000",
+      "max": "40000",
+      "currency": "EUR",
+      "period": "yearly"
+    },
     "is_remote" : true,
     "office_id" : 196,
     "reference" : "WTTJ_gld0A7L",
@@ -224,7 +228,9 @@ This endpoint lets you retrieve all jobs for a given organization.
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `organization_reference` | String | ✔ | | Reference of the associated organization/company | aEioU123
-`stages` | Boolean | | false | Return job stages | true / false
+`stages` | Boolean | | false | Returns job stages | true / false
+`websites` | Boolean | | false | Returns associated websites URLs | true / false
+`status` | String | | | Filter by status | draft / published / archived
 `per_page` | Integer | | 100 | Number of jobs per page |
 `page` | Integer | | 1 | Page offset |
 `status` | String | | | Returns jobs with this specific status | draft / published / archived
@@ -238,7 +244,8 @@ Parameter | Type | Required | Default | Description | Example
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
     -H "Authorization: Bearer WK_API_KEY" \
-    -d "stages=true"
+    -d "stages=true" \
+    -d "websites=true"
 ```
 
 > The above command returns JSON structured like this:
@@ -247,17 +254,13 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
 {
   "name" : "Fake Job 2",
   "external_reference" : "PROVIDER_REFERENCE2",
-  "salary_min" : 45000,
   "organization_reference" : "Pg4eV6k",
   "status" : "draft",
-  "salary_period" : "yearly",
   "profile" : "Fake Job Profile",
   "apply_url" : "http://company.com/jobs/superjob/apply/",
   "company_description" : "Fake Company Description.",
   "contract_duration_min" : null,
-  "salary_max" : 50000,
   "experience_level" : "1_TO_2_YEARS",
-  "salary_currency" : "EUR",
   "department_id" : null,
   "profession_reference" : "sales",
   "cms_sites_references" : "wttj_fr,smgo_fr",
@@ -265,6 +268,12 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
   "start_date" : "2016-09-01T00:00:00.000+02:00",
   "description" : "Fake Job Description.",
   "contract_type" : "FULL_TIME",
+  "salary": {
+    "min": "30000",
+    "max": "40000",
+    "currency": "EUR",
+    "period": "yearly"
+  },
   "is_remote" : true,
   "office_id" : 196,
   "reference" : "WTTJ_gld0A7L",
@@ -293,7 +302,15 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
   "created_at" : "2017-11-13T17:15:26.146+01:00",
   "updated_at" : "2017-11-13T17:15:26.146+01:00",
   "published_at" : null,
-  "archived_at" : null
+  "archived_at" : null,
+  "websites" : [
+     {
+        "reference" : "wttj_fr",
+        "name" : "Welcome to the Jungle",
+        "url" : "http://preprod.welcometothejungle.co/companies/wttj/jobs/fake-job-2"
+     },
+    ...
+  ]
 }
 ```
 
@@ -310,7 +327,8 @@ This endpoint requires <code>jobs_r</code> or <code>jobs_rw</code> scope.
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `reference` | String | ✔ | | Job reference | aEioU123
-`stages` | Boolean | | false | Return job stages | true / false
+`stages` | Boolean | | false | Returns job stages | true / false
+`websites` | Boolean | | false | Returns associated websites URLs | true / false
 
 
 ## Create a job
@@ -329,8 +347,8 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/jobs" \
   "description": "Fake Job Description.",
   "profile": "Fake Job Profile",
   "contract_type": "FULL_TIME",
-  "salary_min": "45000",
-  "salary_max": "50000",
+  "salary_min": "30000",
+  "salary_max": "40000",
   "salary_currency": "EUR",
   "salary_period": "yearly",
   "is_remote": "true",
@@ -351,17 +369,13 @@ EOF
 {
   "name" : "Fake Job",
   "external_reference" : "PROVIDER_REFERENCE1",
-  "salary_min" : 45000,
   "organization_reference" : "Pg4eV6k",
   "status" : "published",
-  "salary_period" : "yearly",
   "profile" : "Fake Job Profile",
   "apply_url" : "http://company.com/jobs/superjob/apply/",
   "company_description" : "Fake Company Description.",
   "contract_duration_min" : null,
-  "salary_max" : 50000,
   "experience_level" : "1_TO_2_YEARS",
-  "salary_currency" : "EUR",
   "department_id" : null,
   "profession_reference" : "sales",
   "cms_sites_references" : "wttj_fr,smgo_fr",
@@ -369,6 +383,12 @@ EOF
   "start_date" : "2016-09-01T00:00:00.000+02:00",
   "description" : "Fake Job Description.",
   "contract_type" : "FULL_TIME",
+  "salary": {
+    "min": "30000",
+    "max": "40000",
+    "currency": "EUR",
+    "period": "yearly"
+  },
   "is_remote" : true,
   "office_id" : 196,
   "reference" : "WTTJ_gld0A7L",
@@ -453,8 +473,8 @@ curl -X PUT "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
   "description": "Fake Job Description.",
   "profile": "Fake Job Profile",
   "contract_type": "FULL_TIME",
-  "salary_min": "45000",
-  "salary_max": "50000",
+  "salary_min": "30000",
+  "salary_max": "40000",
   "salary_currency": "EUR",
   "salary_period": "yearly",
   "is_remote": "true",
@@ -475,17 +495,13 @@ EOF
 {
   "name" : "Fake Job",
   "external_reference" : "PROVIDER_REFERENCE1",
-  "salary_min" : 45000,
   "organization_reference" : "Pg4eV6k",
   "status" : "draft",
-  "salary_period" : "yearly",
   "profile" : "Fake Job Profile",
   "apply_url" : "http://company.com/jobs/superjob/apply/",
   "company_description" : "Fake Company Description.",
   "contract_duration_min" : null,
-  "salary_max" : 50000,
   "experience_level" : "1_TO_2_YEARS",
-  "salary_currency" : "EUR",
   "department_id" : null,
   "profession_reference" : "sales",
   "cms_sites_references" : "wttj_fr,smgo_fr",
@@ -493,6 +509,12 @@ EOF
   "start_date" : "2016-09-01T00:00:00.000+02:00",
   "description" : "Fake Job Description.",
   "contract_type" : "FULL_TIME",
+  "salary": {
+    "min": "30000",
+    "max": "40000",
+    "currency": "EUR",
+    "period": "yearly"
+  },
   "is_remote" : true,
   "office_id" : 196,
   "reference" : "WTTJ_gld0A7L",
@@ -560,17 +582,13 @@ EOF
 {
   "name" : "Fake Job",
   "external_reference" : "PROVIDER_REFERENCE1",
-  "salary_min" : 45000,
   "organization_reference" : "Pg4eV6k",
   "status" : "published",
-  "salary_period" : "yearly",
   "profile" : "Fake Job Profile",
   "apply_url" : "http://company.com/jobs/superjob/apply/",
   "company_description" : "Fake Company Description.",
   "contract_duration_min" : null,
-  "salary_max" : 50000,
   "experience_level" : "1_TO_2_YEARS",
-  "salary_currency" : "EUR",
   "department_id" : null,
   "profession_reference" : "sales",
   "cms_sites_references" : "wttj_fr,smgo_fr",
@@ -578,6 +596,12 @@ EOF
   "start_date" : "2016-09-01T00:00:00.000+02:00",
   "description" : "Fake Job Description.",
   "contract_type" : "FULL_TIME",
+  "salary": {
+    "min": "30000",
+    "max": "40000",
+    "currency": "EUR",
+    "period": "yearly"
+  },
   "is_remote" : true,
   "office_id" : 196,
   "reference" : "WTTJ_gld0A7L",
