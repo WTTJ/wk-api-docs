@@ -17,7 +17,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
     "reference": "wttj-d655345409a6097309156b05",
     "cover_letter": "",
     "created_at": "2016-08-23T12:55:27.206+02:00",
-    "job_id": 3027,
     "job_reference": "WTTJ_KmqkD1Y",
     "modal_path": "/dashboard/o/Pg4eV6k/jobs/WTTJ_KmqkD1Y/card/wttj-d655345409a6097309156b05",
     "portfolio_size": 4242,
@@ -54,7 +53,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
 ```
 
 <aside class="notice">
-This endpoint requires <code>candidates_r</code> or <code>candidates_rw</code> scope.
+This endpoint requires <code>candidates_*</code> or <code>my_candidates_*</code> scope.
 </aside>
 
 This endpoint lets you retrieve all candidates for a given job reference.
@@ -68,15 +67,14 @@ This endpoint lets you retrieve all candidates for a given job reference.
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `job_reference` | String | ✔ | | Job reference | WTTJ_dggjZDa
-`email` | String |  | | Candidate email | example@example.co
-`origin` | String |  | | Candidate origin | website:cms:wttj_fr
-`referrer` | String |  | | Candidate referrer | wttj-d655345409a6097309156b05
-`archived` | String |  | | Return candidate archived or not | true/false
-`job_stage_name` | String |  | | Candidate job stage name | refused
-`job_stage_id` | String |  | | Candidate job stage id | 123
-`job_stage_reference` | String |  | | Candidate job stage reference | refused
-`created_at` | String | | | Candidates added from this date (YYYY-MM-DD) | 2015-11-26
-`updated_at` | String | | | Candidates added from this date (YYYY-MM-DD) | 2015-11-26
+`email` | String |  | | | example@example.co
+`origin` | String |  | | Filter by origin | website:cms:wttj_fr
+`referrer` | String |  | | Filter by referrer | www.linkedin.com
+`job_stage_id` | String |  | | Filter by job stage id | 123
+`job_stage_reference` | String |  | | Filter by job stage reference | refused
+`archived` | String |  | both | Only returns archived candidates or not | true/false
+`created_after` | String | | | Only returns candidates created after this date (YYYY-MM-DD) | 2015-11-26
+`updated_after` | String | | | Only returns candidates updated after this date (YYYY-MM-DD) | 2015-11-26
 `per_page` | Integer | | 100 | Number of jobs per page |
 `page` | Integer | | 1 | Page offset |
 `stage` | Boolean |  | false | Returns related job stage (ie. refused, hired, etc.) | true/false
@@ -100,7 +98,6 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
   "reference": "wttj-d655345409a6097309156b05",
   "cover_letter": "",
   "created_at": "2016-08-23T12:55:27.206+02:00",
-  "job_id": 3027,
   "job_reference": "WTTJ_KmqkD1Y",
   "modal_path": "/dashboard/o/Pg4eV6k/jobs/WTTJ_KmqkD1Y/card/wttj-d655345409a6097309156b05",
   "portfolio_size": 4242,
@@ -136,7 +133,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
 ```
 
 <aside class="notice">
-This endpoint requires <code>candidates_r</code> or <code>candidates_rw</code> scope.
+This endpoint requires <code>candidates_*</code> or <code>my_candidates_*</code> scope.
 </aside>
 
 ### HTTP Request
@@ -178,7 +175,6 @@ EOF
   "reference": "wttj-d655345409a6097309156b05",
   "cover_letter": "",
   "created_at": "2016-08-23T12:55:27.206+02:00",
-  "job_id": 3027,
   "job_reference": "WTTJ_KmqkD1Y",
   "modal_path": "/dashboard/o/Pg4eV6k/jobs/WTTJ_KmqkD1Y/card/wttj-d655345409a6097309156b05",
   "portfolio_size": 4242,
@@ -207,12 +203,14 @@ EOF
 ```
 
 <aside class="notice">
-This endpoint requires <code>candidates_rw</code> scope.
+This endpoint requires <code>candidates_rw</code> or <code>my_candidates_rw</code> scope.
 </aside>
 
 This endpoint lets you create new candidates for a given `job_reference`.
 
-For example, you could create a Chrome Extension which makes it easy for recruiters to create new candidates... :)
+For example, you could create a [Chrome Extension](https://chrome.google.com/webstore/detail/welcomekitco-chrome-exten/lejhdnpgccgidknkedecghdkamgmempj) which makes it easy for recruiters to create new candidates... :)
+
+Also, if you don't want to give full access to all your candidates to external services, you may use the `my_candidates_rw` scope which will let them create candidates and only access to the candidates they created.
 
 ### HTTP Request
 
@@ -276,7 +274,6 @@ EOF
   "reference": "wttj-d655345409a6097309156b05",
   "cover_letter": "",
   "created_at": "2016-08-23T12:55:27.206+02:00",
-  "job_id": 3027,
   "job_reference": "WTTJ_KmqkD1Y",
   "modal_path": "/dashboard/o/Pg4eV6k/jobs/WTTJ_KmqkD1Y/card/wttj-d655345409a6097309156b05",
   "portfolio_size": 4242,
@@ -305,7 +302,7 @@ EOF
 ```
 
 <aside class="notice">
-This endpoint requires <code>candidates_rw</code> scope.
+This endpoint requires <code>candidates_rw</code> or <code>my_candidates_rw</code> scope.
 </aside>
 
 This endpoint lets you update candidates for a given `reference`.
