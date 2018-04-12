@@ -1,6 +1,6 @@
 # Embed
 
-## Get informations to build an embed
+## Get information to build an embed
 
 ```shell
 curl -X GET "https://www.welcomekit.co/api/v1/embed" \

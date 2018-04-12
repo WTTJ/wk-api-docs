@@ -118,10 +118,10 @@ In order to create a job, you will need the following information:
   - *examples: FULL_TIME, PART_TIME, TEMPORARY, FREELANCE, INTERNSHIP, APPRENTICESHIP*
 * `experience_levels`
   - authorized experience levels
-  - *examples: PHD, NO_DIPLOMA, etc.*
+  - *examples: 1_TO_2_YEARS, MORE_THAN_15_YEARS, etc.*
 * `education_levels`
   - authorized education levels
-  - *examples: 1_TO_2_YEARS, MORE_THAN_15_YEARS, etc.*
+  - *examples: PHD, NO_DIPLOMA, etc.*
 * `cms_sites_references`
   - authorized cms sites references
   - *examples: wttj_fr,smgo_fr,btbw_fr etc.*
@@ -230,10 +230,9 @@ Parameter | Type | Required | Default | Description | Example
 `organization_reference` | String | ✔ | | Reference of the associated organization/company | aEioU123
 `stages` | Boolean | | false | Returns job stages | true / false
 `websites` | Boolean | | false | Returns associated websites URLs | true / false
-`status` | String | | | Filter by status | draft / published / archived
+`status` | String | | | Returns jobs with this specific status | draft / published / archived
 `per_page` | Integer | | 100 | Number of jobs per page |
 `page` | Integer | | 1 | Page offset |
-`status` | String | | | Returns jobs with this specific status | draft / published / archived
 `created_after` | String | | | Returns jobs created after this date (YYYY-MM-DD) | 2015-11-26
 `updated_after` | String | | | Returns jobs updated after this date (YYYY-MM-DD) | 2015-11-26
 `published_after` | String | | | Returns jobs published after this date (YYYY-MM-DD) | 2015-11-26
