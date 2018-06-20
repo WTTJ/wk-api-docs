@@ -37,6 +37,10 @@ curl -X GET "https://www.welcomekit.co/api/v1/embed" \
       },
       "office": {
         "id": 42,
+        "name": "Paris",
+        "address": "11 bis rue Bachaumont",
+        "zip_code": "75002",
+        "district": "Paris",
         "city": "Paris",
         "country": {
           "fr": "France",
