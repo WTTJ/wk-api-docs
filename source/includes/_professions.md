@@ -52,7 +52,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/professions" \
 This endpoint just requires a valid token.
 </aside>
 
-In order to create a job, you will need a `profession_reference`. Professions are used to organized job offers on <a href="http://www.welcometothejungle.co/" target="_blank">Welcome to the Jungle<a>, <a href="http://www.showmustgoon.co/" target="_blank">Show must go on</a>, careers websites and other potential job boards.
+In order to create a job, you will need a `profession_reference`. Professions are used to organized job offers on <a href="http://www.welcometothejungle.co/" target="_blank">Welcome to the Jungle</a>, careers websites and other potential job boards.
 
 This endpoint lets you access to the list of all active professions.
 

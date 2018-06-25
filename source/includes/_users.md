@@ -25,7 +25,7 @@ This endpoint requires <code>me_r</code> scope.
 This endpoints lets you get:
 
 * Information about the current user
-* All organizations this user has acces to
+* All organizations this user has access to
 * All jobs related to these organizations
 * All stages (aka columns) related to these jobs
 
