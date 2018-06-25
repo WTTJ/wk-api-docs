@@ -126,7 +126,7 @@ Parameter | Type | Required | Default | Description | Example
 `is_active` | Boolean | | | Department active? | true / false
 `description` | Text | | | Description |
 
-NB: the slug is automaticcally generated from the department's name.
+NB: the slug is automatically generated from the department's name.
 
 ## Update a department
 
