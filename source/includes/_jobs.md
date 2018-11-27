@@ -412,7 +412,7 @@ This endpoint requires <code>jobs_rw</code> scope.
 Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `organization_reference` | String | ✔ | | Reference of the associated organization/company | aEioU123
-`profession_reference` | String | ✔ | | Reference of the associated profession | "sales" / "finance" / "dev_backend" / etc. See [Professions endpoint](#professions)
+`profession_reference` | String | ✔ | | Reference of the associated profession | "sales" / "market_finance" / "dev_backend" / etc. See [Professions endpoint](#professions)
 `name` | String | ✔ | | Job name | Full-Stack Developer
 `company_description` | Text | ✔ | | Company description (Describe the company)
 `description` | Text | ✔ | | Job description (Explain the job, not the company)
