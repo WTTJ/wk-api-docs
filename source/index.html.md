@@ -19,6 +19,7 @@ includes:
   - offices
   - users
   - embed
+  - languages
   - errors
   - faq
 

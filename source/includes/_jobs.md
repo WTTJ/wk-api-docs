@@ -126,7 +126,7 @@ In order to create a job, you will need the following information:
   - authorized cms sites references
   - *examples: wttj_fr,smgo_fr,btbw_fr etc.*
 
-NB: you will also need [authorized professions](#professions) to create any job offer.
+NB: you will also need [authorized professions](#professions) and [languages](#languages) to create any job offer.
 
 ### HTTP Request
 
