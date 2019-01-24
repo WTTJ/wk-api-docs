@@ -13,36 +13,36 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/professions" \
 ```json
 [
     {
-        "fullname": "Audit / Conso / Transaction Services",
-        "reference": "audit"
+        "reference": "customer_success",
+        "fullname": "Relation client > Customer Success"
     },
     {
-        "fullname": "Autres",
-        "reference": "others_consulting"
+        "reference": "legal",
+        "fullname": "Support > Juridique"
     },
     {
-        "fullname": "Marketing",
-        "reference": "marketing"
+        "reference": "dev_backend",
+        "fullname": "Tech > Dev Backend"
     },
     {
-        "fullname": "Opérations",
-        "reference": "operations"
+        "reference": "dev_frontend",
+        "fullname": "Tech > Dev Frontend"
     },
     {
-        "fullname": "Acheteur",
-        "reference": "purchasing"
+        "reference": "dev_mobile",
+        "fullname": "Tech > Dev Mobile"
     },
     {
-        "fullname": "Customer Success",
-        "reference": "customer_success"
+        "reference": "dev_fullstack",
+        "fullname": "Tech > Dev Fullstack"
     },
     {
-        "fullname": "Dev Backend",
-        "reference": "dev_backend"
+        "reference": "devops",
+        "fullname": "Tech > DevOps / Infra"
     },
     {
-        "fullname": "Dev Frontend",
-        "reference": "dev_frontend"
+        "reference": "data_science",
+        "fullname": "Tech > Data Science"
     },
     ...
 ]
