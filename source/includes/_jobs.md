@@ -126,7 +126,7 @@ In order to create a job, you will need the following information:
   - authorized cms sites references
   - *examples: wttj_fr,smgo_fr,btbw_fr etc.*
 
-NB: you will also need [authorized professions](#professions) to create any job offer.
+NB: you will also need [authorized professions](#professions) and [languages](#languages) to create any job offer.
 
 ### HTTP Request
 
@@ -163,6 +163,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
     "start_date" : "2016-09-01T00:00:00.000+02:00",
     "description" : "Fake Job Description.",
     "contract_type" : "FULL_TIME",
+    "language": "en",
     "salary": {
       "min": "30000",
       "max": "40000",
@@ -267,6 +268,7 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
   "start_date" : "2016-09-01T00:00:00.000+02:00",
   "description" : "Fake Job Description.",
   "contract_type" : "FULL_TIME",
+  "language": "en",
   "salary": {
     "min": "30000",
     "max": "40000",
@@ -346,6 +348,7 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/jobs" \
   "description": "Fake Job Description.",
   "profile": "Fake Job Profile",
   "contract_type": "FULL_TIME",
+  "language": "en",
   "salary_min": "30000",
   "salary_max": "40000",
   "salary_currency": "EUR",
@@ -382,6 +385,7 @@ EOF
   "start_date" : "2016-09-01T00:00:00.000+02:00",
   "description" : "Fake Job Description.",
   "contract_type" : "FULL_TIME",
+  "language": "en",
   "salary": {
     "min": "30000",
     "max": "40000",
@@ -419,6 +423,7 @@ Parameter | Type | Required | Default | Description | Example
 `profile` | Text | ✔ | | Job profile (Explain who you're looking for)
 `recruitment_process` | Text | | | Job Recruitment Process (Delay / Interviews / Tests / etc.)
 `contract_type` | String | ✔ | |  Contract type for this job | FULL_TIME / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
+`language` | String | ✔ | |  Language for this job | 'fr' See [languages](#languages) for available languages
 `status` | String | | | Job status | `draft`, `published`, `archived` |
 `salary_min` | Integer | | | Minimum salary for a given `salary_period` | 45000
 `salary_max` | Integer | | | Maximum salary for a given `salary_period` | 55000
@@ -472,6 +477,7 @@ curl -X PUT "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
   "description": "Fake Job Description.",
   "profile": "Fake Job Profile",
   "contract_type": "FULL_TIME",
+  "language": "en",
   "salary_min": "30000",
   "salary_max": "40000",
   "salary_currency": "EUR",
@@ -508,6 +514,7 @@ EOF
   "start_date" : "2016-09-01T00:00:00.000+02:00",
   "description" : "Fake Job Description.",
   "contract_type" : "FULL_TIME",
+  "language": "en",
   "salary": {
     "min": "30000",
     "max": "40000",
@@ -541,6 +548,7 @@ Parameter | Type | Required | Default | Description | Example
 `profile` | Text | | | Job profile (Explain who you're looking for)
 `recruitment_process` | Text | | | Job Recruitment Process (Delay / Interviews / Tests / etc.)
 `contract_type` | String | | |  Contract type for this job | FULL_TIME / INTERNSHIP / etc. See [jobs dependencies](#get-jobs-dependencies)
+`language` | String | | |  Language for this job | 'en' See [languages](#languages) for complete list
 `salary_min` | Integer | | | Minimum salary for a given `salary_period` | 45000
 `salary_max` | Integer | | | Maximum salary for a given `salary_period` | 55000
 `salary_currency` | String | | | Currency for the given salary | EUR / USD. See [jobs dependencies](#get-jobs-dependencies)
@@ -595,6 +603,7 @@ EOF
   "start_date" : "2016-09-01T00:00:00.000+02:00",
   "description" : "Fake Job Description.",
   "contract_type" : "FULL_TIME",
+  "language": "en",
   "salary": {
     "min": "30000",
     "max": "40000",
