@@ -13,36 +13,31 @@ curl -X GET "https://www.welcomekit.co/api/v1/external/professions" \
 ```json
 [
     {
-        "reference": "customer_success",
-        "fullname": "Relation client > Customer Success"
+        "fullname_translations": {
+            "fr": "Business  > Business Development",
+            "es": "Negocios  > Desarrollo de negocio",
+            "en": "Business  > Business Development",
+        },
+        "fullname": "Business  > Business Development",
+        "reference": "business_development"
     },
     {
-        "reference": "legal",
-        "fullname": "Support > Juridique"
+        "fullname_translations": {
+            "fr": "Business  > Acheteur",
+            "es": "Negocios  > Compras",
+            "en": "Business  > Purchasing",
+        },
+        "fullname": "Business  > Purchasing",
+        "reference": "purchasing"
     },
     {
-        "reference": "dev_backend",
-        "fullname": "Tech > Dev Backend"
-    },
-    {
-        "reference": "dev_frontend",
-        "fullname": "Tech > Dev Frontend"
-    },
-    {
-        "reference": "dev_mobile",
-        "fullname": "Tech > Dev Mobile"
-    },
-    {
-        "reference": "dev_fullstack",
-        "fullname": "Tech > Dev Fullstack"
-    },
-    {
-        "reference": "devops",
-        "fullname": "Tech > DevOps / Infra"
-    },
-    {
-        "reference": "data_science",
-        "fullname": "Tech > Data Science"
+        "fullname_translations": {
+            "fr": "Business  > Commercial",
+            "es": "Negocios  > Comercial",
+            "en": "Business  > Sales",
+        },
+        "fullname": "Business  > Sales",
+        "reference": "sales"
     },
     ...
 ]
