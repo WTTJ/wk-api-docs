@@ -3,10 +3,10 @@
 ## List tools
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/tools" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/tools" \
     -H "Authorization: Bearer WK_API_KEY"
 
-curl -X GET "https://www.welcomekit.co/api/v1/external/tools" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/tools" \
     -d "name=react"
     -H "Authorization: Bearer WK_API_KEY"
 ```

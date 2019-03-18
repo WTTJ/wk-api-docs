@@ -3,7 +3,7 @@
 ## List available sectors
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/sectors" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/sectors" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer WK_API_KEY"
 ```

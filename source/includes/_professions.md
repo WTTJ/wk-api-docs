@@ -3,7 +3,7 @@
 ## List available professions
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/professions" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/professions" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer WK_API_KEY"
 ```

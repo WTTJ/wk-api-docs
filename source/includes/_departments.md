@@ -3,7 +3,7 @@
 ## List departments
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/departments" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/departments" \
     -d "organization_reference=Pg4eV6k" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
@@ -46,7 +46,7 @@ Parameter | Type | Required | Default | Description | Example
 ## Retrieve a department
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/departments/:id" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/departments/:id" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
