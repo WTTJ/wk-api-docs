@@ -3,7 +3,7 @@
 ## List candidates
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/candidates" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/candidates" \
     -d "job_reference=WTTJ_KmqkD1Y" \
     -d "stage=true" \
     -H "Authorization: Bearer WK_API_KEY"
@@ -84,7 +84,7 @@ Parameter | Type | Required | Default | Description | Example
 ## Retrieve a candidate
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/candidates/:reference" \
     -d "stage=true" \
     -d "tags=true" \
     -H "Content-Type: application/json" \

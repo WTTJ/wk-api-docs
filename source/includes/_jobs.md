@@ -3,7 +3,7 @@
 ## Get jobs dependencies
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
@@ -135,7 +135,7 @@ NB: you will also need [authorized professions](#professions) and [languages](#l
 ## List jobs
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/jobs" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs" \
     -H "Authorization: Bearer WK_API_KEY" \
     -d "organization_reference=Pg4eV6k" \
     -d "status=published" \
@@ -242,7 +242,7 @@ Parameter | Type | Required | Default | Description | Example
 ## Retrieve a job
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
     -H "Authorization: Bearer WK_API_KEY" \
     -d "stages=true" \
     -d "websites=true"
