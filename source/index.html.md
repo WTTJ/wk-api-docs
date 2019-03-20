@@ -18,6 +18,8 @@ includes:
   - documents
   - offices
   - users
+  - sectors
+  - tools
   - embed
   - languages
   - errors

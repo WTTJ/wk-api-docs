@@ -3,7 +3,7 @@
 ## List offices
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/offices" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/offices" \
     -d "organization_reference=Pg4eV6k" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
@@ -45,7 +45,7 @@ Parameter | Type | Required | Default | Description | Example
 ## Retrieve an office
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/offices/:id" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/offices/:id" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer WK_API_KEY"
 ```

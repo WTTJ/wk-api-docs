@@ -3,7 +3,7 @@
 ## List candidate documents
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/documents" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/documents" \
     -d "candidate_reference=wttj-d655345409a6097309156b05" \
     -H "Authorization: Bearer WK_API_KEY"
 ```
