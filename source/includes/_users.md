@@ -3,7 +3,7 @@
 ## Get current user
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/external/users/current" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/users/current" \
     -H "Content-Type: application/json" \
     -H "Authorization: bearer WK_API_KEY"
 ```

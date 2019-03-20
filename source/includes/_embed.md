@@ -3,7 +3,7 @@
 ## Get information to build an embed
 
 ```shell
-curl -X GET "https://www.welcomekit.co/api/v1/embed" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/embed" \
     -d "organization_reference=Pg4eV6k"
 ```
 
