@@ -22,8 +22,8 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/videos" \
     "image": {"url":  "https://cdn.welcometothejungle.co/uploads/video/image/1480/151603/wttj_video_0679859b-6e84-4549-bbc4-1330eddcac57.jpg",
               "small": {"url": "https://cdn.welcometothejungle.co/uploads/video/image/1480/151603/small_wttj_video_0679859b-6e84-4549-bbc4-1330eddcac57.jpg"},
               "thumb": {"url": "https://cdn.welcometothejungle.co/uploads/video/image/1480/151603/thumb_wttj_video_0679859b-6e84-4549-bbc4-1330eddcac57.jpg"}},
-    "created_at": "2018-01-15T15:51:20.788757Z",
-    "updated_at": "2018-12-11T07:35:43.456385Z",
+    "created_at": "2018-01-15T16:51:20.788757+01:00",
+    "updated_at": "2018-12-11T08:35:43.456385+01:00",
     "details": {"snippet":{"title":"Découvrez Welcome to the Jungle avec Bertrand, Co Founder","thumbnails":{"standard":{"width":640,"url":"https://i.ytimg.com/vi/1gPC5eOJy8I/sddefault.jpg","height":480},"medium":{"width":320,"url":"https://i.ytimg.com/vi/1gPC5eOJy8I/mqdefault.jpg","height":180},"high":{"width":480,"url":"https://i.ytimg.com/vi/1gPC5eOJy8I/hqdefault.jpg","height":360},"default":{"width":120,"url":"https://i.ytimg.com/vi/1gPC5eOJy8I/default.jpg","height":90}},"tags":["WTTJ","Welcome to the Jungle","Recrutement","Emploi"],"publishedAt":"2018-01-16T08:54:19.000Z","localized":{"title":"Découvrez Welcome to the Jungle avec Bertrand, Co Founder","description":"Welcome to the Jungle recrute !\nRetrouvez toutes leurs offres sur Welcome to the Jungle : https://www.welcometothejungle.co/companies/wttj"},"liveBroadcastContent":"none","description":"Welcome to the Jungle recrute !\nRetrouvez toutes leurs offres sur Welcome to the Jungle : https://www.welcometothejungle.co/companies/wttj","defaultAudioLanguage":"fr","channelTitle":"Welcome to the Jungle","channelId":"UCEO2-sJLw0H4_xdX1yVbCNg","categoryId":"22"},"kind":"youtube#video","id":"1gPC5eOJy8I","etag":"\"XI7nbFXulYBIpL0ayR_gDh3eu1k/Em-kOOTlYyb8wnVjYe_SL9w7eHE\"","contentDetails":{"projection":"rectangular","licensedContent":false,"duration":"PT1M28S","dimension":"2d","definition":"hd","caption":"false"}},
     "reference": "1gPC5eOJy8I"
   },
