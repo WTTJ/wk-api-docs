@@ -112,7 +112,7 @@ In order to create a job, you will need the following information:
   - *examples: EUR, USD*
 * `salary_periods`
   - authorized periods when specifying a salary
-  - *examples: yearly, monhtly, etc.*
+  - *examples: yearly, monthly, etc.*
 * `contract_types`
   - authorized contract types
   - *examples: FULL_TIME, PART_TIME, TEMPORARY, FREELANCE, INTERNSHIP, APPRENTICESHIP*
@@ -284,22 +284,26 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
       "visible" : true,
       "reference" : "initial",
       "id" : 5395,
-      "name" : "Nouveau"
+      "name" : "Nouveau",
+      "candidates_count": 4
     },
     {
       "reference" : "refused",
       "visible" : true,
       "id" : 5396,
-      "name" : "Refusé"
+      "name" : "Refusé",
+      "candidates_count": 2
     },
     {
       "id" : 5397,
       "name" : "À rencontrer",
       "reference" : null,
-      "visible" : true
+      "visible" : true,
+      "candidates_count": 1
     },
     ...
   ],
+  "candidates_count": 13,
   "created_at" : "2017-11-13T17:15:26.146+01:00",
   "updated_at" : "2017-11-13T17:15:26.146+01:00",
   "published_at" : null,
@@ -316,7 +320,7 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
 ```
 
 <aside class="notice">
-This endpoint requires <code>jobs_r</code> or <code>jobs_rw</code> scope.
+This endpoint requires <code>jobs_r</code> or <code>jobs_rw</code> scope. Availability of candidates counters (total and per stage ones) requires <code>candidates_r</code> or <code>candidates_rw</code> scope.
 </aside>
 
 ### HTTP Request
@@ -631,7 +635,7 @@ Summary:
 
 * `draft`: private job offer (still visible on main view of the dashboard)
 * `published`: public job offer visible on all `cms_sites_references`
-* `archived`: private job offer (visibile from archived jobs only)
+* `archived`: private job offer (visible from archived jobs only)
 
 ### HTTP Request
 
