@@ -39,3 +39,11 @@ This endpoint lets you access to the list of your images.
 ### HTTP Request
 
 `GET https://www.welcomekit.co/api/v1/external/images`
+
+### Query Parameters
+
+Parameter | Type | Required | Default | Description | Example
+--- | --- | --- | --- | --- | ---
+`organization_reference` | String | ✔ | | Organization reference | Pg4eV6k
+`per_page` | Integer | | 100 | Number of images per page |
+`page` | Integer | | 1 | Page offset |
