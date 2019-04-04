@@ -242,10 +242,11 @@ Parameter | Type | Required | Default | Description | Example
 ## Retrieve a job
 
 ```shell
-curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
+curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
     -H "Authorization: Bearer WK_API_KEY" \
     -d "stages=true" \
-    -d "websites=true"
+    -d "websites=true" \
+    -d "candidates_count=true"
 ```
 
 > The above command returns JSON structured like this:
@@ -320,7 +321,7 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs/:reference" \
 ```
 
 <aside class="notice">
-This endpoint requires <code>jobs_r</code> or <code>jobs_rw</code> scope. Availability of candidates counters (total and per stage ones) requires <code>candidates_r</code> or <code>candidates_rw</code> scope.
+This endpoint requires <code>jobs_r</code> or <code>jobs_rw</code> scope. Availability of candidates counters (total and per stage ones) requires <code>candidates_r</code> or <code>candidates_rw</code> scope and setting the query parameter candidates_count to true.
 </aside>
 
 ### HTTP Request
@@ -334,7 +335,7 @@ Parameter | Type | Required | Default | Description | Example
 `reference` | String | ✔ | | Job reference | aEioU123
 `stages` | Boolean | | false | Returns job stages | true / false
 `websites` | Boolean | | false | Returns associated websites URLs | true / false
-
+`candidates_count` | Boolean | | false | Returns candidates counters (total and per stage ones) | true / false
 
 ## Create a job
 
