@@ -36,6 +36,14 @@ This endpoint requires the images_r scope.
 
 This endpoint lets you access to the list of your images.
 
+The dimensions of each image type are as follows:
+
+- "standard" image dimensions fit within 2000x3000 px
+- "large" image dimensions fit within 1200x2000 px
+- "medium" image dimensions fit within 850x850 px
+- "small" image dimensions fit within 650x650 px
+- "thumb" image dimensions fit within 200x200 px
+
 ### HTTP Request
 
 `GET https://www.welcomekit.co/api/v1/external/images`
