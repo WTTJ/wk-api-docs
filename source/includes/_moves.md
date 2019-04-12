@@ -16,12 +16,12 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/moves" \
   {
     "candidate": {"reference": "dc-41e24bb6e4a27"},
     "from": {
-              "stage": {"name": "To meet", "reference": "to-meet"},
+              "stage": {"id": 547, "name": "To meet", "reference": "to-meet"},
               "organization": {"reference": "wttj"},
               "job": {"reference": "V-1841-0"}
             },
     "to": {
-            "stage": {"name": "Interviewed", "reference": "interviewed"},
+            "stage": {"id": 295, "name": "Interviewed", "reference": "interviewed"},
             "organization": {"reference": "wttj"},
             "job": {"reference": "V-1841-0"}
           },
