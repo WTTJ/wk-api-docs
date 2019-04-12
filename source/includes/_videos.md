@@ -38,6 +38,14 @@ This endpoint requires <code>videos_r</code> scope.
 
 This endpoint lets you retrieve your list of videos. Videos are hosted on Youtube or Dailymotion (see <code>source</code> and <code>url</code> in the returned body).
 
+The dimensions of each image type are as follows:
+
+- "standard" image dimensions fit within 2000x3000 px
+- "large" image dimensions fit within 1200x2000 px
+- "medium" image dimensions fit within 850x850 px
+- "small" image dimensions fit within 650x650 px
+- "thumb" image dimensions fit within 200x200 px
+
 ### HTTP Request
 
 `GET https://www.welcomekit.co/api/v1/external/videos`
