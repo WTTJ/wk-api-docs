@@ -22,6 +22,9 @@ includes:
   - tools
   - embed
   - languages
+  - images
+  - moves
+  - videos
   - errors
   - faq
 
@@ -91,3 +94,6 @@ Scope | Description
 `emails_rw` |  Read and Write access on your candidates emails
 `emails_r` |  Read access on your candidates emails
 `comments_w` | Write access on your candidates comments
+`images_r` | Read access to your images
+`moves_r` |  Read access on candidates moves
+`videos_r` | Read access on your video files
