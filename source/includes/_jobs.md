@@ -112,7 +112,7 @@ In order to create a job, you will need the following information:
   - *examples: EUR, USD*
 * `salary_periods`
   - authorized periods when specifying a salary
-  - *examples: yearly, monhtly, etc.*
+  - *examples: yearly, monthly, etc.*
 * `contract_types`
   - authorized contract types
   - *examples: FULL_TIME, PART_TIME, TEMPORARY, FREELANCE, INTERNSHIP, APPRENTICESHIP*
@@ -433,10 +433,10 @@ Parameter | Type | Required | Default | Description | Example
 `contract_duration_min` | Integer | Recommended for 'TEMPORARY' contract type | | Minimum duration of the contract in months. | 1, 2, .., 36
 `contract_duration_max` | Integer | Recommended for 'TEMPORARY' contract type | | Maximum duration of the contract in months. | 1, 2, .., 36
 `department_id` | Integer | | | Department ID. Mainly used by companies which have a careers website managed through WelcomeKit.co | 1
-`office_id` | Integer | See below | | Office ID. An office is like a "location". If the office wasn't created for the targeted company, you will need to contact support@welcomekit.co first. Also, if you don't have an `office_id` you can call the API with `office_zip_code` or `office_country_code` which may be enough for us to retrieve the associated office. | 1
-`office_address` | String | See below | | Office zip code (office will be found or created from this). See: comment related to `office_id` | 11b rue Bachaumont
+`office_id` | Integer | See below | | Office ID. An office is like a "location". You can use the `List Offices` API to retrieve the list of office ids. Also, if you don't have an `office_id` you can call the API with `office_zip_code` or `office_country_code` which may be enough for us to retrieve the associated office (if any) or dynamically create a new one. | 1
+`office_address` | String | See below | | Office address (office will be found or created from this). See: comment related to `office_id` | 11b rue Bachaumont
 `office_zip_code` | String | See below | | Office zip code (office will be found or created from this). See: comment related to `office_id` | 75002
-`office_city` | String | See below | | Office zip code (office will be found or created from this). See: comment related to `office_id` | Paris
+`office_city` | String | See below | | Office city (office will be found or created from this). See: comment related to `office_id` | Paris
 `office_country_code` | String | See below | | Office country code (office will be found or created from this). See: comment related to `office_id` | FR
 `education_level` | String | | | Minimum education level ID | `BAC`, `BAC_5`, `PHD`, etc. See [jobs dependencies](#get-jobs-dependencies)
 `experience_level` | String | | | Minimum experience level ID | `LESS_THAN_6_MONTHS`, `6_MONTHS_TO_1_YEAR`, `1_TO_2_YEARS`, etc. See [jobs dependencies](#get-jobs-dependencies)
@@ -631,7 +631,7 @@ Summary:
 
 * `draft`: private job offer (still visible on main view of the dashboard)
 * `published`: public job offer visible on all `cms_sites_references`
-* `archived`: private job offer (visibile from archived jobs only)
+* `archived`: private job offer (visible from archived jobs only)
 
 ### HTTP Request
 
