@@ -84,6 +84,29 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs/dependencies" \
     },
     ...
   ],
+  "remote_levels": [
+    {
+      "id": "fulltime",
+      "name": {
+        "en": "Possible full remote",
+        "fr": "Télétravail total possible"
+      }
+    },
+    {
+      "id": "punctual",
+      "name": {
+        "en": "Punctual remote authorized",
+        "fr": "Télétravail ponctuel autorisé"
+      }
+    },
+    {
+      "id": "false",
+      "name": {
+        "en": "Non authorized",
+        "fr": "Non autorisé"
+      }
+    }
+  ],
   "salary_currencies": [
     "EUR",
     "USD"
@@ -122,6 +145,9 @@ In order to create a job, you will need the following information:
 * `education_levels`
   - authorized education levels
   - *examples: PHD, NO_DIPLOMA, etc.*
+* `remote_levels`
+  - authorized remote levels
+  - *examples: fulltime, punctual, false*
 * `cms_sites_references`
   - authorized cms sites references
   - *examples: wttj_fr,smgo_fr,btbw_fr etc.*
@@ -170,7 +196,7 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs" \
       "currency": "EUR",
       "period": "yearly"
     },
-    "is_remote" : true,
+    "is_remote" : "false",
     "office_id" : 196,
     "reference" : "WTTJ_gld0A7L",
     "education_level" : "BAC_5",
@@ -202,7 +228,7 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs" \
       "currency": "EUR",
       "period": "yearly"
     },
-    "is_remote" : true,
+    "is_remote" : "fulltime",
     "office_id" : 196,
     "reference" : "WTTJ_gld0A7L",
     "education_level" : "BAC_5",
@@ -276,7 +302,7 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
     "currency": "EUR",
     "period": "yearly"
   },
-  "is_remote" : true,
+  "is_remote" : "fulltime",
   "office_id" : 196,
   "reference" : "WTTJ_gld0A7L",
   "education_level" : "BAC_5",
@@ -358,7 +384,7 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/jobs" \
   "salary_max": "40000",
   "salary_currency": "EUR",
   "salary_period": "yearly",
-  "is_remote": "true",
+  "is_remote": "fulltime",
   "office_zip_code": "75002",
   "education_level": "BAC_5",
   "experience_level": "1_TO_2_YEARS",
@@ -397,7 +423,7 @@ EOF
     "currency": "EUR",
     "period": "yearly"
   },
-  "is_remote" : true,
+  "is_remote" : "fulltime",
   "office_id" : 196,
   "reference" : "WTTJ_gld0A7L",
   "education_level" : "BAC_5",
@@ -434,7 +460,7 @@ Parameter | Type | Required | Default | Description | Example
 `salary_max` | Integer | | | Maximum salary for a given `salary_period` | 55000
 `salary_currency` | String | | | Currency for the given salary | EUR / USD. See [jobs dependencies](#get-jobs-dependencies)
 `salary_period` | String | | | Period for the given salary | yearly, monthly, daily, none. See [jobs dependencies](#get-jobs-dependencies)
-`is_remote` | Boolean | | | Is remote work authorized for this job? | true / false
+`is_remote` | String | | | Is remote work authorized for this job? | fulltime / punctual / false
 `contract_duration_min` | Integer | Recommended for 'TEMPORARY' contract type | | Minimum duration of the contract in months. | 1, 2, .., 36
 `contract_duration_max` | Integer | Recommended for 'TEMPORARY' contract type | | Maximum duration of the contract in months. | 1, 2, .., 36
 `department_id` | Integer | | | Department ID. Mainly used by companies which have a careers website managed through WelcomeKit.co | 1
@@ -487,7 +513,7 @@ curl -X PUT "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
   "salary_max": "40000",
   "salary_currency": "EUR",
   "salary_period": "yearly",
-  "is_remote": "true",
+  "is_remote": "punctual",
   "office_zip_code": "75002",
   "education_level": "BAC_5",
   "experience_level": "1_TO_2_YEARS",
@@ -526,7 +552,7 @@ EOF
     "currency": "EUR",
     "period": "yearly"
   },
-  "is_remote" : true,
+  "is_remote" : "punctual",
   "office_id" : 196,
   "reference" : "WTTJ_gld0A7L",
   "education_level" : "BAC_5",
@@ -558,7 +584,7 @@ Parameter | Type | Required | Default | Description | Example
 `salary_max` | Integer | | | Maximum salary for a given `salary_period` | 55000
 `salary_currency` | String | | | Currency for the given salary | EUR / USD. See [jobs dependencies](#get-jobs-dependencies)
 `salary_period` | String | | | Period for the given salary | yearly, monthly, daily, none. See [jobs dependencies](#get-jobs-dependencies)
-`is_remote` | Boolean | | | Is remote work authorized for this job? | true / false
+`is_remote` | String | | | Is remote work authorized for this job? | fulltime / punctual / false
 `contract_duration_min` | Integer | | | Minimum duration of the contract in months. | 1, 2, .., 36
 `contract_duration_max` | Integer | | | Maximum duration of the contract in months. | 1, 2, .., 36
 `department_id` | Integer | | | Department ID. Mainly used by companies which have a careers website managed through WelcomeKit.co | 1
@@ -615,7 +641,7 @@ EOF
     "currency": "EUR",
     "period": "yearly"
   },
-  "is_remote" : true,
+  "is_remote" : "punctual",
   "office_id" : 196,
   "reference" : "WTTJ_gld0A7L",
   "education_level" : "BAC_5",
