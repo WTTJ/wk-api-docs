@@ -42,6 +42,8 @@ There are 3 types of moves:
 * a candidate moves from one job to another one (no organization change)
 * a candidate moves from one job to another one from an another organization
 
+Please note that a job stage is not included if it has been deleted after the move.
+
 ### HTTP Request
 
 `GET https://www.welcomekit.co/api/v1/external/moves`
