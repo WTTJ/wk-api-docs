@@ -20,8 +20,9 @@ curl -X POST "https://www.welcomekit.co/api/v1/external/cms/articles" \
                 "external_reference": "ZJFMvWHtSAA",
                 "description": "Go gives developers compile-time safety through its type system, and flexibility through interfaces. Sometimes, interfaces just aren’t flexible enough. Sometimes, you just want to write some code that isn’t safe at all. James talks about the outlaw packages of Go: reflect and unsafe. You’ll learn just enough about Go’s type system to understand how reflect and unsafe subvert it. Finally, he shows practical examples of using reflect, and some impractical examples of using unsafe."},
    "image": {"url": "https://live.staticflickr.com/7823/40546417563_c841356355_k_d.jpg"},
-   "author": {"name": "James Bowes", "headline": "CTO of <a href="https://www.manifold.co/" target="_blank">Manifold</a> and experienced backend developer.",
-              "avatar": {"url": "https://live.staticflickr.com/7927/32566777757_450045a30c_k_d.jpg"}}
+   "cms_author": {"name": "James Bowes", "headline": "CTO of <a href=\"https://www.manifold.co/\" target=\"_blank\">Manifold</a> and experienced backend developer.",
+                  "website": "https://jamesbowes.net", "social_networks": {"github": "https://github.com/jbowes", "twitter": "https://twitter.com/jrbowes"},
+                  "avatar": {"url": "https://live.staticflickr.com/7927/32566777757_450045a30c_k_d.jpg"}}
 }
 EOF
 ```
@@ -60,4 +61,4 @@ Parameter | Type | Required | Default | Description | Example
 `slug` | String | | | Slug |
 `cms_video` | Hash | | | CMS video (name, reference, source, external_reference and description of the CMS video) |
 `image` | Hash | | | Image (only url is supported for the moment) |
-`cms_author` | Hash | | | CMS Author (name, headline and avatar) |
+`cms_author` | Hash | | | CMS Author (name, headline, website, social networks and avatar) |
