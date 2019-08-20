@@ -25,6 +25,9 @@ includes:
   - images
   - moves
   - videos
+  - cms_collection_categories
+  - cms_collections
+  - cms_articles
   - errors
   - faq
 
@@ -97,3 +100,6 @@ Scope | Description
 `images_r` | Read access to your images
 `moves_r` |  Read access on candidates moves
 `videos_r` | Read access on your video files
+`cms_collection_categories_r` | List CMS collecton categories
+`cms_categories_r` |  List CMS collectons
+`cms_articles_rw` | Read and write access on CMS articles
