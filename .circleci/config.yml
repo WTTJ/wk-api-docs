@@ -78,7 +78,7 @@ jobs:
       - run: bundle exec middleman build
       - run:
           name: Make archive
-          command: mkdir ../rel && tar -zcf ../rel/wk-api-docs.tar.gz -C /home/circleci/$CIRCLE_PROJECT_REPONAME/build/ .
+          command: mkdir ../rel && tar zcf ../rel/wk-api-docs.tar.gz -C /home/circleci/$CIRCLE_PROJECT_REPONAME/build/ .
       - persist_to_workspace:
           root: ../rel
           paths:
@@ -90,6 +90,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ../rel
+      - run: tar xfz ~/rel/wk-api-docs.tar.gz -C ~/rel && rm ~/rel/wk-api-docs.tar.gz
       - run:
           name: Release to S3
           command: aws s3 sync --metadata GitCommit=$CIRCLE_SHA1 ~/rel s3://welcome-releases/projects/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH/
