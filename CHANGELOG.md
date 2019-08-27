@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 1.3.4
+
+*July 25, 2019*
+
+Documentation and example changes.
+
 ## Version 1.3.3
 
 *June 11, 2016*
