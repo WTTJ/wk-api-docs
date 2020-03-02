@@ -279,7 +279,8 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
     -H "Authorization: Bearer WK_API_KEY" \
     -d "stages=true" \
     -d "websites=true" \
-    -d "candidates_count=true"
+    -d "candidates_count=true" \
+    -d "application_fields=true
 ```
 
 > The above command returns JSON structured like this:
@@ -349,6 +350,11 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
         "url" : "http://preprod.welcometothejungle.co/companies/wttj/jobs/fake-job-2"
      },
     ...
+  ],
+  "application_fields": [
+    {"name": "resume", "mode": "mandatory"},
+    {"name": "portfolio", "mode": "disabled"},
+    ...
   ]
 }
 ```
@@ -369,6 +375,7 @@ Parameter | Type | Required | Default | Description | Example
 `stages` | Boolean | | false | Returns job stages | true / false
 `websites` | Boolean | | false | Returns associated websites URLs | true / false
 `candidates_count` | Boolean | | false | Returns candidates counters (total and per stage ones) | true / false
+`application_fields` | Boolean | | false | Returns application fields | true / false
 
 ## Create a job
 
