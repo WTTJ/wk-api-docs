@@ -355,7 +355,13 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/jobs/WTTJ_ZyDmzZ6" \
     {"name": "resume", "mode": "mandatory"},
     {"name": "portfolio", "mode": "disabled"},
     ...
-  ]
+  ],
+  "organization": {
+    "name": "wttj",
+    "slug": "wttj",
+    "description": "Lorem ipsum",
+    "logo": "https://....."
+  }
 }
 ```
 
@@ -376,6 +382,7 @@ Parameter | Type | Required | Default | Description | Example
 `websites` | Boolean | | false | Returns associated websites URLs | true / false
 `candidates_count` | Boolean | | false | Returns candidates counters (total and per stage ones) | true / false
 `application_fields` | Boolean | | false | Returns application fields | true / false
+`organization` | Boolean | | false | Returns organization fields | true / false
 
 ## Create a job
 
