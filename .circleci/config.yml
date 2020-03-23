@@ -93,7 +93,7 @@ jobs:
       - run: tar xfz ~/rel/wk-api-docs.tar.gz -C ~/rel && rm ~/rel/wk-api-docs.tar.gz
       - run:
           name: Release to S3
-          command: aws s3 sync --metadata GitCommit=$CIRCLE_SHA1 ~/rel s3://$CIRCLE_PROJECT_REPONAME/
+          command: aws s3 sync --metadata GitBranch=$CIRCLE_BRANCH,GitCommit=$CIRCLE_SHA1 ~/rel/ s3://welcome-releases/projects/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH/
 
 workflows:
   version: 2
