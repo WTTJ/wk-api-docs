@@ -43,23 +43,23 @@ end
 # If you want Middleman to listen on a different port, you can set that below
 set :port, 4567
 
-#case ENV['TARGET'].to_s.downcase
-#when 'preprod'
-#  activate :deploy do |deploy|
-#    deploy.deploy_method = :rsync
-#    # https://github.com/middleman-contrib/middleman-deploy/pull/113
-#    deploy.host          = 'wk-api-docs@146.185.187.199'
-#    #deploy.user          = 'wk-api-docs'
-#    deploy.path          = '/var/www/wk-api-docs/preprod/current'
-#    deploy.clean         = true
-#  end
-#when 'production'
-#  activate :deploy do |deploy|
-#    deploy.deploy_method = :rsync
-#    # https://github.com/middleman-contrib/middleman-deploy/pull/113
-#    deploy.host          = 'wk-api-docs@5.101.104.223'
-#    #deploy.user          = 'wk-api-docs'
-#    deploy.path          = '/var/www/wk-api-docs/production/current'
-#    deploy.clean         = true
-#  end
-#end
+case ENV['TARGET'].to_s.downcase
+when 'preprod'
+  activate :deploy do |deploy|
+    deploy.deploy_method = :rsync
+    # https://github.com/middleman-contrib/middleman-deploy/pull/113
+    deploy.host          = 'wk-api-docs@146.185.187.199'
+    #deploy.user          = 'wk-api-docs'
+    deploy.path          = '/var/www/wk-api-docs/preprod/current'
+    deploy.clean         = true
+  end
+when 'production'
+  activate :deploy do |deploy|
+    deploy.deploy_method = :rsync
+    # https://github.com/middleman-contrib/middleman-deploy/pull/113
+    deploy.host          = 'wk-api-docs@5.101.104.223'
+    #deploy.user          = 'wk-api-docs'
+    deploy.path          = '/var/www/wk-api-docs/production/current'
+    deploy.clean         = true
+  end
+end
