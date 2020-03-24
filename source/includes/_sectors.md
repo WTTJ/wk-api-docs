@@ -13,6 +13,7 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/sectors" \
 ```json
 [
     {
+        "id": "2",
         "fullname": {
             "es": "Tecnología > Big data",
             "en": "Tech > Big data",
@@ -21,7 +22,8 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/sectors" \
         "parent": {
             "es": "Tecnología",
             "en": "Tech",
-            "fr": "Tech"
+            "fr": "Tech",
+            "_id": "1"
         },
         "names": {
             "es": "Big data",
@@ -31,6 +33,7 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/sectors" \
         "reference": "big_data"
     },
     {
+        "id": "3",
         "fullname": {
             "es": "Tecnología > Software",
             "en": "Tech > Software",
@@ -39,7 +42,8 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/sectors" \
         "parent": {
             "es": "Tecnología",
             "en": "Tech",
-            "fr": "Tech"
+            "fr": "Tech",
+            "_id": "1"
         },
         "names": {
             "es": "Software",

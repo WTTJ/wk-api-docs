@@ -1,0 +1,115 @@
+---
+defaults: &defaults
+  working_directory: ~/wk-api-docs
+
+version: 2
+jobs:
+  checkout:
+    <<: *defaults
+    docker:
+      - image: circleci/ruby:2.3.4-node
+    steps:
+      - checkout
+      - save_cache:
+          key: v1-wk-api-docs-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ~/wk-api-docs
+  bundle:
+    <<: *defaults
+    docker:
+      - image: circleci/ruby:2.3.4-node
+        environment:
+          BUNDLE_PATH: vendor/bundle
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 4
+          BUNDLE_APP_CONFIG: "/usr/local/bundle"
+          BUNDLE_BIN: "/usr/local/bundle/bin"
+          BUNDLE_GEMFILE: "/home/circleci/wk-api-docs/Gemfile"
+    steps:
+      - restore_cache:
+          key: v1-wk-api-docs-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          keys:
+            - v1-wk-api-docs-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - v1-wk-api-docs-{{ .Branch }}
+            - v1-wk-api-docs
+      - run: bundle config github.https true
+      - run: bundle check || bundle install
+      - save_cache:
+          key: v1-wk-api-docs-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - save_cache:
+          key: v1-wk-api-docs-{{ .Branch }}
+          paths:
+            - vendor/bundle
+      - save_cache:
+          key: v1-wk-api-docs
+          paths:
+            - vendor/bundle
+  build:
+    <<: *defaults
+    docker:
+      - image: circleci/ruby:2.3.4-node
+        environment:
+          BUNDLE_PATH: vendor/bundle
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 4
+          BUNDLE_APP_CONFIG: "/usr/local/bundle"
+          BUNDLE_BIN: "/usr/local/bundle/bin"
+          BUNDLE_GEMFILE: "/home/circleci/wk-api-docs/Gemfile"
+    steps:
+      - restore_cache:
+          keys:
+            - v1-wk-api-docs-{{ .Environment.CIRCLE_SHA1 }}
+      - run: sudo chown -R circleci /usr/local/bundle
+      - restore_cache:
+          keys:
+            - v1-wk-api-docs-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - v1-wk-api-docs-{{ .Branch }}
+            - v1-wk-api-docs
+      - run:
+          name: env var setup
+          command: |
+            echo 'export RELEASE_REVISION=$(git rev-parse HEAD)' >> $BASH_ENV
+            echo 'export RELEASE_DIR=$(date '+%Y%m%d')' >> $BASH_ENV
+      - run: bundle config github.https true && bundle install
+      - run: echo RELEASE_REVISION >> REVISION
+      - run: bundle exec middleman build
+      - run:
+          name: Make archive
+          command: mkdir ../rel && tar zcf ../rel/wk-api-docs.tar.gz -C /home/circleci/$CIRCLE_PROJECT_REPONAME/build/ .
+      - persist_to_workspace:
+          root: ../rel
+          paths:
+            - wk-api-docs.tar.gz
+  release:
+    <<: *defaults
+    machine:
+      enabled: true
+    steps:
+      - attach_workspace:
+          at: ../rel
+      - run: tar xfz ~/rel/wk-api-docs.tar.gz -C ~/rel && rm ~/rel/wk-api-docs.tar.gz
+      - run:
+          name: Release to S3
+          command: aws s3 sync --metadata GitBranch=$CIRCLE_BRANCH,GitCommit=$CIRCLE_SHA1 ~/rel/ s3://welcome-releases/projects/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH/
+
+workflows:
+  version: 2
+  btd:
+    jobs:
+      - checkout
+      - bundle:
+          requires:
+            - checkout
+      - build:
+          requires:
+            - bundle
+      - release:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - build
