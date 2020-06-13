@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import 'normalize';
 @import 'variables';
+@import 'fonts';
 @import 'icon-font';
 
 /*
@@ -39,6 +40,10 @@ html, body {
 // TABLE OF CONTENTS
 ////////////////////////////////////////////////////////////////////////////////
 
+#toc {
+  margin: 0 -30px;
+}
+
 #toc > ul > li > a > span {
   float: right;
   background-color: #2484FF;
@@ -69,6 +74,7 @@ html, body {
   background-color: $nav-bg;
   font-size: 14px;
   font-weight: bold;
+  padding: 30px;
 
   // language selector for mobile devices
   .lang-selector {
@@ -87,19 +93,22 @@ html, body {
 
   &>.search {
     position: relative;
+    color: #a3a3a3;//$nav-text;
 
     input {
-      background: $nav-bg;
-      border-width: 0 0 1px 0;
+      background: #fff;
+      border-width: 1px;
       border-color: $search-box-border-color;
-      padding: 6px 0 6px 20px;
       box-sizing: border-box;
-      margin: $nav-v-padding $nav-padding;
-      margin-bottom: 20px;
-      width: $nav-width - 30;
+      margin: 0;
+      padding: 11px 11px 11px #{11px + 20px};
       outline: none;
-      color: $nav-text;
       border-radius: 0; /* ios has a default border radius */
+      display: block;
+      width: 100%;
+      font-family: "Work Sans";
+      font-size: 14px;
+      font-weight: normal;
 
       &::-webkit-input-placeholder {
         color: $search-box-placeholder;
@@ -117,9 +126,9 @@ html, body {
 
     &:before {
       position: absolute;
-      top: 17px;
-      left: $nav-padding;
-      color: $nav-text;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
       @extend %icon-search;
     }
   }
@@ -129,7 +138,7 @@ html, body {
   }
 
   .search-results {
-    margin-top: 0;
+    margin-top: 20px;
     box-sizing: border-box;
     height: 0;
     overflow-y: auto;
@@ -137,20 +146,23 @@ html, body {
     transition-property: height, margin;
     transition-duration: 180ms;
     transition-timing-function: ease-in-out;
-    background: #3c3c3c;
+    background: #efeae4;
 
     &.visible {
       height: 30%;
+      margin-top: 0;
       margin-bottom: 1em;
     }
 
     li {
-      margin: 1em $nav-padding;
-      line-height: 1;
+      margin: 0 0 0 5px;
+      line-height: 1.2;
+      padding: 5px;
+      font-weight: normal;
     }
 
     a {
-      color: $nav-text;
+      color: #000;
       text-decoration: none;
 
       &:hover {
@@ -179,7 +191,13 @@ html, body {
   }
 
   li {
-    color: $nav-text;
+    color: #959390;
+    font-family: "Work Sans";
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    line-height: 19px;
+    padding: 10px 0;
     transition-property: background;
     transition-timing-function: linear;
     transition-duration: 230ms;
@@ -187,16 +205,15 @@ html, body {
 
   // This is the currently selected ToC entry
   .tocify-focus {
-    box-shadow: 0px 1px 0px $nav-active-shadow;
-    background-color: $nav-active-bg;
+    background-color: #efeae4;
     color: $nav-active-text;
+    border-left: 3px solid #fcda00;
   }
 
   // Subheaders are the submenus that slide open
   // in the table of contents.
   .tocify-subheader {
     display: none; // tocify will override this when needed
-    background-color: $nav-subitem-bg;
     font-weight: 500;
     .tocify-item>a {
       padding-left: $nav-padding + $nav-indent;
@@ -210,10 +227,17 @@ html, body {
 
   .toc-footer {
     margin-top: 1em;
+    margin-left: -$nav-padding;
+    margin-right: -$nav-padding;
 
     li,a {
-      color: $nav-text;
       text-decoration: none;
+      color: rgb(0, 0, 0);
+      font-family: "Work Sans";
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+      line-height: 19px;
     }
 
     li {
@@ -222,16 +246,28 @@ html, body {
 
     a{
       display: block;
-      padding: 10px 15px;
+      padding: 10px $nav-padding;
 
       &.toc-footer-request {
+        color: #959390;
         border-top: 1px solid $nav-footer-border-color;
         border-bottom: 1px solid $nav-footer-border-color;
+        font-family: "Work Sans";
+        font-size: 14px;
+        font-weight: 500;
+        height: 19px;
+        letter-spacing: -0.3px;
+        line-height: 19px;
       }
 
       &.toc-footer-copyright {
-        font-size: 11px;
-        opacity: 0.5;
+        color: rgba(0,0,0,0.4);
+        font-family: "Work Sans";
+        font-size: 12px;
+        font-weight: normal;
+        letter-spacing: -0.2px;
+        line-height: 15px;
+        text-align: center;
       }
     }
 
@@ -239,7 +275,6 @@ html, body {
       text-decoration: underline;
     }
   }
-
 }
 
 // button to show navigation on mobile devices
@@ -272,7 +307,7 @@ html, body {
   transition: left 0.3s ease-in-out;
 
   &:hover { opacity: 1; }
-  &.open {left: $nav-width}
+  &.open {left: #{$nav-width + $nav-padding * 2}}
 }
 
 // CUSTOM LOGO
@@ -280,30 +315,17 @@ html, body {
   display: block;
   padding: 10px 10px 20px 10px;
   text-decoration: none;
-  text-align: center;
-
-  .logo-wk-svg {
-    width: 50px;
-    height: 50px;
-
-    .logo-wk-path {
-      fill: #3dd095;
-    }
-  }
-
-  strong {
-    display: block;
-    margin-top: 10px;
-    color: #3dd095;
-    text-transform: uppercase;
-  }
+  text-align: left;
 
   span {
     display: block;
     margin-top: 5px;
-    color: #fff;
-    font-size: 12px;
-    text-transform: uppercase;
+    color: #000;
+    font-family: Welcomeweb;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    line-height: 19px;;
   }
 }
 
@@ -312,7 +334,7 @@ html, body {
 ////////////////////////////////////////////////////////////////////////////////
 
 .page-wrapper {
-  margin-left: $nav-width;
+  margin-left: $nav-width + 2 * $nav-padding;
   position: relative;
   z-index: 10;
   background-color: $main-bg;
@@ -389,16 +411,23 @@ html, body {
   }
 
   a {
-    color: #148cf0;
+    color: rgb(0, 0, 0);
+    font-family: "Work Sans";
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    line-height: 19px;
     text-decoration: underline;
+    text-decoration-color: $primary-text;
 
     &:hover {
-      color: #0f7fdc;
+      color: #000;
       text-decoration: none;
+      text-decoration-color: $primary-text;
     }
 
     &:visited {
-      color: #085ea7;
+      color: #000;
     }
   }
 
@@ -413,7 +442,7 @@ html, body {
   }
 
   &>ul, &>ol {
-    padding-left: $main-padding + 15px;
+    margin-left: $main-padding + 20px;
   }
 
   // the div is the tocify hidden div for placeholding stuff
@@ -423,14 +452,13 @@ html, body {
 
   h1 {
     @extend %header-font;
+    color: #000;
     font-size: 30px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    border-bottom: 1px solid #ccc;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
     border-top: 1px solid #ddd;
-    background-image: linear-gradient(to bottom, #fff, #f9f9f9);
   }
 
   h1:first-child, div:first-child + h1 {
@@ -476,28 +504,40 @@ html, body {
   table {
     margin-bottom: 1em;
     overflow: auto;
+
+    tbody {
+      vertical-align: top;
+    }
+
     th,td {
       text-align: left;
-      vertical-align: top;
       line-height: 1.6;
     }
 
     th {
-      padding: 5px 10px;
       border-bottom: 1px solid #ccc;
       vertical-align: bottom;
+      padding: 5px 10px 10px;
+      font-weight: 500;
+      color: #000;
     }
 
     td {
-      padding: 10px;
+      padding: 8px;
+    }
+
+    td, th {
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+
+    tr:first-child td {
+      padding-top: 15px;
     }
 
     td > code.prettyprint {
       white-space: nowrap;
-    }
-
-    tr:last-child {
-      border-bottom: 1px solid #ccc;
     }
 
     tr:nth-child(odd)>td {
@@ -517,6 +557,39 @@ html, body {
     margin-left: 15px;
   }
 
+  li {
+    list-style: none;
+    text-indent: -20px;
+
+    > p {
+      display: inline;
+
+      code.prettyprint {
+        display: inline;
+        white-space: nowrap;
+        margin-bottom: 15px;
+      }
+    }
+
+    &:before {
+      width: 6px;
+      height: 6px;
+      content: '';
+      border-radius: 50px;
+      background: $primary-text;
+      display: inline-block;
+      margin-right: 14px
+    }
+
+    &:not(:first-child) {
+      margin-top: 8px;
+    }
+
+    ul li {
+      margin-top: 20px;
+    }
+  }
+
   p, li, dt, dd {
     line-height: 1.6;
     margin-top: 0;
@@ -527,14 +600,22 @@ html, body {
   }
 
   code {
-    background-color: rgba(0,0,0,0.05);
+    color: #000;
+    background: #efeae4;
     padding: 3px;
-    border-radius: 3px;
+    border-radius: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: "Work Sans";
+    opacity: 55%;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
     @extend %break-words;
     @extend %code-font;
   }
 
   pre>code {
+    color: #fff;
     background-color: transparent;
     padding: 0;
   }
@@ -542,26 +623,32 @@ html, body {
   aside {
     padding-top: 1em;
     padding-bottom: 1em;
-    text-shadow: 0 1px 0 lighten($aside-notice-bg, 15%);
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-    background: $aside-notice-bg;
+    border: 1px solid #4b9bf1;
+    margin: 1.5em calc(50% + 30px) 1.5em 30px;
+    background: #edf3fe;
     line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: "Work Sans";
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: -0.3px;
+    line-height: 18px;
+    text-shadow: none;
 
     &.warning {
       background-color: $aside-warning-bg;
-      text-shadow: 0 1px 0 lighten($aside-warning-bg, 15%);
+      border: 1px solid #e4ae56;
     }
 
     &.success {
       background-color: $aside-success-bg;
-      text-shadow: 0 1px 0 lighten($aside-success-bg, 15%);
+      border: 1px solid #00a772;
     }
   }
 
   aside:before {
     vertical-align: middle;
-    padding-right: 0.5em;
+    margin-right: 8px;
     font-size: 14px;
   }
 
@@ -582,7 +669,6 @@ html, body {
     margin: -2px;
     border-radius: 4px;
     border: 1px solid #F7E633;
-    text-shadow: 1px 1px 0 #666;
     background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
   }
 }
@@ -642,7 +728,7 @@ html, body {
 
 @media (max-width: $tablet-width) {
   .tocify-wrapper {
-    left: -$nav-width;
+    left: -#{$nav-width + $nav-padding * 2};
 
     &.open {
       left: 0;
