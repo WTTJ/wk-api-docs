@@ -20,17 +20,23 @@
   line-height: 1;
 }
 
+%svg-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
 %icon-exclamation-sign {
-  @extend %icon;
-  content: "\e600";
+  @extend %svg-icon;
+  content: url(/images/alert.svg);
 }
 %icon-info-sign {
-  @extend %icon;
-  content: "\e602";
+  @extend %svg-icon;
+  content: url(/images/information.svg);
 }
 %icon-ok-sign {
-  @extend %icon;
-  content: "\e606";
+  @extend %svg-icon;
+  content: url(/images/check.svg);
 }
 %icon-search {
   @extend %icon;
