@@ -1,29 +1,5 @@
 # Organizations
 
-## Get organizations dependencies
-
-```shell
-curl -X GET -G "https://www.welcomekit.co/api/v1/external/organizations/dependencies" \
-    -H "Content-Type: application/json" \
-    -H "Authorization: Bearer WK_API_KEY"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-...
-}
-```
-
-<aside class="notice">
-This endpoint requires <code>su_organizations_r</code> scope.
-</aside>
-
-### HTTP Request
-
-`GET https://www.welcomekit.co/api/v1/external/jobs/dependencies`
-
 ## Retrieve an organization
 
 ```shell
@@ -76,7 +52,13 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/organizations/aEioU123
   "i18n_good_to_knows":{
       "fr" : "Vitae sit libero quis optio maiores et doloribus. Voluptas a nesciunt odio aut quo. Reiciendis et sint eum laboriosam labore omnis. Velit saepe autem reiciendis libero quia occaecati quia."
       },
-  "websites" : "https://www.welcometothejungle.com/en/companies/wttj","
+  "websites" : [
+    {
+      "reference" : "wttj_fr",
+      "name" :"Welcome To The Jungle",
+      "root_url" : "https://www.welcometothejungle.com/en/companies/wttj"
+    }
+  ]
   "offices":[
     {"id":4,
      "name" : "WTTJ HQ",
