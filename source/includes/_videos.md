@@ -33,10 +33,10 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/videos" \
 ```
 
 <aside class="notice">
-This endpoint requires <code>videos_r</code> scope.
+This endpoint requires <code>videos_r</code> or <code>su_videos_r</code> scope.
 </aside>
 
-This endpoint lets you retrieve your list of videos. Videos are hosted on Youtube, Dailymotion or 360player (see <code>source</code> and <code>url</code> in the returned body).
+This endpoint lets you retrieve your list of videos (scope <code>videos_r</code>) or to all videos (scope <code>su_videos_r</code>). Videos are hosted on Youtube, Dailymotion or 360player (see <code>source</code> and <code>url</code> in the returned body).
 
 The dimensions of each image type are as follows:
 
