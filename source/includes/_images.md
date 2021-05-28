@@ -31,10 +31,10 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/images" \
 ```
 
 <aside class="notice">
-This endpoint requires the images_r scope.
+This endpoint requires the <code>images_r</code> or <code>su_images_r</code> scope.
 </aside>
 
-This endpoint lets you access to the list of your images.
+This endpoint lets you access to the list of your images (scope <code>images_r</code>) or to all images (scope <code>su_images_r</code>).
 
 The dimensions of each image type are as follows:
 
