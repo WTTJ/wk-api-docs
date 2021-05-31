@@ -185,7 +185,7 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/organizations" \
 This endpoint requires <code>su_organizations_r</code> scope. Availability of offices requires <code>su_offices_r</code> or <code>su_offices_rw</code> scope and setting the query parameter offices to true.
 </aside>
 
-This endpoint lets you retrieve all organizations according to their name or website url or cms site reference (one of this parameter is required).
+This endpoint lets you retrieve all organizations according to their name or website url or cms site reference (one and only one of these parameters is required).
 
 ### HTTP Request
 
