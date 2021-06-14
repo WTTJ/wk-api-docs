@@ -182,7 +182,10 @@ curl -X GET -G "https://www.welcomekit.co/api/v1/external/organizations" \
 ```
 
 <aside class="notice">
-This endpoint requires <code>su_organizations_r</code> scope. Availability of offices requires <code>su_offices_r</code> or <code>su_offices_rw</code> scope and setting the query parameter offices to true.
+This endpoint requires <code>su_organizations_r</code> scope.
+Availability of offices requires <code>su_offices_r</code> or <code>su_offices_rw</code> scope and setting the query parameter offices to true.
+Availability of images requires <code>su_images_r</code> scope and setting the query parameter images to true.
+Availability of videos requires <code>su_videos_r</code> scope and setting the query parameter videos to true.
 </aside>
 
 This endpoint lets you retrieve all organizations according to their name or website url or cms site reference (one and only one of these parameters is required).
@@ -199,6 +202,8 @@ Parameter | Type | Required | Default | Description | Example
 `media_website_url` | String | | | Returns organizations base on the media website url | welcometothejungle
 `cms_sites_references` | String | | | Returns organizations base on the sites references | wttj_fr,jungle
 `offices` | Boolean | | false | Returns offices field | [{...}, {...}]
+`images` | Boolean | | false | Returns images field | [{...}, {...}]
+`videos` | Boolean | | false | Returns videos field | [{...}, {...}]
 `per_page` | Integer | | 100 | Number of jobs per page |
 `page` | Integer | | 1 | Page offset |
 `created_after` | String | | | Returns jobs created after this date (YYYY-MM-DD) | 2015-11-26
@@ -211,7 +216,7 @@ Parameter | Type | Required | Default | Description | Example
 ```shell
 curl -X GET -G "https://www.welcomekit.co/api/v1/external/organizations/aEioU123" \
     -H "Authorization: Bearer WK_API_KEY" \
-    -d "offices=true""
+    -d "offices=true"
 ```
 
 > The above command returns JSON structured like this:
