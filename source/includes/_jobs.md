@@ -262,6 +262,7 @@ Parameter | Type | Required | Default | Description | Example
 --- | --- | --- | --- | --- | ---
 `stages` | Boolean | | false | Returns job stages | true / false
 `websites` | Boolean | | false | Returns associated websites URLs | true / false
+`office` | Boolean | | false | Returns associated office description | true / false
 `status` | String | | | Returns jobs with this specific status | draft / published / archived
 `contract_type` | String | | | Returns jobs with this specific contract type | FULL_TIME / ...
 `per_page` | Integer | | 100 | Number of jobs per page |
@@ -370,6 +371,7 @@ Parameter | Type | Required | Default | Description | Example
 `organization_reference` | String | ✔ | | Reference of the associated organization/company | aEioU123
 `stages` | Boolean | | false | Returns job stages | true / false
 `websites` | Boolean | | false | Returns associated websites URLs | true / false
+`office` | Boolean | | false | Returns associated office description | true / false
 `status` | String | | | Returns jobs with this specific status | draft / published / archived
 `per_page` | Integer | | 100 | Number of jobs per page |
 `page` | Integer | | 1 | Page offset |
@@ -486,6 +488,7 @@ Parameter | Type | Required | Default | Description | Example
 `reference` | String | ✔ | | Job reference | aEioU123
 `stages` | Boolean | | false | Returns job stages | true / false
 `websites` | Boolean | | false | Returns associated websites URLs | true / false
+`office` | Boolean | | false | Returns associated office description | true / false
 `candidates_count` | Boolean | | false | Returns candidates counters (total and per stage ones) | true / false
 `application_fields` | Boolean | | false | Returns application fields | true / false
 `organization` | Boolean | | false | Returns organization fields | true / false
