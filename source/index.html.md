@@ -12,6 +12,7 @@ includes:
   - jobs
   - professions
   - departments
+  - organizations
   - candidates
   - comments
   - emails
