@@ -86,7 +86,7 @@ jobs:
   release:
     <<: *defaults
     machine:
-      enabled: true
+      image: cimg/base:2022.05
     steps:
       - attach_workspace:
           at: ../rel
